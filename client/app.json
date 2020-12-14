@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/GetPhoneNumber/GetPhoneNumber",
+    "pages/GetUserBase/GetUserBase",
+    "pages/UserInfo/UserInfo",
+    "pages/home/home"
+  ],
+  "window": {
+    "defaultTitle": "My App"
+  }
+}

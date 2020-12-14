@@ -1,0 +1,10 @@
+
+<view>
+   <button>逛逛</button>
+  <button onTap="mine">我的</button>
+
+
+
+</view>
+
+
