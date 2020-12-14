@@ -1,0 +1,3 @@
+<view>
+  <button onTap="payCode">买单</button>
+</view>

@@ -1,0 +1,7 @@
+<view>
+  <button open-type="getAuthorize" 
+    onGetAuthorize="onGetAuthorize" onError="onAuthError" 
+    scope='phoneNumber'>
+        授权手机号
+    </button>
+</view>
