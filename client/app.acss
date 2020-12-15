@@ -1,3 +1,15 @@
 page {
-  background: #f7f7f7;
+  background: white;
+}
+
+button {
+  background: linear-gradient(-27deg, #2DC2A2, #2CC0A0);
+  border-radius: 49px;
+  border-color: #2DC2A2;
+}
+
+.flex-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

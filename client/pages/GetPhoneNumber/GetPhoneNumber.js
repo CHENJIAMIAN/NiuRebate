@@ -1,7 +1,9 @@
 var app = getApp();
 
 Page({
-  data: {},
+  data: {
+    step1done:true,
+  },
   onLoad() {},
 
   // .js 

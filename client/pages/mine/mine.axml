@@ -1,8 +1,17 @@
 <view>
-  
+<view class="user-card-container">
+  <view class="user-info">
+    
+  </view>
+  <view class="user-card">
+    <view>
+      
+    </view>
+  </view>
+</view>
+
+
   <button onTap="alipayScan">扫码</button>
   <button onTap="payCode">付款</button>
-
-   <button  onTap="buyCard">开通会员</button>
-
+  <button onTap="buyCard">开通会员</button>
 </view>

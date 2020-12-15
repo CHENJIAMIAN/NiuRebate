@@ -1,13 +1,32 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/mine/mine",
     "pages/GetPhoneNumber/GetPhoneNumber",
+    "pages/index/index",
     "pages/GetUserBase/GetUserBase",
     "pages/UserInfo/UserInfo",
     "pages/home/home"
   ],
   "window": {
-    "defaultTitle": "My App"
+    "defaultTitle": "大牛返利"
+  },
+  "tabBar": {
+    "textColor": "#333333",
+    "selectedColor": "#009D9A",
+    "backgroundColor": "#ffffff",
+    "items": [
+      {
+        "pagePath": "pages/index/index",
+        "icon": "assets/img/gg2.png",
+        "activeIcon": "assets/img/gg.png",
+        "name": "逛逛"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "icon": "assets/img/wd2.png",
+        "activeIcon": "assets/img/wd.png",
+        "name": "我的"
+      }
+    ]
   }
 }

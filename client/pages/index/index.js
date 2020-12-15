@@ -1,7 +1,9 @@
 var app = getApp();
 
 Page({
-
+  data: {
+    gotLocation: false,
+  },
   onLoad(query) {
     // 页面加载
     console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
@@ -10,11 +12,8 @@ Page({
     // 页面加载完成
     my.showLoading();
     my.getLocation({
-      type:1,
-      success(res) {
-       
-
-
+      type: 1,
+      success: (res) => {
         app.globalData.longitude = res.longitude;
         app.globalData.latitude = res.latitude;
         app.globalData.cityCode = res.cityAdcode;
@@ -22,44 +21,41 @@ Page({
 
         var url = app.serverUrl + '/aliShop/list';
         my.request({
-            url: url,
-            method: 'POST', 
-            data: {
-              cityCode:res.cityAdcode,
-              districtCode:res.districtAdcode
-            },
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            success: function(resdata) {
+          url: url,
+          method: 'POST',
+          data: {
+            cityCode: res.cityAdcode,
+            districtCode: res.districtAdcode
+          },
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          success: (resdata) => {
+            my.hideLoading();
 
-               my.hideLoading();
-              
-              if (resdata.data.code == 0){
+            if (resdata.data.code == 0) {
+              this.setData({ gotLocation: true });
+            } else {
+              this.setData({ gotLocation: false });
+              my.showToast({
+                type: 'fail',
+                content: resdata.data.msg,
+                duration: 1000,
+                success: () => {
+                },
+              });
 
-                
-
-              }else{
-
-                my.showToast({
-                  type: 'fail',
-                  content: resdata.data.msg,
-                  duration: 1000,
-                  success: () => {
-                  },
-                });
-                                
-              }
-            }, 
-            fail: function(resdata) {
-              my.hideLoading();
             }
-          });
-        
+          },
+          fail: (resdata) => {
+            my.hideLoading();
+          }
+        });
+
       },
       fail() {
         my.hideLoading();
-        
+
       },
     })
   },
@@ -90,12 +86,12 @@ Page({
     };
   },
 
-  
 
-  mine(){
-   my.navigateTo({
-     url: '/pages/mine/mine'
-   });
+
+  mine() {
+    my.navigateTo({
+      url: '/pages/mine/mine'
+    });
   },
 
 });
