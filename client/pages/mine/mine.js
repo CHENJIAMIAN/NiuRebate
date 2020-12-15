@@ -39,6 +39,8 @@ Page({
               'Content-Type': 'application/x-www-form-urlencoded'
             },
             success: function(resdata) {
+              
+               console.log(resdata)
 
               if (resdata.data.data.userId){
 
@@ -63,7 +65,7 @@ Page({
               }else if (resdata.data.code == 1){
 
                 my.navigateTo({
-                  url: '/pages/GetPhoneNumber/GetPhoneNumber'
+                  url: '/pages/login/login'
                 });
 
               }else if (resdata.data.code == 2){

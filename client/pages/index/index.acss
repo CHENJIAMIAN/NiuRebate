@@ -8,8 +8,6 @@
   height: 804rpx;
 }
 
-
-
 .near-fullheight {
   height: 70vh;
 }

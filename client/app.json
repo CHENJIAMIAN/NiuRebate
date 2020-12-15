@@ -1,11 +1,12 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/mine/mine",
     "pages/GetPhoneNumber/GetPhoneNumber",
-    "pages/index/index",
     "pages/GetUserBase/GetUserBase",
     "pages/UserInfo/UserInfo",
-    "pages/home/home"
+    "pages/home/home",
+    "pages/login/login"
   ],
   "window": {
     "defaultTitle": "大牛返利"
