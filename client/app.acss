@@ -1,4 +1,10 @@
+/* @font-face {
+  font-family: "PingFang SC";
+  src: url('./assets/PingFangRegular.ttf');
+} */
+
 page {
+  font-family: PingFang SC;
   background: white;
 }
 
