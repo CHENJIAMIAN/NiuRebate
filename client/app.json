@@ -5,8 +5,7 @@
     "pages/GetPhoneNumber/GetPhoneNumber",
     "pages/GetUserBase/GetUserBase",
     "pages/UserInfo/UserInfo",
-    "pages/home/home",
-    "pages/login/login"
+    "pages/home/home"
   ],
   "window": {
     "defaultTitle": "大牛返利"

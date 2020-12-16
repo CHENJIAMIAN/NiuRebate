@@ -34,7 +34,7 @@ Page({
 
                     if (resdata.data.code == 0){
                       my.navigateTo({
-                        url: '/pages/UserInfo/UserInfo'
+                        url: '/pages/mine/mine'
                       });
 
                     }

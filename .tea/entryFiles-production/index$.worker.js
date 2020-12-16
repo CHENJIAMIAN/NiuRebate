@@ -36,7 +36,6 @@ require('../../client/pages/GetPhoneNumber/GetPhoneNumber?hash=32d7d2807ed4e666e
 require('../../client/pages/GetUserBase/GetUserBase?hash=32d7d2807ed4e666ef03b4b3fe8c38ecf2e34e68');
 require('../../client/pages/UserInfo/UserInfo?hash=32d7d2807ed4e666ef03b4b3fe8c38ecf2e34e68');
 require('../../client/pages/home/home?hash=32d7d2807ed4e666ef03b4b3fe8c38ecf2e34e68');
-require('../../client/pages/login/login?hash=32d7d2807ed4e666ef03b4b3fe8c38ecf2e34e68');
 }
 self.bootstrapApp ? self.bootstrapApp({ success }) : success();
 }

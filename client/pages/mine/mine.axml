@@ -1,17 +1,114 @@
 <view>
-<view class="user-card-container">
-  <view class="user-info">
-    
-  </view>
-  <view class="user-card">
-    <view>
-      
+  <view hidden="{{needLogin}}" class="user-top-container">
+    <!-- 用户信息 -->
+    <view class="user-info">
+      <view class="user-icon">
+        <image class="image-yh" src="../../assets/img/yh.png"/>
+      </view>
+      <view class="txt-group1">
+        <view class="txt-sjh">
+          151****6904
+        </view>
+        <view class="txt-tiny-tip">
+          <image class="image-zs" src="../../assets/img/zs.png"/>
+          <text style="margin-left: 15rpx;">
+            您还不是会员
+          </text>
+        </view>
+      </view>
+      <image class="image-yqyl" src="../../assets/img/yqyl.png"/>
+    </view>
+    <!-- 会员卡 -->
+    <view class="flex-content user-card-container">
+      <view class="user-card">
+        <view class="txt-group2">
+          <view class="txt-dnvip">
+      大牛VIP
+          </view>
+          <view class="txt-tiny-tip">
+      用支付宝支付就有返利
+          </view>
+        </view>
+        <button type="primary" class="btn-ljkt" onTap="buyCard">立即开通</button>
+      </view>
     </view>
   </view>
-</view>
+  <!-- 主内容 -->
+  <view hidden="{{needLogin}}" class="main-content">
+    <view class="txt-wdtj">
+      <image class="image-wdtj" src="../../assets/img/wdtj.png"/>
+      <text style="margin-left: 40rpx;">我的推荐</text>
+    </view>
+    <block a:if="{{!hasContent}}">
+      <image class="image-zwfl" src="../../assets/img/zwfl.png"/>
+      <view class="flex-content txt-zwfl">
+      暂无返利
+      </view>
+    </block>
+    <!-- 内容列表 -->
+    <view a:else class="recommend-list">
+      <!--  -->
+      <view class="flex-content recommend-list-item" a:for="{{listData}}">
+        <image class="image-tx" src="../../assets/img/cardbg.png"/>
+        <view class="txt-group1">
+          <view class="txt-medium">
+      转账来自{{item.laizi}}
+          </view>
+          <view class="txt-tinyest-tip" style="margin-top:10rpx;">
+         {{item.time}}
+          </view>
+        </view>
+        <view class="txt-group3">
+          <view class="txt-fl">
+            返利：
+            <text style="font-size: 32rpx;">
+            +{{item.fanli}}
+            </text>
+          </view>
+          <view class="txt-tinyest-tip" style="margin-top:10rpx;text-decoration: line-through;">
+          消费：{{item.xiaofei}}
+          </view>
+        </view>
+        <view class="btm-line">
+        </view>
+      </view>
+      <!--  -->
+    </view>
+  </view>
+  <!-- 买单组件 -->
+  <view a:if="{{!hasContent}}" class="{{'big-green-circle ' + (showPayBtn && 'long-green-bar')}}">
+    <block a:if="{{showPayBtn}}">
+      <view class="img-btn" onTap="alipayScan">
+        <image class="image-sm" src="../../assets/img/sm.png"/>
+        <view class="txt-tiny-tip">
+        扫一扫
+        </view>
+      </view>
+      <view class="img-btn" style="margin-top:36rpx" onTap="payCode">
+        <image class="image-sm" src="../../assets/img/fkm.png"/>
+        <view class="txt-tiny-tip">
+      付款码
+        </view>
+      </view>
+      <image onTap="tapHidePay" class="image-down" src="../../assets/img/down.png"/>
+    </block>
+    <view a:else onTap="tapShowPay">
+      买单
+    </view>
+  </view>
 
 
-  <button onTap="alipayScan">扫码</button>
-  <button onTap="payCode">付款</button>
-  <button onTap="buyCard">开通会员</button>
+  <view hidden="{{!needLogin}}">
+    <view class="flex-content" style="height:80vh">
+      <image class="image-sqdl" src="../../assets/img/sqdl.png"/>
+    </view>
+    <view class="btn-section flex-content" style="bottom: 400rpx;">
+      <text class="tip-text">{{'美好生活从大牛开始'}}</text>
+    </view>
+    <view class="btn-section flex-content">
+      <button type="primary" onTap="goPhoneNumber">授权登录</button>
+    </view>
+  </view>
+
+
 </view>
