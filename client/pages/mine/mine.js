@@ -16,7 +16,7 @@ Page({
         xiaofei: "58.00",
       }
     ],
-    hasContent: true,
+    hasContent: false,
     showPayBtn: false,
     memberId: '',
     userId: '',

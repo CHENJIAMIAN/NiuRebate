@@ -2,7 +2,7 @@ var app = getApp();
 
 Page({
   data: {
-    step1done:true,
+
   },
   onLoad() {},
 

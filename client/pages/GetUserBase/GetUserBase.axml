@@ -1,7 +1,32 @@
-<view>
-  <button open-type="getAuthorize"
-    onGetAuthorize="onGetAuthorize" onError="onAuthError" 
-    scope='userInfo'>
-        会员基础信息授权
-    </button>
+<view class="container">
+  <view class="big-bold">
+    授权登录
+  </view>
+  <view class="tiny-tip" style="margin:27rpx 0;">完善信息后，笔笔消费拿返利</view>
+  <view class="flow-bar flex-content">
+    <view class="step step1">
+      <view class="green-circle">
+    1
+      </view>
+      <view class="green-txt">
+    授权手机号
+      </view>
+    </view>
+    <view class="step-between" style=" background: #2ABF9F;">
+    </view>
+    <view class="step step2">
+      <view class="green-circle">
+    2
+      </view>
+      <view class="green-txt">
+    授权基本信息
+      </view>
+    </view>
+  </view>
+  <view class="flex-content" style="margin-top:82rpx;">
+    <image class="image-hqsjh" src="../../assets/img/hqsjh.png"/>
+  </view>
+  <button style="margin-top:200rpx;" type="primary" open-type="getAuthorize" onGetAuthorize="onGetAuthorize" onError="onAuthError" scope='userInfo'>
+        授权基本信息
+  </button>
 </view>
