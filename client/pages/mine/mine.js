@@ -65,6 +65,7 @@ Page({
     nickName: '',
     avatar: '',
     memberFlag: '',
+    expiryDate: '',
     needLogin:false
   },
 
@@ -74,8 +75,8 @@ Page({
   onReady() {
 
     var that = this;
-    false && my.showLoading();
-    false && my.getAuthCode({
+    my.showLoading();
+    my.getAuthCode({
       scopes: 'auth_base', // 主动授权（弹框）：auth_user，静默授权（不弹框）：auth_base
       success: (res) => {
 
@@ -116,13 +117,14 @@ Page({
                   userId: resdata.data.data.userId,
                   nickName: resdata.data.data.nickName,
                   avatar: resdata.data.data.avatar,
-                  memberFlag: resdata.data.data.memberFlag
+                  memberFlag: resdata.data.data.memberFlag,
+                  expiryDate: resdata.data.data.expiryDate
                 });
 
                 if (resdata.data.data.memberFlag == 0) {
-                     that.setData({
-                       hasContent:false
-                     });
+                  that.setData({
+                    hasContent:false
+                  });
                 }
 
               } else if (resdata.data.code == 1) {
@@ -206,7 +208,7 @@ Page({
             content: '会通会员失败，稍后重试',
             duration: 1000,
             success: () => {
-            },
+            }, 
           });
         }
 
@@ -221,7 +223,7 @@ Page({
   alipayScan() {
     // 打开支付宝扫一扫
     my.ap.navigateToAlipayPage({
-      appCode: 'alipayScan',
+      appCode: 'alipayScan', 
       success: (res) => {
         // my.alert({content:'成功：'+JSON.stringify(res)});
       },
