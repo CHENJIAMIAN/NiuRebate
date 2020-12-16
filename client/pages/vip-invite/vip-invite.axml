@@ -1,7 +1,7 @@
 <view>
   <view class="user-top-container">
     <view class="txt-tiny-tip">
-      <image class="image-tz" src="../../assets/img/tz.png"/>
+      <image class="img-tz" src="../../assets/img/tz.png"/>
       <text style="margin-left: 15rpx;">
             198****6904
       </text>
@@ -12,14 +12,14 @@
       <view class="user-card">
         <view class="user-info">
           <view class="user-icon">
-            <image class="image-yh" src="../../assets/img/yh.png"/>
+            <image class="img-yh" src="../../assets/img/yh.png"/>
           </view>
           <view class="txt-group1">
             <view class="txt-sjh">
           151****6904
             </view>
             <view class="txt-tiny-tip">
-              <image class="image-zs" src="../../assets/img/zs.png"/>
+              <image class="img-zs" src="../../assets/img/zs.png"/>
               <text style="margin-left: 15rpx;">
             您还不是会员
               </text>
@@ -38,34 +38,92 @@
     <view>
       <view class="title">权益一：高额返现</view>
       <!-- 返现item -->
-      <view class="dp-item">
-        <image class="image-dp" src="../../assets/img/cardbg2.png"/>
+      <view class="dp-item" a:for="{{dpListData}}">
+        <image class="img-dp" src="{{item.img}}"/>
         <view class="dp-item-right">
-          <view class="txt-30-bold ">辣椒胡</view>
-          <view class="txt-20-gray">火锅烧烤      余杭区 14.6km</view>
+          <view class="txt-30-bold ">{{item.dianming}}</view>
+          <view class="txt-20-gray">{{item.type}}      {{item.position}} {{item.distance}}km</view>
           <view class="txt-30-bold orange">
-             ￥ 85
+             ￥ {{item.price}}
             <text style="font-size:20rpx">
                /人
             </text>
           </view>
           <view class="txt-flcount">VIP会员返利6.0%</view>
         </view>
+        <view class="btm-line">
+        </view>
+      </view>
+      <view class="fjhy">
+        <image class="img-hk" src="../../assets/img/hk.png"/>
+        <view class="txt-fjhy">
+           附近还有
+          <text style="color:#FD6010;"> 616
+          </text>家好店支持大牛返利
+        </view>
       </view>
     </view>
     <!-- 权益2 -->
     <view>
       <view class="title">权益二：邀请好友，躺赚收益</view>
+      <view class="txt-24 card-qy flex-content">
+        <view class="card-qy-item">
+          <image class="img-5239" src="../../assets/img/fx.png"/>
+          <view>
+分享活动给好友好友完成注册
+          </view>
+        </view>
+        <view class="card-qy-item">
+          <image class="img-5239" src="../../assets/img/kp.png"/>
+          <view>
+好友购卡你获得开卡费的50%
+          </view>
+        </view>
+        <view class="card-qy-item">
+          <image class="img-5239" src="../../assets/img/qian.png"/>
+          <view>
+好友线下消费你获得佣金奖励
+          </view>
+        </view>
+      </view>
     </view>
     <!-- 权益3 -->
     <view>
       <view class="title">权益三：不定期会员活动</view>
+      <view class="qy3-card" a:for="{{hdListData}}">
+        <image class="img-qy3" src="{{item.img}}"/>
+        <view class="qy3-btm-bar txt-tiny-tip">
+          {{item.name}}
+        </view>
+      </view>
     </view>
     <!-- 权益4 -->
     <view>
-      <view class="title">
-        位用户购买了大牛返利卡
+      <view class="title-lr">
+        <image class="img-lbar" src="../../assets/img/lbar.png"/>
+   已有
+        <text style="color:#2ABF9F;">100</text>位用户购买了大牛返利卡
+        <image class="img-lbar" src="../../assets/img/rbar.png"/>
+      </view>
+      <view class="gm-card" a:for="{{gmListData}}">
+        <image class="img-gmtx" src="{{item.img}}"/>
+        <view class="gm-card-r">
+          <view class="txt-30-bold">
+          {{item.name}}
+          ·
+          {{item.job}}
+          </view>
+          <view class="txt-20">
+          使用大牛返利卡{{item.month}}个多月，共收益{{item.mony}}多元
+          </view>
+          <view class="txt-20-gray">
+          {{item.desc}}
+          </view>
+        </view>
       </view>
     </view>
+    <button class="btn-kt" type="primary" onTap="">
+      19.9元/年 开通VIP会员
+    </button>
   </view>
 </view>

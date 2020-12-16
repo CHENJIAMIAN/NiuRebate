@@ -2,6 +2,7 @@ var app = getApp();
 
 Page({
   data: {
+    isVIP:false,
     listData: [
       {
         laizi: "小明",
