@@ -12,7 +12,8 @@
         <view class="txt-tiny-tip">
           <image class="image-zs" src="../../assets/img/zs.png"/>
           <text style="margin-left: 15rpx;">
-            您还不是会员
+            <text a:if="{{!isVIP}}">您还不是会员</text>
+            <text a:else>3463435354</text>
           </text>
         </view>
       </view>
@@ -26,10 +27,11 @@
       大牛VIP
           </view>
           <view class="txt-tiny-tip">
-      用支付宝支付就有返利
+            <text a:if="{{!isVIP}}">用支付宝支付就有返利</text>
+            <text a:else>有效日期至2021-09-08</text>
           </view>
         </view>
-        <button type="primary" class="btn-ljkt" onTap="buyCard">立即开通</button>
+        <button  a:if="{{!isVIP}}" type="primary" class="btn-ljkt" onTap="buyCard">立即开通</button>
       </view>
     </view>
   </view>
@@ -48,32 +50,32 @@
     <!-- 内容列表 -->
     <view a:else class="recommend-list">
       <!--  -->
-      <!-- <scroll-view scroll-y="{{true}}" style="height: 200px;" onScroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}"> -->
-        <view class="flex-content recommend-list-item" a:for="{{listData}}">
-          <image class="image-tx" src="../../assets/img/cardbg.png"/>
-          <view class="txt-group1">
-            <view class="txt-medium">
+      <!--<scroll-view scroll-y="{{true}}" style="height: 200px;" onScroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}"> -->
+      <view class="flex-content recommend-list-item" a:for="{{listData}}">
+        <image class="image-tx" src="../../assets/img/cardbg.png"/>
+        <view class="txt-group1">
+          <view class="txt-medium">
       转账来自{{item.laizi}}
-            </view>
-            <view class="txt-tinyest-tip" style="margin-top:10rpx;">
+          </view>
+          <view class="txt-tinyest-tip" style="margin-top:10rpx;">
          {{item.time}}
-            </view>
-          </view>
-          <view class="txt-group3">
-            <view class="txt-fl">
-            返利：
-              <text style="font-size: 32rpx;">
-            +{{item.fanli}}
-              </text>
-            </view>
-            <view class="txt-tinyest-tip" style="margin-top:10rpx;text-decoration: line-through;">
-          消费：{{item.xiaofei}}
-            </view>
-          </view>
-          <view class="btm-line">
           </view>
         </view>
-      <!-- </scroll-view> -->
+        <view class="txt-group3">
+          <view class="txt-fl">
+            返利：
+            <text style="font-size: 32rpx;">
+            +{{item.fanli}}
+            </text>
+          </view>
+          <view class="txt-tinyest-tip" style="margin-top:10rpx;text-decoration: line-through;">
+          消费：{{item.xiaofei}}
+          </view>
+        </view>
+        <view class="btm-line">
+        </view>
+      </view>
+      <!--</scroll-view> -->
       <!--  -->
     </view>
   </view>

@@ -1,9 +1,16 @@
    .user-top-container {
      padding: 30rpx;
+     padding-top: 150rpx;
      position: relative;
      width: 690rpx;
      height: 400rpx;
      background: url(../assets/img/yhbg.png) 0 0 / 100% 100% no-repeat;
+   }
+
+   .user-card-container {
+     position: absolute;
+     left: 30rpx;
+     top: 198rpx;
    }
 
    .user-card {
@@ -15,23 +22,60 @@
      background: url(../assets/img/cardbg2.png) 0 0 / 100% 100% no-repeat;
    }
 
-   .image-yh {
+   .fjhy {
+     position: relative;
+     margin-top: 20rpx;
+   }
+
+   .txt-fjhy {
+     font-size: 36rpx;
+     font-family: PingFang SC;
+     font-weight: 500;
+     color: #FFFFFF;
+     line-height: 25rpx;
+     text-align: center;
+     transform: translateY(-80rpx);
+   }
+
+   .img-qy3 {
+     width: 690rpx;
+     height: 220rpx;
+     border-radius: 10px;
+   }
+
+   .qy3-card {
+     position: relative;
+     margin: 10rpx 0;
+   }
+
+   .qy3-btm-bar {
+     position: absolute;
+     width: 690rpx;
+     height: 40rpx;
+     line-height: 40rpx;
+     background: #273F32;
+     border-radius: 0px 0px 10px 10px;
+     transform: translateY(-45rpx);
+     text-align: center;
+   }
+
+   .img-yh {
      width: 106rpx;
      height: 106rpx;
    }
 
-   .image-zs {
+   .img-zs {
      width: 28rpx;
      height: 23rpx;
      transform: translateY(2px);
    }
 
-   .image-yqyl {
+   .img-yqyl {
      width: 92rpx;
      height: 60rpx;
    }
 
-   .image-wdtj {
+   .img-wdtj {
      width: 37rpx;
      height: 34rpx;
      transform: translateY(2px);
@@ -58,7 +102,6 @@
      font-family: PingFang SC;
      font-weight: 500;
      color: #FFFFFF;
-     line-height: 24rpx;
    }
 
    .txt-tinyest-tip {
@@ -92,12 +135,12 @@
    }
 
    .main-content {
+     position: relative;
      width: 686rpx;
      background: white;
      border-radius: 15px 15px 0 0;
-     position: fixed;
-     top: 356rpx;
-     padding: 62rpx 32rpx 0 32rpx;
+     margin-top: -116rpx;
+     padding: 21rpx 32rpx 39rpx 32rpx;
    }
 
    .user-info {
@@ -138,17 +181,44 @@
      line-height: 34rpx;
    }
 
-   .user-card-container {
-     position: absolute;
-     left: 30rpx;
-     top: 98rpx;
-   }
-
-   .image-zwfl {
+   .img-zwfl {
      width: 317rpx;
      height: 290rpx;
      margin-left: 185rpx;
      margin-top: 200rpx;
+   }
+
+   .img-5239 {
+     width: 52rpx;
+     height: 39rpx;
+   }
+
+   .card-qy {
+     display: flex;
+     justify-content: space-around;
+     width: 690rpx;
+     height: 180rpx;
+     background: #FFFFFF;
+     /* border-radius: 10px; */
+     box-shadow: 0 0 15px 0 rgba(0, 0, 0, .1);
+   }
+
+   .card-qy-item {
+     width: 186rpx;
+     height: 120rpx;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-items: center;
+     justify-content: space-between;
+     text-align: center;
+   }
+
+   .txt-24 {
+     font-size: 24rpx;
+     font-family: PingFang SC;
+     font-weight: 500;
+     color: #333333;
    }
 
    .big-green-circle {
@@ -175,7 +245,7 @@
      padding-top: 56rpx;
    }
 
-   .image-sm {
+   .img-sm {
      width: 46rpx;
      height: 46rpx;
    }
@@ -188,13 +258,13 @@
      height: 85rpx;
    }
 
-   .image-down {
+   .img-down {
      height: 22rpx;
      width: 40rpx;
      margin-top: 70rpx;
    }
 
-   .image-tx {
+   .img-tx {
      width: 80rpx;
      height: 80rpx;
      border-radius: 50%;
@@ -209,18 +279,29 @@
 
    .btm-line {
      position: absolute;
-     width: 585rpx;
+     bottom: 0rpx;
+     right: 0rpx;
+     width: 690rpx;
      height: 2rpx;
      background: #DDDDDD;
      opacity: 0.3;
-     bottom: -20rpx;
-     right: 0rpx;
    }
 
-   .image-tz {
+   .img-tz {
      width: 32rpx;
      height: 30rpx;
      transform: translateY(3px);
+   }
+
+   .title-lr {
+     margin: 84rpx 0;
+     height: 35rpx;
+     font-size: 36rpx;
+     font-family: Source Han Sans CN;
+     font-weight: 500;
+     color: #333333;
+     line-height: 29rpx;
+     text-align: center;
    }
 
    .title {
@@ -230,19 +311,21 @@
      font-weight: 500;
      color: #333333;
      line-height: 29rpx;
+     margin: 43rpx auto;
+     transform: translateX(20rpx)
    }
 
    .title:before {
      position: absolute;
      content: " ";
-     left: 16rpx;
+     left: -20rpx;
      width: 6rpx;
      height: 29rpx;
      background: #2ABF9F;
      border-radius: 3px;
    }
 
-   .image-dp {
+   .img-dp {
      width: 179rpx;
      height: 179rpx;
      border-radius: 7px;
@@ -255,6 +338,13 @@
      color: #333333;
    }
 
+   .txt-20 {
+     font-size: 20rpx;
+     font-family: PingFang SC;
+     font-weight: 500;
+     color: #333333;
+   }
+
    .txt-20-gray {
      font-size: 20rpx;
      font-family: PingFang SC;
@@ -263,10 +353,12 @@
    }
 
    .dp-item {
+     position: relative;
      display: flex;
+     padding: 24rpx 24rpx 24rpx 0;
    }
 
-   .dp-item-right{
+   .dp-item-right {
      display: flex;
      flex-direction: column;
      justify-content: space-between;
@@ -288,4 +380,52 @@
      color: #FFFFFF;
      line-height: 40rpx;
      text-align: center;
+   }
+
+   .btn-kt {
+     background: linear-gradient(99deg, #1A1822, #413542);
+     border-radius: 49rpx;
+     border-color: #1A1822;
+     font-size: 32rpx;
+     font-family: PingFang SC;
+     font-weight: 500;
+     color: #FFDCC6;
+   }
+
+   .img-gmtx {
+     width: 156rpx;
+     height: 156rpx;
+     border-radius: 50%;
+   }
+
+   .gm-card {
+     display: flex;
+     align-items: center;
+     background: #FFFFFF;
+     /* border-radius: 10px; */
+     box-shadow: 0 0 15px 0 rgba(0, 0, 0, .1);
+     padding: 11rpx;
+     margin: 15rpx 0;
+   }
+
+   .gm-card-r {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
+     height: 140rpx;
+     width: 465rpx;
+     margin-left: 20rpx;
+   }
+
+   .img-lbar {
+     width: 44rpx;
+     height: 6rpx;
+     transform: translateY(-5px);
+     margin: 0 8px;
+   }
+
+   .img-hk {
+     width: 690rpx;
+     height: 167rpx;
+     border: 1rpx #413542 dashed;
    }
