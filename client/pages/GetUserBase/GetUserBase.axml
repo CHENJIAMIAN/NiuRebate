@@ -1,7 +1,0 @@
-<view>
-  <button open-type="getAuthorize"
-    onGetAuthorize="onGetAuthorize" onError="onAuthError" 
-    scope='userInfo'>
-        会员基础信息授权
-    </button>
-</view>
