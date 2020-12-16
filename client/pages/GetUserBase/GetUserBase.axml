@@ -12,7 +12,7 @@
     授权手机号
       </view>
     </view>
-    <view class="step-between" style=" background: #2ABF9F;">
+    <view class="step-between" style="background: #2ABF9F;">
     </view>
     <view class="step step2">
       <view class="green-circle">
