@@ -7,13 +7,13 @@
       </view>
       <view class="txt-group1">
         <view class="txt-sjh">
-          151****6904
+          {{phone}}
         </view>
         <view class="txt-tiny-tip">
           <image class="image-zs" src="../../assets/img/zs.png"/>
           <text style="margin-left: 15rpx;">
             <text a:if="{{!isVIP}}">您还不是会员</text>
-            <text a:else>3463435354</text>
+            <text a:else>{{memberId}}</text>
           </text>
         </view>
       </view>
@@ -28,10 +28,10 @@
           </view>
           <view class="txt-tiny-tip">
             <text a:if="{{!isVIP}}">用支付宝支付就有返利</text>
-            <text a:else>有效日期至2021-09-08</text>
+            <text a:else>有效日期至{{expiryDate}}</text>
           </view>
         </view>
-        <button  a:if="{{!isVIP}}" type="primary" class="btn-ljkt" onTap="buyCard">立即开通</button>
+        <button  a:if="{{!isVIP}}" type="primary" class="btn-ljkt" onTap="goBuyCard">立即开通</button>
       </view>
     </view>
   </view>

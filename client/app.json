@@ -1,11 +1,11 @@
 {
   "pages": [
-    "pages/vip-invite/vip-invite",
     "pages/index/index",
     "pages/mine/mine",
     "pages/GetPhoneNumber/GetPhoneNumber",
     "pages/GetUserBase/GetUserBase",
     "pages/UserInfo/UserInfo",
+    "pages/vip-invite/vip-invite",
     "pages/home/home"
   ],
   "window": {

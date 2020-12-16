@@ -1,3 +1,5 @@
+var app = getApp();
+
 Page({
   data: {
     dpListData: [{
@@ -48,4 +50,70 @@ Page({
     //   scrollTop: parseInt(600),
     // });
   },
+
+
+   buyCard() {
+
+    var url = app.serverUrl + '/aliMember/buyCard';
+
+    my.request({
+      url: url,
+      method: 'POST',
+      data: {
+        userId: app.globalData.userId
+      },
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      success: function (resdata) {
+
+
+        if (resdata.data.code == 0) {
+
+          var tradeNo = resdata.data.data.tradeNo;
+
+          my.tradePay({
+            tradeNO: tradeNo,
+            success: function (res) {
+
+              
+
+              my.reLaunch({
+                url: '/pages/mine/mine'
+              })
+              
+            },
+            fail: function (res) {
+
+              my.reLaunch({
+                url: '/pages/mine/mine'
+              })
+
+            },
+          });
+
+        } else {
+
+          my.showToast({
+            type: 'fail',
+            content: '会通会员失败，稍后重试',
+            duration: 1000,
+            success: () => {
+            }, 
+          });
+
+
+          my.reLaunch({
+            url: '/pages/mine/mine'
+          })
+        }
+
+      },
+      fail: function (resdata) {
+        console.log(resdata);
+      }
+    });
+
+  },
+
 });

@@ -63,6 +63,7 @@ Page({
     showPayBtn: false,
     memberId: '',
     userId: '',
+    phone:'',
     nickName: '',
     avatar: '',
     memberFlag: '',
@@ -116,6 +117,7 @@ Page({
                 that.setData({
                   memberId: resdata.data.data.id,
                   userId: resdata.data.data.userId,
+                  phone: resdata.data.data.phone,
                   nickName: resdata.data.data.nickName,
                   avatar: resdata.data.data.avatar,
                   memberFlag: resdata.data.data.memberFlag,
@@ -124,7 +126,12 @@ Page({
 
                 if (resdata.data.data.memberFlag == 0) {
                   that.setData({
+                    isVIP:false,
                     hasContent:false
+                  });
+                }else if (resdata.data.data.memberFlag == 1){
+                    that.setData({
+                    isVIP:true
                   });
                 }
 
@@ -172,54 +179,7 @@ Page({
   },
 
 
-  buyCard() {
-
-    var url = app.serverUrl + '/aliMember/buyCard';
-
-    my.request({
-      url: url,
-      method: 'POST',
-      data: {
-        userId: app.globalData.userId
-      },
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      success: function (resdata) {
-
-
-        if (resdata.data.code == 0) {
-
-          var tradeNo = resdata.data.data.tradeNo;
-
-          my.tradePay({
-            tradeNO: tradeNo,
-            success: function (res) {
-
-            },
-            fail: function (res) {
-
-            },
-          });
-
-        } else {
-
-          my.showToast({
-            type: 'fail',
-            content: '会通会员失败，稍后重试',
-            duration: 1000,
-            success: () => {
-            }, 
-          });
-        }
-
-      },
-      fail: function (resdata) {
-        console.log(resdata);
-      }
-    });
-
-  },
+ 
 
   alipayScan() {
     // 打开支付宝扫一扫
@@ -253,6 +213,13 @@ Page({
       url: '/pages/GetPhoneNumber/GetPhoneNumber'
     });
 
+  },
+
+
+  goBuyCard(){
+    my.navigateTo({
+      url: '/pages/vip-invite/vip-invite'
+    });
   },
 
 

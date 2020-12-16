@@ -2,7 +2,7 @@ var app = getApp();
 
 Page({
   data: {
-    gotLocation: false,
+    gotLocation: true,
   },
   onLoad(query) {
     // 页面加载

@@ -41,9 +41,11 @@ Page({
                       //   url: '/pages/mine/mine'
                       // })
 
-                      my.reLaunch({
-                        url: '/pages/mine/mine'
-                      })
+                      my.navigateTo({
+                        url: '/pages/vip-invite/vip-invite'
+                      });
+
+                    
 
                     }
                     

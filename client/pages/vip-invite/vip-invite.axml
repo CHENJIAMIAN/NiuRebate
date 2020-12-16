@@ -122,7 +122,7 @@
         </view>
       </view>
     </view>
-    <button class="btn-kt" type="primary" onTap="">
+    <button class="btn-kt" type="primary" onTap="buyCard">
       19.9元/年 开通VIP会员
     </button>
   </view>
