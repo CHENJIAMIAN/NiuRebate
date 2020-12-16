@@ -1,5 +1,5 @@
 <view>
-  <view class="user-top-container">
+  <view hidden="{{needLogin}}" class="user-top-container">
     <!-- 用户信息 -->
     <view class="user-info">
       <view class="user-icon">
@@ -34,7 +34,7 @@
     </view>
   </view>
   <!-- 主内容 -->
-  <view class="main-content">
+  <view hidden="{{needLogin}}" class="main-content">
     <view class="txt-wdtj">
       <image class="image-wdtj" src="../../assets/img/wdtj.png"/>
       <text style="margin-left: 40rpx;">我的推荐</text>
@@ -96,4 +96,19 @@
       买单
     </view>
   </view>
+
+
+  <view hidden="{{!needLogin}}">
+    <view class="flex-content" style="height:80vh">
+      <image class="image-sqdl" src="../../assets/img/sqdl.png"/>
+    </view>
+    <view class="btn-section flex-content" style="bottom: 400rpx;">
+      <text class="tip-text">{{'美好生活从大牛开始'}}</text>
+    </view>
+    <view class="btn-section flex-content">
+      <button type="primary" onTap="goPhoneNumber">授权登录</button>
+    </view>
+  </view>
+
+
 </view>

@@ -22,7 +22,8 @@ Page({
     userId: '',
     nickName: '',
     avatar: '',
-    memberFlag: ''
+    memberFlag: '',
+    needLogin:false
   },
 
   onLoad() {
@@ -54,7 +55,9 @@ Page({
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded'
             },
-            success: function (resdata) {
+            success: function(resdata) {
+              
+              console.log(resdata)
 
               if (resdata.data.data.userId) {
 
@@ -73,13 +76,15 @@ Page({
                 });
 
                 if (resdata.data.data.memberFlag == 0) {
-
+                     that.setData({
+                       hasContent:false
+                     });
                 }
 
               } else if (resdata.data.code == 1) {
 
-                my.navigateTo({
-                  url: '/pages/GetPhoneNumber/GetPhoneNumber'
+                that.setData({
+                  needLogin:true
                 });
 
               } else if (resdata.data.code == 2) {
@@ -185,6 +190,13 @@ Page({
       fail: (res) => {
         // my.alert({content:'失败：'+JSON.stringify(res)});
       }
+    });
+  },
+
+
+  goPhoneNumber(){
+    my.navigateTo({
+      url: '/pages/GetPhoneNumber/GetPhoneNumber'
     });
   },
 

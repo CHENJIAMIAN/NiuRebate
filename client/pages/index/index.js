@@ -10,47 +10,17 @@ Page({
   },
   onReady() {
     // 页面加载完成
+    var that = this;
     my.showLoading();
     my.getLocation({
       type: 1,
       success: (res) => {
         app.globalData.longitude = res.longitude;
         app.globalData.latitude = res.latitude;
-        app.globalData.cityCode = res.cityAdcode;
-        app.globalData.districtCode = res.districtAdcode;
+        app.globalData.cityName = res.city;
 
-        var url = app.serverUrl + '/aliShop/list';
-        my.request({
-          url: url,
-          method: 'POST',
-          data: {
-            cityCode: res.cityAdcode,
-            districtCode: res.districtAdcode
-          },
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-          },
-          success: (resdata) => {
-            my.hideLoading();
-
-            if (resdata.data.code == 0) {
-              this.setData({ gotLocation: true });
-            } else {
-              this.setData({ gotLocation: false });
-              my.showToast({
-                type: 'fail',
-                content: resdata.data.msg,
-                duration: 1000,
-                success: () => {
-                },
-              });
-
-            }
-          },
-          fail: (resdata) => {
-            my.hideLoading();
-          }
-        });
+        that.requestMerchantData(res.longitude, res.latitude, res.city);
+        
 
       },
       fail() {
@@ -84,6 +54,68 @@ Page({
       desc: 'My App description',
       path: 'pages/index/index',
     };
+  },
+
+
+  requestMerchantData(longitude, latitude, cityName){
+
+    console.log(longitude + '===' + latitude + '===' + cityName);
+
+    var url = app.serverUrl + '/aliShop/list';
+        my.request({
+          url: url,
+          method: 'POST',
+          data: {
+            longitude: longitude,
+            latitude: latitude,
+            cityName: cityName
+          },
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          success: (resdata) => {
+            my.hideLoading();
+
+            if (resdata.data.code == 0) {
+              this.setData({ gotLocation: true });
+            } else {
+              this.setData({ gotLocation: false });
+              my.showToast({
+                type: 'fail',
+                content: resdata.data.msg,
+                duration: 1000,
+                success: () => {
+                },
+              });
+
+            }
+          },
+          fail: (resdata) => {
+            my.hideLoading();
+          }
+        });
+
+  },
+
+
+  chooseLocation() {
+    var that = this
+    my.chooseLocation({
+         success:(res)=>{
+          console.log(res)
+
+          app.globalData.longitude = res.longitude;
+          app.globalData.latitude = res.latitude;
+          app.globalData.cityName = res.cityName;
+
+          that.requestMerchantData(res.longitude, res.latitude, res.cityName);
+
+          
+        },
+        fail:(error)=>{
+          
+        },
+    });
   },
 
 
