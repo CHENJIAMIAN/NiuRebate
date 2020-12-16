@@ -69,12 +69,12 @@ Page({
   },
 
   onLoad() {
-  },
+  }, 
 
   onReady() {
 
     var that = this;
-
+    false && my.showLoading();
     false && my.getAuthCode({
       scopes: 'auth_base', // 主动授权（弹框）：auth_user，静默授权（不弹框）：auth_base
       success: (res) => {
@@ -98,6 +98,8 @@ Page({
               'Content-Type': 'application/x-www-form-urlencoded'
             },
             success: function(resdata) {
+
+              my.hideLoading();
               
               console.log(resdata)
 
@@ -140,6 +142,7 @@ Page({
             },
             fail: function (resdata) {
               console.log(resdata);
+              my.hideLoading();
             }
           });
 
@@ -147,6 +150,12 @@ Page({
         }
 
       },
+
+      fail() {
+        my.hideLoading();
+
+      },
+
     });
 
   },

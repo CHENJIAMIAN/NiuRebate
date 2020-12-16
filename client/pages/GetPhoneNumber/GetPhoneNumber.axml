@@ -12,13 +12,13 @@
     授权手机号
       </view>
     </view>
-    <view class="step-between" style="{{step1done && 'background: #2ABF9F;'}}">
+    <view class="step-between">
     </view>
     <view class="step step2">
-      <view class="{{step1done?'green-circle':'ungreen-circle'}}">
+      <view class="ungreen-circle">
     2
       </view>
-      <view class="{{step1done?'green-txt':'ungreen-txt'}}">
+      <view class="ungreen-txt">
     授权基本信息
       </view>
     </view>
