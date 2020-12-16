@@ -198,6 +198,7 @@ Page({
     my.navigateTo({
       url: '/pages/GetPhoneNumber/GetPhoneNumber'
     });
+
   },
 
 
