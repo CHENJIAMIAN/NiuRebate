@@ -1,0 +1,258 @@
+   .user-top-container {
+     padding: 30rpx;
+     position: relative;
+     width: 690rpx;
+     height: 400rpx;
+     background: url(../assets/img/yhbg.png) 0 0 / 100% 100% no-repeat;
+   }
+
+   .user-card {
+     display: flex;
+     padding: 36rpx;
+     width: 618rpx;
+     height: 293rpx;
+     background: linear-gradient(90deg, #1EA890, #269F85);
+     border-radius: 15px;
+     background: url(../assets/img/cardbg.png) 0 0 / 100% 100% no-repeat;
+   }
+
+   .image-yh {
+     width: 106rpx;
+     height: 106rpx;
+   }
+
+   .image-zs {
+     width: 28rpx;
+     height: 23rpx;
+     transform: translateY(2px);
+   }
+
+   .image-yqyl {
+     width: 92rpx;
+     height: 60rpx;
+   }
+
+   .image-wdtj {
+     width: 37rpx;
+     height: 34rpx;
+     transform: translateX(4px) translateY(2px);
+   }
+
+   .txt-wdtj {
+     font-size: 28rpx;
+     font-family: PingFang SC;
+     font-weight: 500;
+     color: #222222;
+   }
+
+   .txt-sjh {
+     font-size: 36rpx;
+     font-family: PingFang SC;
+     font-weight: bold;
+     color: #FFFFFF;
+     line-height: 24rpx;
+     margin-bottom: 26rpx;
+   }
+
+   .txt-tiny-tip {
+     font-size: 24rpx;
+     font-family: PingFang SC;
+     font-weight: 500;
+     color: #FFFFFF;
+     line-height: 24rpx;
+   }
+
+   .txt-tinyest-tip {
+     font-size: 20rpx;
+     font-family: PingFang SC;
+     font-weight: 500;
+     color: #999999;
+   }
+
+   .txt-dnvip {
+     font-size: 42rpx;
+     font-family: PangMenZhengDao;
+     font-weight: 400;
+     font-style: italic;
+     color: #FFFFFF;
+     line-height: 24rpx;
+     margin-bottom: 19rpx;
+   }
+
+   .btn-ljkt {
+     width: 159rpx;
+     height: 49rpx;
+     background: linear-gradient(99deg, #1A1822, #413542);
+     border-radius: 23px;
+     font-size: 26rpx;
+     font-family: PingFang SC;
+     font-weight: 500;
+     color: #FFDCC6;
+     line-height: 49rpx;
+   }
+
+   .main-content {
+     width: 686rpx;
+     background: white;
+     border-radius: 15px 15px 0 0;
+     position: fixed;
+     bottom: 0;
+     top: 286rpx;
+     padding: 62rpx 32rpx 0 32rpx;
+     overflow: auto;
+   }
+
+   .user-info {
+     display: flex;
+     flex: 1;
+     align-items: center;
+   }
+
+   .txt-group1 {
+     flex-grow: 1;
+     margin-left: 36rpx;
+   }
+
+   .txt-group2 {
+     flex-grow: 1;
+     margin-left: 3rpx;
+   }
+
+   .txt-medium {
+     font-size: 30rpx;
+     font-family: PingFang SC;
+     font-weight: 500;
+     color: #333333;
+   }
+
+   .txt-fl {
+     font-size: 24rpx;
+     font-family: PingFang SC;
+     font-weight: 500;
+     color: #FF8400;
+   }
+
+   .txt-zwfl {
+     font-size: 28rpx;
+     font-family: PingFang SC;
+     font-weight: 500;
+     color: #999999;
+     line-height: 34rpx;
+   }
+
+   .user-card-container {
+     position: absolute;
+     left: 30rpx;
+     bottom: -60rpx;
+   }
+
+   .image-zwfl {
+     width: 317rpx;
+     height: 290rpx;
+     margin-left: 185rpx;
+     margin-top: 200rpx;
+   }
+
+   .big-green-circle {
+     width: 124rpx;
+     height: 124rpx;
+     background: linear-gradient(-27deg, #2DC2A2, #2CC0A0);
+     border-radius: 50%;
+     position: fixed;
+     bottom: 52rpx;
+     right: 40rpx;
+     line-height: 124rpx;
+     text-align: center;
+     width: 61px;
+     font-family: PingFang SC;
+     font-weight: 500;
+     color: #FFFFFF;
+     transition: all 0.2s;
+   }
+
+   .long-green-bar {
+     width: 124rpx;
+     height: 349rpx;
+     border-radius: 62px;
+     padding-top: 56rpx;
+   }
+
+   .image-sm {
+     width: 46rpx;
+     height: 46rpx;
+   }
+
+   .img-btn {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-between;
+     height: 85rpx;
+   }
+
+   .image-down {
+     height: 22rpx;
+     width: 40rpx;
+     margin-top: 70rpx;
+   }
+
+   .image-tx {
+     width: 80rpx;
+     height: 80rpx;
+     border-radius: 50%;
+   }
+
+   .recommend-list {
+     overflow: auto;
+   }
+
+   .recommend-list-item {
+     position: relative;
+     /* padding-top: 60rpx; */
+     padding: 30rpx 0;
+   }
+
+   .btm-line {
+     position: absolute;
+     width: 585rpx;
+     height: 2rpx;
+     background: #DDDDDD;
+     opacity: 0.3;
+     bottom: -0rpx;
+     right: 0rpx;
+   }
+
+   .image-zwkt {
+     width: 473rpx;
+     height: 336rpx;
+   }
+
+   .image-sqdl {
+     width: 750rpx;
+     height: 804rpx;
+   }
+
+   .near-fullheight {
+     height: 70vh;
+   }
+
+   .btn-section {
+     position: absolute;
+     bottom: 100rpx;
+     left: 0;
+     width: 750rpx;
+   }
+
+   .btn-section button {
+     width: 552rpx;
+     height: 98rpx;
+   }
+
+   .tip-text {
+     height: 28rpx;
+     font-size: 28rpx;
+     font-family: PingFang SC;
+     font-weight: 500;
+     color: #666666;
+     line-height: 34rpx;
+   }
