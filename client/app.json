@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/vip-invite/vip-invite",
     "pages/index/index",
     "pages/mine/mine",
     "pages/GetPhoneNumber/GetPhoneNumber",
