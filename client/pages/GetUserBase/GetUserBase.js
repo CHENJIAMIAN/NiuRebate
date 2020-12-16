@@ -33,9 +33,17 @@ Page({
                   success: function(resdata) {
 
                     if (resdata.data.code == 0){
-                      my.navigateTo({
+                      // my.navigateTo({
+                      //   url: '/pages/mine/mine'
+                      // });
+
+                      // my.switchTab({
+                      //   url: '/pages/mine/mine'
+                      // })
+
+                      my.reLaunch({
                         url: '/pages/mine/mine'
-                      });
+                      })
 
                     }
                     

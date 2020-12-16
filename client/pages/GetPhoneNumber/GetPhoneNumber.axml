@@ -26,10 +26,7 @@
   <view class="flex-content" style="margin-top:82rpx;">
     <image class="image-hqsjh" src="../../assets/img/hqsjh.png"/>
   </view>
-  <button a:if={{!step1done}} style="margin-top:200rpx;" type="primary" open-type="getAuthorize" onGetAuthorize="onGetAuthorize" onError="onAuthError" scope='phoneNumber'>
+  <button style="margin-top:200rpx;" type="primary" open-type="getAuthorize" onGetAuthorize="onGetAuthorize" onError="onAuthError" scope='phoneNumber'>
         授权手机号
-  </button>
-  <button a:else style="margin-top:200rpx;" type="primary" open-type="getAuthorize" onGetAuthorize="onGetAuthorize" onError="onAuthError" scope='phoneNumber'>
-        授权基本信息
   </button>
 </view>

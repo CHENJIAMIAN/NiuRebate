@@ -78,7 +78,7 @@
     </view>
   </view>
   <!-- 买单组件 -->
-  <view a:if="{{!hasContent}}" class="{{'big-green-circle ' + (showPayBtn && 'long-green-bar')}}">
+  <view a:if="{{memberFlag == 1}}" class="{{'big-green-circle ' + (showPayBtn && 'long-green-bar')}}">
     <block a:if="{{showPayBtn}}">
       <view class="img-btn" onTap="alipayScan">
         <image class="image-sm" src="../../assets/img/sm.png"/>
