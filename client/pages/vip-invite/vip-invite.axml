@@ -122,10 +122,8 @@
         </view>
       </view>
     </view>
-    <view style="margin-top:60rpx;">
-      <button class="btn-kt" type="primary" onTap="">
+    <button class="btn-kt" type="primary" onTap="">
       19.9元/年 开通VIP会员
-      </button>
-    </view>
+    </button>
   </view>
 </view>

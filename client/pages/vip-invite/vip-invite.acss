@@ -140,7 +140,7 @@
      background: white;
      border-radius: 15px 15px 0 0;
      margin-top: -116rpx;
-     padding: 21rpx 32rpx 39rpx 32rpx;
+     padding: 21rpx 32rpx 139rpx 32rpx;
    }
 
    .user-info {
@@ -383,6 +383,10 @@
    }
 
    .btn-kt {
+     position: fixed;
+     left: 32rpx;
+     right: 32rpx;
+     bottom: 20rpx;
      background: linear-gradient(99deg, #1A1822, #413542);
      border-radius: 49rpx;
      border-color: #1A1822;
