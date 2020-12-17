@@ -1,6 +1,6 @@
 <view class="container">
   <!-- 通过页面跳转（my.navigateTo）或者页面重定向（my.redirectTo）所到达的页面，即使它是定义在 tabBar 配置中的页面，也不会显示底部的 tab 栏。 -->
-  <view  hidden="{{gotLocation}}">
+  <view hidden="{{gotLocation}}">
     <view class="flex-content near-fullheight">
       <image class="image-zwkt" src="../../assets/img/zwkt.png"/>
     </view>
@@ -12,6 +12,82 @@
     </view>
   </view>
   <view hidden="{{!gotLocation}}">
-   
+  </view>
+  <!-- 主页内容 -->
+  <view>
+    <!-- 本页为透明头，考虑兼容性问题，这里使用固定高度作为顶部占位-->
+    <view style="height: 66px;background:#2DC2A2;"></view>
+    <!-- top bar -->
+    <view class="top-bar">
+      <!-- postion -->
+      <view>
+        <!--<image class="img-hk" src="../../assets/img/hk.png"/> -->
+        <image class="img-dw" src="../../assets/img/dw.png"/>
+        <text class="txt-28" style="margin-left:15rpx;">
+          杭州市上城区环城...
+        </text>
+        <image class="img-xl" src="../../assets/img/xl.png" style="margin-left:18rpx;"/>
+      </view>
+      <!-- search -->
+      <search-bar value="{{searchValue}}" placeholder="支付拿返利！" showCancelButton="{{false}}" />
+    </view>
+    <!-- main white content area -->
+    <view class="main-content">
+      <!-- top img -->
+      <view class="flex-content">
+        <image class="img-top" src="{{img}}"/>
+      </view>
+      <!-- notify bar -->
+      <view class="notify-bar">
+        <image class="img-tz" src="../../assets/img/tz2.png"/>
+        <text class="txt-24 orange" style="margin-left:20rpx;">在国诚C消费后赚了5.53元</text>
+      </view>
+      <!-- pay bar -->
+      <view class="pay-bar">
+        <view class="img-btn" onTap="alipayScan">
+          <image class="image-sm" src="../../assets/img/sm.png"/>
+          <view class="txt-28" style="margin-left:33rpx;">
+        扫一扫
+          </view>
+        </view>
+        <view class="split-line-vertical">
+        </view>
+        <view class="img-btn" onTap="payCode">
+          <image class="image-sm" src="../../assets/img/fkm.png"/>
+          <view class="txt-28" style="margin-left:33rpx;">
+      付款码
+          </view>
+        </view>
+      </view>
+      <!-- tab bar -->
+      <view>
+        <tabs tabs="{{tabs}}" tabsName="activeTab" onTabClick="handleTabClick" onChange="handleTabChange" activeTab="{{activeTab}}" showPlus="{{false}}" swipeable="{{false}}" capsule="{{false}}" hasSubTitle="{{true}}" tabBarUnderlineWidth="20px" stickyBar="{{true}}" tabBarActiveTextColor="#FF8400" tabBarInactiveTextColor="#666666" tabBarActiveSubTextColor="#FF8400" tabBarSubTextColor="#666666">
+          <block a:for="{{tabs}}">
+            <tab-content key="{{index}}" tabId="{{index}}" activeTab="{{activeTab}}" a:if="{{index === 0}}">
+              <view class="tab-content">
+                <!-- tj card -->
+                <view class="tj-card" a:for="{{tjListData}}">
+                  <image class="img-tj" src="{{img}}"/>
+                  <view class="tj-card-txts">
+                    <view class="txt-32-bold">{{item.name}}</view>
+                    <view class="txt-20-gray">{{item.price}}/人  {{item.type}}     {{item.position}}  {{item.distance}}</view>
+                    <view class="btn-txt-group">
+                      <view class="btn-txt-l"> 每单约赚￥{{item.zhuan}}</view>
+                      <view class="btn-txt-r"> 返利{{item.fanli}}%</view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </tab-content>
+            <tab-content key="{{index}}" tabId="{{index}}" activeTab="{{activeTab}}" a:elif="{{index === 2}}">
+              <view class="tab-content"> {{item.title}}</view>
+            </tab-content>
+            <tab-content key="{{index}}" tabId="{{index}}" activeTab="{{activeTab}}" a:else>
+              <view class="tab-content">{{item.title}}</view>
+            </tab-content>
+          </block>
+        </tabs>
+      </view>
+    </view>
   </view>
 </view>

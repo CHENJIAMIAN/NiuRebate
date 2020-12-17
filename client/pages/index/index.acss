@@ -32,3 +32,186 @@
   color: #666666;
   line-height: 34rpx;
 }
+
+/* tab demo start */
+
+.tab-content {
+  /* 如果 swipeable="{{true}}"，需要增加 height */
+  /* height: 350px; */
+  /* 为了体现 stickyBar 的作用而增加的 tab-content 的高度 */
+}
+
+/* tab demo end */
+
+.top-bar {
+  height: 100rpx;
+  background: linear-gradient(-27deg, #2DC2A2, #2CC0A0);
+  display: flex;
+  padding: 30rpx;
+  justify-content: space-between;
+}
+
+.main-content {
+  background: #FFFFFF;
+  border-radius: 15px;
+  padding: 30rpx;
+  transform: translateY(-40rpx);
+}
+
+.notify-bar {
+  margin: 30rpx 0;
+}
+
+.pay-bar {
+  width: 690rpx;
+  height: 115rpx;
+  background: #2FBEA0;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.img-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.split-line-vertical {
+  width: 2rpx;
+  height: 60rpx;
+  background: #FFFFFF;
+  opacity: 0.6;
+}
+
+.btn-txt-group {
+  display: flex;
+}
+
+.btn-txt-l {
+  width: 230rpx;
+  height: 54rpx;
+  line-height: 54rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #2FBEA0;
+  background: url(../assets/img/yjjx2.png) 0 0 / 100% 100% no-repeat;
+  text-align: center;
+}
+
+.btn-txt-r {
+  width: 184rpx;
+  height: 54rpx;
+  line-height: 54rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #FF8400;
+  background: url(../assets/img/yjjx1.png) 0 0 / 100% 100% no-repeat;
+  text-align: center;
+  transform: translateX(-15rpx)
+}
+
+.txt-20-gray {
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #999999;
+}
+
+.txt-24 {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+}
+
+.txt-28 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+.txt-32-bold {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333333;
+}
+
+.orange {
+  color: #FF8400;
+}
+
+.img-dw {
+  width: 36rpx;
+  height: 44rpx;
+  transform: translateY(10rpx)
+}
+
+.img-xl {
+  width: 24rpx;
+  height: 24rpx;
+  transform: translateY(5rpx)
+}
+
+.img-top {
+  width: 690rpx;
+  height: 228rpx;
+  border-radius: 10px;
+}
+
+.img-tz {
+  width: 32rpx;
+  height: 30rpx;
+  transform: translateY(8rpx)
+}
+
+.image-sm {
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.img-tj {
+  width: 690rpx;
+  height: 289rpx;
+  border-radius: 10px 10px 0px 0px;
+}
+
+/* search-bar start */
+
+.am-search {
+  width: 280rpx;
+  height: 66rpx;
+  background: #FFFFFF;
+  border-radius: 33px;
+}
+
+.am-search-input {
+  border: none;
+}
+
+.am-search-synthetic {
+  padding-left: 5rpx;
+}
+
+.am-tabs-bar-tab-subTitle {
+  background-color: transparent !important;
+}
+
+/* search-bar end */
+
+.tj-card {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
+  margin: 20rpx 0;
+}
+
+.tj-card-txts {
+  padding-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 180rpx;
+}

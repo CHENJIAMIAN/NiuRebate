@@ -1,1 +1,8 @@
-{}
+{
+  "transparentTitle": "auto",
+  "usingComponents": {
+    "tabs": "mini-ali-ui/es/tabs/index",
+    "tab-content": "mini-ali-ui/es/tabs/tab-content/index",
+    "search-bar": "mini-ali-ui/es/search-bar/index"
+  }
+}

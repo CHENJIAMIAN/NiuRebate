@@ -3,6 +3,10 @@
   src: url('./assets/PingFangRegular.ttf');
 } */
 
+:root {
+  --am-search-searchicon-color: #2FBEA0;
+}
+
 page {
   font-family: PingFang SC;
   background: white;

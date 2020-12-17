@@ -2,11 +2,71 @@ var app = getApp();
 
 Page({
   data: {
+    img: 'https://gw.alipayobjects.com/mdn/rms_eb2664/afts/img/A*bFuBQZuNErMAAAAAAAAAAABkARQnAQ',
+    tjListData: [
+      {
+        name: "辣酱糊",
+        price: "20",
+        type: "便利店",
+        position: "西湖区",
+        distance: "8.1km",
+        zhuan: "6.30",
+        fanli: "10.50",
+      }, {
+        name: "辣酱糊",
+        price: "20",
+        type: "便利店",
+        position: "西湖区",
+        distance: "8.1km",
+        zhuan: "6.30",
+        fanli: "10.50",
+      },
+    ],
     gotLocation: true,
+    tabs: [
+      {
+        title: '推荐',
+        subTitle: '优质商家',
+        number: '6',
+        // showBadge: true,
+        badge: {
+          stroke: true,
+        },
+      },
+      {
+        title: '美食',
+        subTitle: '吃遍全城',
+        number: '66',
+        // showBadge: true,
+        badge: {
+          arrow: false,
+          stroke: true,
+        },
+      },
+      {
+        title: '购物',
+        subTitle: '商超便利',
+        number: '99+',
+        // showBadge: true,
+        badge: {
+          arrow: true,
+        },
+      },
+      {
+        title: '生活',
+        subTitle: '休闲娱乐',
+        // showBadge: true,
+        number: 0,
+      },
+    ],
+    activeTab: 0,
   },
   onLoad(query) {
     // 页面加载
     console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
+    // my.pageScrollTo({
+    //   scrollTop: parseInt(600),
+    // });
   },
   onReady() {
     // 页面加载完成
@@ -20,7 +80,7 @@ Page({
         app.globalData.cityName = res.city;
 
         that.requestMerchantData(res.longitude, res.latitude, res.city);
-        
+
 
       },
       fail() {
@@ -57,43 +117,43 @@ Page({
   },
 
 
-  requestMerchantData(longitude, latitude, cityName){
+  requestMerchantData(longitude, latitude, cityName) {
 
     console.log(longitude + '===' + latitude + '===' + cityName);
 
     var url = app.serverUrl + '/aliShop/list';
-        my.request({
-          url: url,
-          method: 'POST',
-          data: {
-            longitude: longitude,
-            latitude: latitude,
-            cityName: cityName
-          },
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-          },
-          success: (resdata) => {
-            my.hideLoading();
+    my.request({
+      url: url,
+      method: 'POST',
+      data: {
+        longitude: longitude,
+        latitude: latitude,
+        cityName: cityName
+      },
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      success: (resdata) => {
+        my.hideLoading();
 
-            if (resdata.data.code == 0) {
-              this.setData({ gotLocation: true });
-            } else {
-              this.setData({ gotLocation: false });
-              my.showToast({
-                type: 'fail',
-                content: resdata.data.msg,
-                duration: 1000,
-                success: () => {
-                },
-              });
+        if (resdata.data.code == 0) {
+          this.setData({ gotLocation: true });
+        } else {
+          this.setData({ gotLocation: false });
+          my.showToast({
+            type: 'fail',
+            content: resdata.data.msg,
+            duration: 1000,
+            success: () => {
+            },
+          });
 
-            }
-          },
-          fail: (resdata) => {
-            my.hideLoading();
-          }
-        });
+        }
+      },
+      fail: (resdata) => {
+        my.hideLoading();
+      }
+    });
 
   },
 
@@ -101,20 +161,20 @@ Page({
   chooseLocation() {
     var that = this
     my.chooseLocation({
-         success:(res)=>{
-          console.log(res)
+      success: (res) => {
+        console.log(res)
 
-          app.globalData.longitude = res.longitude;
-          app.globalData.latitude = res.latitude;
-          app.globalData.cityName = res.cityName;
+        app.globalData.longitude = res.longitude;
+        app.globalData.latitude = res.latitude;
+        app.globalData.cityName = res.cityName;
 
-          that.requestMerchantData(res.longitude, res.latitude, res.cityName);
+        that.requestMerchantData(res.longitude, res.latitude, res.cityName);
 
-          
-        },
-        fail:(error)=>{
-          
-        },
+
+      },
+      fail: (error) => {
+
+      },
     });
   },
 
@@ -125,5 +185,18 @@ Page({
       url: '/pages/mine/mine'
     });
   },
-
+  // tab start
+  handleTabClick({ index, tabsName }) {
+    this.setData({
+      [tabsName]: index,
+    });
+  },
+  handleTabChange({ index, tabsName }) {
+    this.setData({
+      [tabsName]: index,
+    });
+  },
+  // tab end
 });
+
+
