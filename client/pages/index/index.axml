@@ -46,7 +46,7 @@
       <view class="pay-bar">
         <view class="img-btn" onTap="alipayScan">
           <image class="image-sm" src="../../assets/img/sm.png"/>
-          <view class="txt-28" style="margin-left:33rpx;">
+          <view class="txt-28">
         扫一扫
           </view>
         </view>
@@ -54,7 +54,7 @@
         </view>
         <view class="img-btn" onTap="payCode">
           <image class="image-sm" src="../../assets/img/fkm.png"/>
-          <view class="txt-28" style="margin-left:33rpx;">
+          <view class="txt-28">
       付款码
           </view>
         </view>

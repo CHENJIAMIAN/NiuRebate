@@ -1,13 +1,13 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/shop-home/shop-home",
-    "pages/pay/pay",
-    "pages/mine/mine",
-    "pages/GetPhoneNumber/GetPhoneNumber",
-    "pages/GetUserBase/GetUserBase",
-    "pages/UserInfo/UserInfo",
     "pages/vip-invite/vip-invite",
+    "pages/GetUserBase/GetUserBase",
+    "pages/GetPhoneNumber/GetPhoneNumber",
+    "pages/mine/mine",
+    "pages/pay/pay",
+    "pages/shop-home/shop-home",
+    "pages/UserInfo/UserInfo",
     "pages/home/home"
   ],
   "window": {
