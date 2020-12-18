@@ -1,0 +1,157 @@
+.img-320 {
+  width: 320rpx;
+  height: 192rpx;
+  border-radius: 10rpx;
+  margin: 0 10rpx;
+}
+
+.img-148 {
+  width: 148rpx;
+  height: 148rpx;
+  border-radius: 7rpx;
+}
+
+.img-dw {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.btm-gap {
+  width: 750rpx;
+  height: 21rpx;
+  background: #f7f7f7;
+}
+
+.gray-card {
+  width: 690rpx;
+  height: 115rpx;
+  background: rgba(221, 221, 221, 0.2);
+  border-radius: 10rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.orange {
+  color: #FF8400;
+}
+
+.btn-txt-vip {
+  width: 111rpx;
+  height: 44rpx;
+  background: linear-gradient(99deg, #1A1822, #413542);
+  border-radius: 5rpx;
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #FFDCC6;
+  line-height: 44rpx;
+  text-align: center;
+}
+
+.txt-32-bold {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333333;
+}
+
+.txt-30-bold {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333333;
+}
+
+.txt-30 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+}
+
+.txt-28 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+}
+
+.txt-28-bold {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333333;
+}
+
+.txt-24-gray {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #666666;
+}
+
+.txt-24-lightgray {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #999999;
+}
+
+.txt-20 {
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+}
+
+.txt-20-gray {
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #999999;
+}
+
+.light-gray {
+  color: #999999;
+}
+
+.txt-20-green {
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #29BE9E;
+}
+
+.content {
+  padding: 30rpx;
+}
+
+.btn-buy {
+  width: 158rpx;
+  height: 70rpx;
+  background: linear-gradient(-27deg, #2DC2A2, #2CC0A0);
+  border-radius: 35rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #FFFFFF;
+  line-height: 70rpx;
+}
+
+.shop-desc {
+  display: flex;
+}
+
+.shop-desc-txts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 148rpx
+}
+
+.position-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.scroll-view_H {
+  white-space: nowrap;
+}

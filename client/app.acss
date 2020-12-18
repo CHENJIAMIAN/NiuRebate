@@ -23,3 +23,13 @@ button {
   align-items: center;
   justify-content: center;
 }
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}

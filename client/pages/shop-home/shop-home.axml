@@ -1,0 +1,66 @@
+<view>
+  <view class="content">
+    <!-- 1 -->
+    <view class="shop-desc">
+      <image class="img-148" src="{{img}}"/>
+      <view class="shop-desc-txts" style="margin-left:29rpx;">
+        <view class="txt-30-bold">辣酱糊</view>
+        <view class="orange" style="margin-bottom: 10rpx;">￥85
+          <text class="txt-20">/人</text></view>
+        <view class="txt-20-gray">余杭区  江浙菜</view>
+      </view>
+    </view>
+    <!-- 2 -->
+    <view class="flex" style=";margin-top:29rpx;">
+      <view class="btn-txt-vip">VIP会员</view>
+      <view class="txt-28 orange" style="margin-left:24rpx;">商家返利10.50%，每单约赚6.30元</view>
+    </view>
+    <!-- 3 -->
+    <view class="txt-30" style="margin:37rpx 0;">营业中| 09：00-21：30</view>
+    <!-- 4 -->
+    <view class="position-group">
+      <view>
+        <view class="txt-30 ">精仿地铁站涨也不行就二B30店铺</view>
+        <view class="txt-24-lightgray" style="margin-top:19rpx;">距您4.3km，步行约57分钟</view>
+      </view>
+      <view style="text-align:center;">
+        <image class="img-dw" src="../../assets/img/dw2.png"/>
+        <view class="txt-20-green">去这里</view>
+      </view>
+    </view>
+    <!-- 5 -->
+    <view class="gray-card" style="margin-top:26rpx;">
+      <view class="txt-28-bold">使用说明</view>
+      <view class="txt-24-gray" style="margin-top:19rpx;">门店消费——付款并告知使用返利卡——付款即返</view>
+    </view>
+  </view>
+  <view class="btm-gap"></view>
+  <view class="content flex-between">
+    <view>
+      <view class="txt-32-bold">会员买单立返</view>
+      <view class="txt-24-gray" style="margin-top:19rpx;">成功付款后，返利实时到账</view>
+    </view>
+    <button class="btn-buy" type="primary" onTap="">
+    买单
+    </button>
+  </view>
+  <view class="btm-gap"></view>
+  <view class="content">
+    <view class="txt-32-bold">门店照</view>
+    <view style="margin-top:30rpx;">
+      <image class="img-320" src="{{img}}"/>
+    </view>
+  </view>
+  <view class="btm-gap"></view>
+  <view class="content">
+    <view class="txt-32-bold">特色产品</view>
+    <scroll-view class="scroll-view_H" scroll-x="{{true}}" style="width: 100%;margin-top:30rpx;">
+      <image class="img-320" src="{{img}}"/>
+      <image class="img-320" src="{{img}}"/>
+      <image class="img-320" src="{{img}}"/>
+      <image class="img-320" src="{{img}}"/>
+      <image class="img-320" src="{{img}}"/>
+      <image class="img-320" src="{{img}}"/>
+    </scroll-view>
+  </view>
+</view>

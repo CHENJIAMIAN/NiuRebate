@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/pay/pay",
     "pages/index/index",
+    "pages/shop-home/shop-home",
+    "pages/pay/pay",
     "pages/mine/mine",
     "pages/GetPhoneNumber/GetPhoneNumber",
     "pages/GetUserBase/GetUserBase",
