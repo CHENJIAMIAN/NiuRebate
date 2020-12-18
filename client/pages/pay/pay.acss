@@ -1,0 +1,175 @@
+.img-tx {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+}
+
+.img-fkm {
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.img-down {
+  width: 24rpx;
+  height: 14rpx;
+  margin-left: 17rpx;
+  flex-grow: 1;
+}
+
+.txt-80 {
+  font-size: 80rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+}
+
+.txt-20 {
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+}
+
+.txt-24 {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #666666;
+}
+
+.txt-28 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+}
+
+.txt-28-gray {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #999999;
+}
+
+.txt-32-bold {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333333;
+}
+
+.txt-34-gray {
+  font-size: 34rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #AAAAAA;
+}
+
+.txt-36 {
+  font-size: 36rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+}
+
+.txt-20-gray {
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #999999;
+}
+
+.txt-24-gray {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #999999;
+}
+
+.orange {
+  color: #FF8400
+}
+
+.green {
+  color: #2ABF9F;
+}
+
+.input {
+  font-size: 34rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #333333;
+}
+
+.btn-buy {
+  width: 198rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: linear-gradient(-27deg, #2DC2A2, #2CC0A0);
+  border-radius: 8rpx;
+  color: white !important;
+}
+
+.opacity03 {
+  opacity: 0.3;
+}
+
+.amount-card {
+  width: 690rpx;
+  height: 370rpx;
+  background: #FFFFFF;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.amount-card-head {
+  display: flex;
+}
+
+.btm-line {
+  width: 585rpx;
+  height: 2rpx;
+  background: #DDDDDD;
+  opacity: 0.3;
+}
+
+.a-page {
+  background: #f7f7f7;
+}
+
+.btm-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 750rpx;
+  height: 132rpx;
+  background: #FFFFFF;
+  display: flex;
+  padding: 30rpx;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.container {
+  padding: 20rpx 30rpx;
+}
+
+/* popup start */
+
+.box {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 600rpx;
+  background: #FFFFFF;
+  border-radius: 15rpx 15rpx 0 0;
+  padding: 50rpx 30rpx 132rpx 30rpx;
+  box-sizing: border-box;
+}
+
+/* popup end */

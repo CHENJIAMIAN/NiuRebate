@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "买单",
+  "usingComponents": {
+    "popup": "mini-ali-ui/es/popup/index"
+  }
+}

@@ -2,7 +2,7 @@
   <!-- 通过页面跳转（my.navigateTo）或者页面重定向（my.redirectTo）所到达的页面，即使它是定义在 tabBar 配置中的页面，也不会显示底部的 tab 栏。 -->
   <view hidden="{{gotLocation}}">
     <view class="flex-content near-fullheight">
-      <image class="image-zwkt" src="../../assets/img/zwkt.png"/>
+      <image class="image-zwkt" src="../../acssets/img/zwkt.png"/>
     </view>
     <view class="flex-content">
       <text class="tip-text">{{'当前城市暂未开通，敬请期待'}}</text>

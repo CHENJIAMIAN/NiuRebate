@@ -1,0 +1,58 @@
+<view class="container">
+  <!--amount card  -->
+  <view class="amount-card">
+    <!-- 1 -->
+    <view class="amount-card-head">
+      <image class="img-tx" src="{{img}}"/>
+      <view style="flex-grow:1;margin-left:30rpx;">
+        <view class="txt-36">俘虏夜店</view>
+        <view class="txt-24-gray" style="margin-top:14rpx;">买单后返利
+          <text class="orange">10.50%</text></view>
+      </view>
+      <view style="text-align:center;">
+        <image class="img-fkm" src="../../assets/img/fkm2.png"/>
+        <view class="txt-20 green" style="margin-top:14rpx;">付款码</view>
+      </view>
+    </view>
+    <view class="btm-line"></view>
+    <!-- 2 -->
+    <view>
+      <text class="txt-80">￥</text>
+      <input class="input txt-34-gray" placeholder="请输入金额" value="{{amountValue}}" onInput="onInput" />
+    </view>
+    <view class="btm-line"></view>
+    <!-- 3 -->
+    <view class="green">正在向该店付款，请认真核对</view>
+  </view>
+  <!-- tip -->
+  <view class="txt-20-gray" style="margin-top:30rpx;">
+    部分红包和优惠会影响返利额度,最终以实付金额为准
+  </view>
+  <!-- btm bar -->
+  <view class="btm-bar">
+    <view>
+      <view class="txt-24">总消费：
+        <text class="txt-28">￥85.00</text></view>
+      <view class="txt-24 orange" style="margin-top:14rpx;">总返利：
+        <text class="txt-36">￥85.00</text></view>
+    </view>
+    <view class="green" style="margin-left:100rpx;" onTap="showDetail">
+      <text>明细</text>
+      <image class="img-down" src="../../assets/img/down2.png"/>
+    </view>
+    <button class="{{'btn-buy '+ (!amountValue&&'opacity03')}}" disabled="{{!amountValue}}" type="primary">立即买单</button>
+  </view>
+  <popup show="{{showBottom}}" position="bottom" onClose="onPopupClose">
+    <view class="box">
+      <view class="txt-32-bold">付款明细</view>
+      <view class="txt-28-gray">消费总金额 <text style="color: #333333;float:right;">￥30.36</text></view>
+      <view class="btm-line"></view>
+      <view class="txt-32-bold">付款明细</view>
+      <view class="txt-28-gray">实时返利 <text class="orange" style="float:right;">￥30.36</text></view>
+      <view class="txt-28-gray">奖励金 <text class="orange" style="float:right;">￥30.36</text></view>
+      <view class="btm-line"></view>
+      <view class="txt-20-gray">部分红包和优惠会影响返利额度,最终以实付金额为准</view>
+      <view class="btm-line"></view>
+    </view>
+  </popup>
+</view>
