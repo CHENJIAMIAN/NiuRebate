@@ -1,0 +1,50 @@
+   .big-green-circle {
+     width: 124rpx;
+     height: 124rpx;
+     background: linear-gradient(-27deg, #2DC2A2, #2CC0A0);
+     border-radius: 50%;
+     position: fixed;
+     bottom: 52rpx;
+     right: 40rpx;
+     line-height: 124rpx;
+     text-align: center;
+     width: 61px;
+     font-family: PingFang SC;
+     font-weight: 500;
+     color: #FFFFFF;
+     transition: all 0.2s;
+   }
+
+   .long-green-bar {
+     width: 124rpx;
+     height: 349rpx;
+     border-radius: 62px;
+     padding-top: 56rpx;
+   }
+
+   .img-btn {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-between;
+     height: 85rpx;
+   }
+
+   .image-sm {
+     width: 46rpx;
+     height: 46rpx;
+   }
+
+   .image-down {
+     height: 22rpx;
+     width: 40rpx;
+     margin-top: 70rpx;
+   }
+
+   .txt-tiny-tip {
+     font-size: 24rpx;
+     font-family: PingFang SC;
+     font-weight: 500;
+     color: #FFFFFF;
+     line-height: 24rpx;
+   }

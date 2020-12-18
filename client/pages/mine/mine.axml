@@ -31,7 +31,7 @@
             <text a:else>有效日期至{{expiryDate}}</text>
           </view>
         </view>
-        <button  a:if="{{!isVIP}}" type="primary" class="btn-ljkt" onTap="goBuyCard">立即开通</button>
+        <button a:if="{{!isVIP}}" type="primary" class="btn-ljkt" onTap="goBuyCard">立即开通</button>
       </view>
     </view>
   </view>
@@ -80,26 +80,7 @@
     </view>
   </view>
   <!-- 买单组件 -->
-  <view a:if="{{memberFlag == 1}}" class="{{'big-green-circle ' + (showPayBtn && 'long-green-bar')}}">
-    <block a:if="{{showPayBtn}}">
-      <view class="img-btn" onTap="alipayScan">
-        <image class="image-sm" src="../../assets/img/sm.png"/>
-        <view class="txt-tiny-tip">
-        扫一扫
-        </view>
-      </view>
-      <view class="img-btn" style="margin-top:36rpx" onTap="payCode">
-        <image class="image-sm" src="../../assets/img/fkm.png"/>
-        <view class="txt-tiny-tip">
-      付款码
-        </view>
-      </view>
-      <image onTap="tapHidePay" class="image-down" src="../../assets/img/down.png"/>
-    </block>
-    <view a:else onTap="tapShowPay">
-      买单
-    </view>
-  </view>
+  <pay-button a:if="{{memberFlag == 1}}" />
   <view hidden="{{!needLogin}}">
     <view class="flex-content" style="height:80vh">
       <image class="image-sqdl" src="../../assets/img/sqdl.png"/>

@@ -89,5 +89,6 @@
         </tabs>
       </view>
     </view>
+    <pay-button/>
   </view>
 </view>

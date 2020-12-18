@@ -1,1 +1,5 @@
-{}
+{
+  "usingComponents": {
+    "pay-button": "/components/PayButton/PayButton"
+  }
+}
