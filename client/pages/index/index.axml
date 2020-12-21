@@ -73,7 +73,7 @@
                 <view class="schedule-container">
                   <scroll-view scroll-y="{{true}}" onScrollToLower="scrollMytrip" class="schedule-scroll">
                     <!-- tj card -->
-                    <view class="tj-card" a:for="{{list}}">
+                    <view class="tj-card" a:for="{{list}}" data-item={{item}} onTap="goShopDetail" >
                       <image class="img-tj" src="{{item.img}}"/>
                       <view class="tj-card-txts">
                         <view class="txt-32-bold">{{item.name}}</view>

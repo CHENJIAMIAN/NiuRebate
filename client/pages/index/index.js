@@ -211,8 +211,9 @@ Page({
           });
 
         }else if(resdata.data.code == 7){
+          this.setData({ show: false });
           my.showToast({
-            type: 'fail',
+            type: 'none',
             content: resdata.data.msg,
             duration: 1000,
             success: () => {
@@ -319,6 +320,14 @@ Page({
     } catch (e) {
       console.log('mySchedulde执行异常:', e);
     }
+  },
+
+
+  goShopDetail(e){
+    const { item } = e.target.dataset;
+    my.navigateTo({
+      url: `/pages/shop-home/shop-home?id=${item.id}` 
+    });
   }
 
 });
