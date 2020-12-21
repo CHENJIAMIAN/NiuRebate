@@ -3,6 +3,7 @@ var app = getApp();
 Page({
   data: {
     position:'',
+    imgs: [0,1,2,3],
     img: 'https://gw.alipayobjects.com/mdn/rms_eb2664/afts/img/A*bFuBQZuNErMAAAAAAAAAAABkARQnAQ',
     tjListData: [
       {
@@ -63,7 +64,7 @@ Page({
       },
     ],
     activeTab: 0,
-  },
+  }, 
   onLoad(query) {
     // 页面加载
     console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
@@ -89,7 +90,6 @@ Page({
           position: res.city + res.district
         });
         that.requestMerchantData(res.longitude, res.latitude, res.city);
-
 
       },
       fail() {
@@ -148,13 +148,14 @@ Page({
         if (resdata.data.code == 0) {
           this.setData({ gotLocation: true }); 
 
-          console.log(resdata.data.data);
 
           var list = resdata.data.data.rows;
-          for (var i=0; i<list.length; i++){
-            
-          }
 
+          this.setData({
+            tjListData: this.data.tjListData.concat(list)
+          });
+
+          
         } else {
           this.setData({ gotLocation: false });
           my.showToast({
