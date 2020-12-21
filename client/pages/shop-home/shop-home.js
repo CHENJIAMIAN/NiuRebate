@@ -15,6 +15,7 @@ Page({
     longitude:'',
     latitude:'',
     address:'',
+    discount:'',
     shopImgList:[],
     prodImgList:[]
 
@@ -53,6 +54,7 @@ Page({
             price: bean.price,
             position: bean.position,
             type: bean.type,
+            discount: bean.discount,
             fanli: bean.fanli,
             zhuan: bean.zhuan,
             operTime: bean.operTime,
@@ -82,10 +84,8 @@ Page({
   },
 
   payBill(){
-
-    const { id } = this.data.id;
     my.navigateTo({
-      url: `/pages/pay/pay?id=${id}` 
+      url: '/pages/pay/pay?id=' + this.data.id + '&name=' + this.data.name + '&discount=' + this.data.discount + '&img=' + this.data.img
     });
 
   },
