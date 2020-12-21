@@ -8,7 +8,8 @@ App({
     userId: '',
     longitude: '',
     latitude: '',
-    cityName: ''
+    cityName: '',
+    district:''
   },
 
   onLaunch(options) {

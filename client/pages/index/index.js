@@ -2,9 +2,11 @@ var app = getApp();
 
 Page({
   data: {
+    position:'',
     img: 'https://gw.alipayobjects.com/mdn/rms_eb2664/afts/img/A*bFuBQZuNErMAAAAAAAAAAABkARQnAQ',
     tjListData: [
       {
+        id:0,
         name: "辣酱糊",
         price: "20",
         type: "便利店",
@@ -13,6 +15,7 @@ Page({
         zhuan: "6.30",
         fanli: "10.50",
       }, {
+        id:0,
         name: "辣酱糊",
         price: "20",
         type: "便利店",
@@ -75,10 +78,16 @@ Page({
     my.getLocation({
       type: 1,
       success: (res) => {
+
+        console.log(res);
+
         app.globalData.longitude = res.longitude;
         app.globalData.latitude = res.latitude;
         app.globalData.cityName = res.city;
-
+        app.globalData.district = res.district;
+        that.setData({
+          position: res.city + res.district
+        });
         that.requestMerchantData(res.longitude, res.latitude, res.city);
 
 
@@ -137,7 +146,15 @@ Page({
         my.hideLoading();
 
         if (resdata.data.code == 0) {
-          this.setData({ gotLocation: true });
+          this.setData({ gotLocation: true }); 
+
+          console.log(resdata.data.data);
+
+          var list = resdata.data.data.rows;
+          for (var i=0; i<list.length; i++){
+            
+          }
+
         } else {
           this.setData({ gotLocation: false });
           my.showToast({
@@ -167,9 +184,12 @@ Page({
         app.globalData.longitude = res.longitude;
         app.globalData.latitude = res.latitude;
         app.globalData.cityName = res.cityName;
+        app.globalData.district = res.name; 
+        that.setData({
+          position: res.name
+        });
 
         that.requestMerchantData(res.longitude, res.latitude, res.cityName);
-
 
       },
       fail: (error) => {

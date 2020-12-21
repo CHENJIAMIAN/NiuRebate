@@ -11,22 +11,22 @@
       <button type="primary" onTap="chooseLocation">手动定位</button>
     </view>
   </view>
-  <view hidden="{{!gotLocation}}">
-  </view>
+  
+  
   <!-- 主页内容 -->
-  <view>
+  <view hidden="{{!gotLocation}}">
     <!-- 本页为透明头，考虑兼容性问题，这里使用固定高度作为顶部占位-->
     <view style="height: 66px;background:#2DC2A2;"></view>
-    <!-- top bar -->
+    <!-- top bar --> 
     <view class="top-bar">
       <!-- postion -->
       <view>
         <!--<image class="img-hk" src="../../assets/img/hk.png"/> -->
         <image class="img-dw" src="../../assets/img/dw.png"/>
-        <text class="txt-28" style="margin-left:15rpx;">
-          杭州市上城区环城...
+        <text class="txt-28" style="margin-left:15rpx;" onTap="chooseLocation">
+          {{position}}...
         </text>
-        <image class="img-xl" src="../../assets/img/xl.png" style="margin-left:18rpx;"/>
+        <image class="img-xl" src="../../assets/img/xl.png" style="margin-left:18rpx;" onTap="chooseLocation"/>
       </view>
       <!-- search -->
       <search-bar value="{{searchValue}}" placeholder="支付拿返利！" showCancelButton="{{false}}" />
@@ -43,7 +43,7 @@
         <text class="txt-24 orange" style="margin-left:20rpx;">在国诚C消费后赚了5.53元</text>
       </view>
       <!-- pay bar -->
-      <view class="pay-bar">
+      <view class="pay-bar" hidden="true" >
         <view class="img-btn" onTap="alipayScan">
           <image class="image-sm" src="../../assets/img/sm.png"/>
           <view class="txt-28">
