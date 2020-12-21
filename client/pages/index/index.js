@@ -1,4 +1,40 @@
 var app = getApp();
+// mock列表数据
+const mockData = [{
+  name: "辣酱糊",
+  price: "20",
+  type: "便利店",
+  position: "西湖区",
+  distance: "8.1km",
+  zhuan: "6.30",
+  fanli: "10.50",
+}, {
+  name: "辣酱糊",
+  price: "20",
+  type: "便利店",
+  position: "西湖区",
+  distance: "8.1km",
+  zhuan: "6.30",
+  fanli: "10.50",
+}, {
+  name: "辣酱糊",
+  price: "20",
+  type: "便利店",
+  position: "西湖区",
+  distance: "8.1km",
+  zhuan: "6.30",
+  fanli: "10.50",
+}, {
+  name: "辣酱糊",
+  price: "20",
+  type: "便利店",
+  position: "西湖区",
+  distance: "8.1km",
+  zhuan: "6.30",
+  fanli: "10.50",
+},];
+// mock列表总数
+const mockTotal = 60;
 
 Page({
   data: {
@@ -6,27 +42,10 @@ Page({
     imgs: [0,1,2,3],
     img: 'https://gw.alipayobjects.com/mdn/rms_eb2664/afts/img/A*bFuBQZuNErMAAAAAAAAAAABkARQnAQ',
     tjListData: [
-      {
-        id:0,
-        name: "辣酱糊",
-        price: "20",
-        type: "便利店",
-        position: "西湖区",
-        distance: "8.1km",
-        zhuan: "6.30",
-        fanli: "10.50",
-      }, {
-        id:0,
-        name: "辣酱糊",
-        price: "20",
-        type: "便利店",
-        position: "西湖区",
-        distance: "8.1km",
-        zhuan: "6.30",
-        fanli: "10.50",
-      },
+      
     ],
-    gotLocation: true,
+    showIndexPage: true,
+    gotoLocation: true,
     tabs: [
       {
         title: '推荐',
@@ -71,6 +90,9 @@ Page({
     // my.pageScrollTo({
     //   scrollTop: parseInt(600),
     // });
+    // this.mySchedulde();
+
+
   },
   onReady() {
     // 页面加载完成
@@ -89,14 +111,15 @@ Page({
         that.setData({
           position: res.city + res.district
         });
-        that.requestMerchantData(res.longitude, res.latitude, res.city);
+
+        let page = 1;
+        that.requestMerchantData(res.longitude, res.latitude, res.city, page);
 
       },
       fail() {
         my.hideLoading();
-
       },
-    })
+    }) 
   },
   onShow() {
     // 页面显示
@@ -126,9 +149,10 @@ Page({
   },
 
 
-  requestMerchantData(longitude, latitude, cityName) {
+  requestMerchantData(longitude, latitude, cityName, page) {
 
     console.log(longitude + '===' + latitude + '===' + cityName);
+
 
     var url = app.serverUrl + '/aliShop/list';
     my.request({
@@ -137,7 +161,8 @@ Page({
       data: {
         longitude: longitude,
         latitude: latitude,
-        cityName: cityName
+        cityName: cityName,
+        page:page
       },
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -146,18 +171,37 @@ Page({
         my.hideLoading();
 
         if (resdata.data.code == 0) {
-          this.setData({ gotLocation: true }); 
+          this.setData({ gotoLocation: false }); 
+
+          console.log(resdata);
+
+          let list = this.data.tjListData;
+          var dataList = resdata.data.data;
+          // for (var i=0; i<dataList.length; i++){
+          //   list.push(dataList[i]);
+          // }
+
+          setTimeout(() => {
+            for (let i = 0; i < dataList.length; i++) {
+              let newObj = { ...dataList[i], remarksa: `我是第${page}页` };
+              list.push(newObj);
+            }
+            this.setData({
+              list,
+              page,
+              show: false
+            });
+          }, 1000);
 
 
-          var list = resdata.data.data.rows;
 
-          this.setData({
-            tjListData: this.data.tjListData.concat(list)
-          });
+          // this.setData({
+          //   tjListData: this.data.tjListData.concat(dataList)
+          // });
 
           
-        } else {
-          this.setData({ gotLocation: false });
+        } else if (resdata.data.code == 6){
+          this.setData({ gotoLocation: true });
           my.showToast({
             type: 'fail',
             content: resdata.data.msg,
@@ -166,6 +210,14 @@ Page({
             },
           });
 
+        }else if(resdata.data.code == 7){
+          my.showToast({
+            type: 'fail',
+            content: resdata.data.msg,
+            duration: 1000,
+            success: () => {
+            },
+          });
         }
       },
       fail: (resdata) => {
@@ -212,12 +264,63 @@ Page({
       [tabsName]: index,
     });
   },
+
   handleTabChange({ index, tabsName }) {
     this.setData({
       [tabsName]: index,
     });
   },
   // tab end
+
+  /**
+ * scroll-view滑到底部触发事件
+ * @method scrollMytrip
+ */
+  async scrollMytrip() {
+    try {
+      const { page, list, } = this.data;
+      // 判断是否还有数据需要加载 
+      // if (list.length < mockTotal) {
+        this.setData({ show: true });
+        const newPage = page + 1;
+
+        console.log(newPage);
+
+        this.requestMerchantData(app.globalData.longitude, app.globalData.latitude, app.globalData.cityName, newPage);
+
+        // this.mySchedulde(newPage);
+      // }
+    } catch (e) {
+      this.setData({ show: false });
+      console.log('scrollMytrip执行异常:', e);
+    } 
+  },
+  /**
+   * 模拟请求服务端查询数据并渲染页面
+   * @method mySchedulde
+   * @param {int} page 分页,默认第1页
+   */
+  async mySchedulde(page = 1) {
+    try {
+      let list = this.data.tjListData;
+      // 模拟请求拿到数据进行更新data
+      setTimeout(() => {
+        let data = mockData;
+        for (let i = 0; i < data.length; i++) {
+          let newObj = { ...data[i], remarksa: `我是第${page}页` };
+          list.push(newObj);
+        }
+        this.setData({
+          list,
+          page,
+          show: false
+        });
+      }, 1000);
+    } catch (e) {
+      console.log('mySchedulde执行异常:', e);
+    }
+  }
+
 });
 
 

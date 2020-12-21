@@ -1,20 +1,21 @@
 <view class="container">
   <!-- 通过页面跳转（my.navigateTo）或者页面重定向（my.redirectTo）所到达的页面，即使它是定义在 tabBar 配置中的页面，也不会显示底部的 tab 栏。 -->
-  <view hidden="{{gotLocation}}">
-    <view class="flex-content near-fullheight">
-      <image class="image-zwkt" src="../../acssets/img/zwkt.png"/>
+  <block a:if="{{gotoLocation}}">
+    <view>
+      <view class="flex-content near-fullheight">
+        <image class="image-zwkt" src="../../acssets/img/zwkt.png"/>
+      </view>
+      <view class="flex-content">
+        <text class="tip-text">{{'当前城市暂未开通，敬请期待'}}</text>  
+      </view>
+      <view class="btn-section flex-content">
+        <button type="primary" onTap="chooseLocation">手动定位</button>
+      </view>
     </view>
-    <view class="flex-content">
-      <text class="tip-text">{{'当前城市暂未开通，敬请期待'}}</text>
-    </view>
-    <view class="btn-section flex-content">
-      <button type="primary" onTap="chooseLocation">手动定位</button>
-    </view>
-  </view>
-  
-  
+  </block>
+
   <!-- 主页内容 -->
-  <view hidden="{{!gotLocation}}">
+  <view a:else class="container-index">
     <!-- 本页为透明头，考虑兼容性问题，这里使用固定高度作为顶部占位-->
     <view style="height: 66px;background:#2DC2A2;"></view>
     <!-- top bar --> 
@@ -50,7 +51,7 @@
       <view class="pay-bar" hidden="true" >
         <view class="img-btn" onTap="alipayScan">
           <image class="image-sm" src="../../assets/img/sm.png"/>
-          <view class="txt-28">
+          <view class="txt-28" style="margin-top:16rpx;">
         扫一扫
           </view>
         </view>
@@ -58,7 +59,7 @@
         </view>
         <view class="img-btn" onTap="payCode">
           <image class="image-sm" src="../../assets/img/fkm.png"/>
-          <view class="txt-28">
+          <view class="txt-28" style="margin-top:16rpx;">
       付款码
           </view>
         </view>
@@ -69,22 +70,34 @@
           <block a:for="{{tabs}}">
             <tab-content key="{{index}}" tabId="{{index}}" activeTab="{{activeTab}}" a:if="{{index === 0}}">
               <view class="tab-content">
-                <!-- tj card -->
-                <view class="tj-card" a:for="{{tjListData}}">
-                  <image class="img-tj" src="{{img}}"/>
-                  <view class="tj-card-txts">
-                    <view class="txt-32-bold">{{item.name}}</view>
-                    <view class="txt-20-gray">{{item.price}}/人  {{item.type}}     {{item.position}}  {{item.distance}}</view>
-                    <view class="btn-txt-group">
-                      <view class="btn-txt-l"> 每单约赚￥{{item.zhuan}}</view>
-                      <view class="btn-txt-r"> 返利{{item.fanli}}%</view>
+                <view class="schedule-container">
+                  <scroll-view scroll-y="{{true}}" onScrollToLower="scrollMytrip" class="schedule-scroll">
+                    <!-- tj card -->
+                    <view class="tj-card" a:for="{{list}}">
+                      <image class="img-tj" src="{{item.img}}"/>
+                      <view class="tj-card-txts">
+                        <view class="txt-32-bold">{{item.name}}</view>
+                        <view class="txt-20-gray">{{item.price}}/人  {{item.type}}     {{item.position}}  {{item.distance}}</view>
+                        <view class="btn-txt-group">
+                          <view class="btn-txt-l"> 每单约赚￥{{item.zhuan}}</view>
+                          <view class="btn-txt-r"> 返利{{item.fanli}}%</view>
+                        </view>
+                      </view>
                     </view>
-                  </view>
+                    <view class="spinner" style="{{show ? '' : 'display:none'}}">
+                      <view class="bounce1 bounce"></view>
+                      <view class="bounce2 bounce"></view>
+                      <view class="bounce3 bounce"></view>
+                      <view style="margin:20rpx 0 0 20rpx;color:#666666;">加载中...</view>
+                    </view>
+                  </scroll-view>
                 </view>
               </view>
             </tab-content>
+            <tab-content key="{{index}}" tabId="{{index}}" activeTab="{{activeTab}}" a:elif="{{index === 1}}">
+            </tab-content>
             <tab-content key="{{index}}" tabId="{{index}}" activeTab="{{activeTab}}" a:elif="{{index === 2}}">
-              <view class="tab-content"> {{item.title}}</view>
+              <view class="tab-content">{{item.title}}</view>
             </tab-content>
             <tab-content key="{{index}}" tabId="{{index}}" activeTab="{{activeTab}}" a:else>
               <view class="tab-content">{{item.title}}</view>
@@ -95,4 +108,5 @@
     </view>
     <pay-button/>
   </view>
+
 </view>

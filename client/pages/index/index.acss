@@ -1,3 +1,5 @@
+@import './load-more.acss';
+
 .image-zwkt {
   width: 473rpx;
   height: 336rpx;
@@ -49,13 +51,18 @@
   display: flex;
   padding: 30rpx;
   justify-content: space-between;
+  margin-top:-40rpx;
+  transform: translateY(40rpx);
+
 }
 
 .main-content {
   background: #FFFFFF;
   border-radius: 15px;
   padding: 30rpx;
-  transform: translateY(-40rpx);
+  padding-bottom: 0rpx;
+  /* transform: translateY(-40rpx); */
+  position: relative;
 }
 
 .notify-bar {
@@ -221,3 +228,6 @@
 }
 
 
+.container-index{
+  /* height: 700rpx; */
+}
