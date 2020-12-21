@@ -34,9 +34,13 @@
     <!-- main white content area -->
     <view class="main-content">
       <!-- top img -->
-      <view class="flex-content">
-        <image class="img-top" src="{{img}}"/>
-      </view>
+      <swiper class="demo-swiper" previousMargin="10px" nextMargin="10px" indicator-dots="{{true}}" autoplay="{{true}}" vertical="{{false}}" interval="{{4000}}" circular="{{true}}" duration="{{4000}}" indicator-active-color="#2DC2A2">
+        <swiper-item key="swiper-item-{{index}}" a:for="{{imgs}}">
+          <view class="flex-content swiper-item">
+            <image class="img-top" src="{{img}}"/>
+          </view>
+        </swiper-item>
+      </swiper>
       <!-- notify bar -->
       <view class="notify-bar">
         <image class="img-tz" src="../../assets/img/tz2.png"/>

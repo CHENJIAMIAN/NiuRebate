@@ -2,6 +2,7 @@ var app = getApp();
 
 Page({
   data: {
+    imgs: [0,1,2,3],
     img: 'https://gw.alipayobjects.com/mdn/rms_eb2664/afts/img/A*bFuBQZuNErMAAAAAAAAAAABkARQnAQ',
     tjListData: [
       {

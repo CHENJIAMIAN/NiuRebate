@@ -215,3 +215,9 @@
   justify-content: space-around;
   height: 180rpx;
 }
+
+.swiper-item{
+  margin:10rpx;
+}
+
+
