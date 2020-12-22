@@ -1,5 +1,6 @@
 {
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "mini-ali-ui": "^1.2.2"
   }
 }
