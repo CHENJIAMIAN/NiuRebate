@@ -278,6 +278,7 @@ Page({
  * @method scrollMytrip
  */
   async scrollMytrip() {
+    console.log('scrollMytrip')
     try {
       const { page, list, } = this.data;
       // 判断是否还有数据需要加载 
