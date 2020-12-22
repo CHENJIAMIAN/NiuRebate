@@ -1,3 +1,4 @@
+@import './assets/load-more.acss';
 /* @font-face {
   font-family: "PingFang SC";
   src: url('./assets/PingFangRegular.ttf');

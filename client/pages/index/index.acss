@@ -1,4 +1,3 @@
-@import './load-more.acss';
 
 .image-zwkt {
   width: 473rpx;
