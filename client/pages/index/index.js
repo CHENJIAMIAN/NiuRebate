@@ -36,7 +36,7 @@ const mockData = [{
 // mock列表总数
 const mockTotal = 60;
 
-Page({
+Page({ 
   data: {
     position:'',
     imgs: [0,1,2,3],
@@ -91,6 +91,55 @@ Page({
     //   scrollTop: parseInt(600),
     // });
     // this.mySchedulde();
+
+
+    var that = this;
+    my.getAuthCode({
+      scopes: 'auth_base', // 主动授权（弹框）：auth_user，静默授权（不弹框）：auth_base
+      success: (res) => {
+
+        if (res.authCode) {
+          // console.log(app.serverUrl + '/login/' + res.authCode);
+          // 调用自己的服务端接口，让服务端进行后端的授权认证
+
+          var url = app.serverUrl + '/aliMember/login';
+
+          console.log(res.authCode);
+
+
+          my.request({
+            url: url,
+            method: 'POST',
+            data: {
+              authCode: res.authCode
+            },
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            success: function(resdata) {
+
+              if (resdata.data.data.userId) {
+
+                app.globalData.userId = resdata.data.data.userId;
+
+              }
+
+            },
+            fail: function (resdata) {
+            
+            }
+          });
+
+
+        }
+
+      },
+
+      fail() {
+      },
+
+    });
+
 
 
   },
@@ -243,6 +292,7 @@ Page({
           position: res.name
         });
 
+        my.showLoading();
         that.requestMerchantData(res.longitude, res.latitude, res.cityName);
 
       },

@@ -1,3 +1,5 @@
+var app = getApp();
+
 Page({
   data: {
     id:0,
@@ -68,4 +70,64 @@ Page({
         }
       });
     },
+
+    
+   paybill() {
+
+    var url = app.serverUrl + '/mini/order';
+
+    my.request({
+      url: url,
+      method: 'POST',
+      data: {
+        buyerId: app.globalData.userId,
+        merchantId: this.data.id,
+        amount: this.data.amountValue
+      },
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      success: function (resdata) {
+
+         console.log(resdata);
+
+
+        if (resdata.data.code == 0) {
+
+          var tradeNo = resdata.data.data.aliTradeNo;
+
+          my.tradePay({
+            tradeNO: tradeNo,
+            success: function (res) {  
+
+              
+              
+            },
+            fail: function (res) {
+
+             
+            },
+          });
+
+        } else {
+
+          my.showToast({
+            type: 'fail',
+            content: '支付失败, 请稍后重试',
+            duration: 1000,
+            success: () => {
+            }, 
+          });
+
+
+        }
+
+      },
+      fail: function (resdata) {
+        console.log(resdata);
+      }
+    });
+
+  },
+
 });

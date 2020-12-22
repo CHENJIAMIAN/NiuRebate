@@ -133,6 +133,8 @@ Page({
                     that.setData({
                     isVIP:true
                   });
+
+                  that.loadRecord();
                 }
 
               } else if (resdata.data.code == 1) {
@@ -171,9 +173,79 @@ Page({
   },
 
  
+  loadRecord(){
+
+    let page = 1;
+    this.requestFanliData(page);
+
+  },
 
 
-  goPhoneNumber(){
+  requestFanliData(page) {
+
+    my.showLoading();
+
+    var url = app.serverUrl + '/aliMember/fanliList';
+
+    my.request({
+      url: url,
+      method: 'POST',
+      data: {
+        userId: app.globalData.userId,
+        page: page
+      },
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }, 
+      success: (resdata) => {
+
+        my.hideLoading();
+
+        console.log(resdata);
+
+        if (resdata.data.code == 0) {
+         
+          this.setData({
+            hasContent:true
+          });
+          
+          var bean = resdata.data.data;
+          
+        } else if (resdata.data.code == 10){
+          
+          this.setData({
+            hasContent:false
+          });
+
+
+        }else if(resdata.data.code == 7){
+          my.showToast({
+            type: 'none',
+            content: resdata.data.msg,
+            duration: 1000,
+            success: () => {
+            },
+          });
+        }else{
+          my.showToast({
+            type: 'fail',
+            content: resdata.data.msg,
+            duration: 1000,
+            success: () => {
+            },
+          });
+        }
+      },
+      fail: (resdata) => {
+        console.log(resdata);
+        my.hideLoading();
+      }
+    });
+
+  },
+
+
+  goPhoneNumber(){ 
     my.navigateTo({
       url: '/pages/GetPhoneNumber/GetPhoneNumber'
     });

@@ -40,7 +40,7 @@
       <text>明细</text>
       <image class="img-down" src="../../assets/img/down2.png"/>
     </view>
-    <button class="{{'btn-buy '+ (!amountValue&&'opacity03')}}" disabled="{{!amountValue}}" type="primary">立即买单</button>
+    <button class="{{'btn-buy '+ (!amountValue&&'opacity03')}}" disabled="{{!amountValue}}" type="primary" onTap="paybill">立即买单</button>
   </view>
   <popup show="{{showBottom}}" position="bottom" onClose="onPopupClose">
     <view class="box">

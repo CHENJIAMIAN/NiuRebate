@@ -68,7 +68,7 @@
             +{{item.fanli}}
             </text>
           </view>
-          <view class="txt-tinyest-tip" style="margin-top:10rpx;text-decoration: line-through;">
+          <view class="txt-tinyest-tip" style="margin-top:10rpx;">
           消费：{{item.xiaofei}}
           </view>
         </view>
