@@ -45,11 +45,11 @@
   <popup show="{{showBottom}}" position="bottom" onClose="onPopupClose">
     <view class="box">
       <view class="txt-32-bold">付款明细</view>
-      <view class="txt-28-gray">消费总金额 <text style="color: #333333;float:right;">￥30.36</text></view>
+      <view class="txt-28-gray">消费总金额 <text style="color: #333333;float:right;">￥{{amountValue}}</text></view>
       <view class="btm-line"></view>
       <view class="txt-32-bold">付款明细</view>
-      <view class="txt-28-gray">实时返利 <text class="orange" style="float:right;">￥30.36</text></view>
-      <view class="txt-28-gray">奖励金 <text class="orange" style="float:right;">￥30.36</text></view>
+      <view class="txt-28-gray">实时返利 <text class="orange" style="float:right;">￥{{realValue}}</text></view>
+      <view class="txt-28-gray">奖励金 <text class="orange" style="float:right;">￥{{bountyValue}}</text></view>
       <view class="btm-line"></view>
       <view class="txt-20-gray">部分红包和优惠会影响返利额度,最终以实付金额为准</view>
       <view class="btm-line"></view>

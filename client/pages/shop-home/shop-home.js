@@ -16,6 +16,8 @@ Page({
     latitude:'',
     address:'',
     discount:'',
+    realTimeRate:'',
+    bountyRate:'',
     shopImgList:[],
     prodImgList:[]
 
@@ -46,7 +48,10 @@ Page({
 
         if (resdata.data.code == 0) {
 
+          
           var bean = resdata.data.data;
+          console.log(resdata);
+           
           this.setData({
             id: bean.id,
             img: bean.img,
@@ -57,9 +62,11 @@ Page({
             discount: bean.discount,
             fanli: bean.fanli,
             zhuan: bean.zhuan,
+            realTimeRate: bean.realTimeRate,
+            bountyRate: bean.bountyRate,
             operTime: bean.operTime,
             distance: bean.distance,
-            address: bean.address,
+            address: bean.address, 
             longitude: bean.longitude,
             latitude: bean.latitude,
             shopImgList: bean.shopImgList,
@@ -85,7 +92,12 @@ Page({
 
   payBill(){
     my.navigateTo({
-      url: '/pages/pay/pay?id=' + this.data.id + '&name=' + this.data.name + '&discount=' + this.data.discount + '&img=' + this.data.img
+      url: '/pages/pay/pay?id=' + this.data.id 
+          + '&name=' + this.data.name 
+          + '&discount=' + this.data.discount
+          + '&realTimeRate=' + this.data.realTimeRate
+          + '&bountyRate=' + this.data.bountyRate
+          + '&img=' + this.data.img
     });
 
   },
