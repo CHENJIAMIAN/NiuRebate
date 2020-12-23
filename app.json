@@ -1,12 +1,14 @@
 {
   "pages": [
+    "pages/error-tip/error-tip",
+    "pages/success-tip/success-tip",
+    "pages/shop-home/shop-home",
     "pages/index/index",
     "pages/mine/mine",
     "pages/vip-invite/vip-invite",
     "pages/GetUserBase/GetUserBase",
     "pages/GetPhoneNumber/GetPhoneNumber",
     "pages/pay/pay",
-    "pages/shop-home/shop-home",
     "pages/UserInfo/UserInfo",
     "pages/home/home",
     "pages/share/share",

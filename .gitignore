@@ -1,2 +1,4 @@
 node_modules
 .tea
+.tea/entryFiles-development/index$.web.js
+.tea/entryFiles-development/index$.worker.js
