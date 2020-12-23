@@ -1,7 +1,7 @@
 App({
 
-    // serverUrl:"http://192.168.50.158:9800",
-  serverUrl:"http://www.lemengsc.com:9800",
+  // serverUrl:"http://192.168.50.158:9800",
+  serverUrl: "http://www.lemengsc.com:9800",
 
   globalData: {
     hasLogin: false,
@@ -9,7 +9,7 @@ App({
     longitude: '',
     latitude: '',
     cityName: '',
-    district:''
+    district: ''
   },
 
   onLaunch(options) {
@@ -21,4 +21,5 @@ App({
     // 从后台被 scheme 重新打开
     // options.query == {number:1}
   },
+
 });
