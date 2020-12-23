@@ -72,6 +72,7 @@
     </block>
     <!-- 内容列表 -->
     <view a:else class="recommend-list">
+      <view class="title">返利明细</view>
       <!--  -->
       <!--<scroll-view scroll-y="{{true}}" style="height: 200px;" onScroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}"> -->
       <view class="flex-content recommend-list-item" a:for="{{listData}}">

@@ -161,6 +161,7 @@
 
    .recommend-list {
      overflow: auto;
+     margin-top: 20rpx;
    }
 
    .recommend-list-item {
@@ -269,4 +270,25 @@
    .img-yjt {
      width: 14rpx;
      height: 24rpx;
+   }
+
+   .title {
+     height: 35rpx;
+     font-size: 36rpx;
+     font-family: PingFang SC;
+     font-weight: bold;
+     color: #333333;
+     line-height: 29rpx;
+     margin: 43rpx auto;
+     transform: translateX(20rpx)
+   }
+
+   .title:before {
+     position: absolute;
+     content: " ";
+     left: -20rpx;
+     width: 6rpx;
+     height: 29rpx;
+     background: #2ABF9F;
+     border-radius: 3px;
    }
