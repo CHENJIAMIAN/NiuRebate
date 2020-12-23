@@ -1,7 +1,7 @@
 <view>
   <view class="user-top-container">
     <view class="txt-tiny-tip">
-      <image class="img-tz" src="../../assets/img/tz.png"/>
+      <image class="img-tz" src="/assetstz.png"/>
       <text style="margin-left: 15rpx;">
             198****6904
       </text>
@@ -12,14 +12,14 @@
       <view class="user-card">
         <view class="user-info">
           <view class="user-icon">
-            <image class="img-yh" src="../../assets/img/yh.png"/>
+            <image class="img-yh" src="/assetsyh.png"/>
           </view>
           <view class="txt-group1">
             <view class="txt-sjh">
           151****6904
             </view>
             <view class="txt-tiny-tip">
-              <image class="img-zs" src="../../assets/img/zs.png"/>
+              <image class="img-zs" src="/assetszs.png"/>
               <text style="margin-left: 15rpx;">
             您还不是会员
               </text>
@@ -55,7 +55,7 @@
         </view>
       </view>
       <view class="fjhy">
-        <image class="img-hk" src="../../assets/img/hk.png"/>
+        <image class="img-hk" src="/assetshk.png"/>
         <view class="txt-fjhy">
            附近还有
           <text style="color:#FD6010;"> 616
@@ -68,19 +68,19 @@
       <view class="title">权益二：邀请好友，躺赚收益</view>
       <view class="txt-24 card-qy flex-content">
         <view class="card-qy-item">
-          <image class="img-5239" src="../../assets/img/fx.png"/>
+          <image class="img-5239" src="/assetsfx.png"/>
           <view>
 分享活动给好友好友完成注册
           </view>
         </view>
         <view class="card-qy-item">
-          <image class="img-5239" src="../../assets/img/kp.png"/>
+          <image class="img-5239" src="/assetskp.png"/>
           <view>
 好友购卡你获得开卡费的50%
           </view>
         </view>
         <view class="card-qy-item">
-          <image class="img-5239" src="../../assets/img/qian.png"/>
+          <image class="img-5239" src="/assetsqian.png"/>
           <view>
 好友线下消费你获得佣金奖励
           </view>
@@ -100,10 +100,10 @@
     <!-- 权益4 -->
     <view>
       <view class="title-lr">
-        <image class="img-lbar" src="../../assets/img/lbar.png"/>
+        <image class="img-lbar" src="/assetslbar.png"/>
    已有
         <text style="color:#2ABF9F;">100</text>位用户购买了大牛返利卡
-        <image class="img-lbar" src="../../assets/img/rbar.png"/>
+        <image class="img-lbar" src="/assetsrbar.png"/>
       </view>
       <view class="gm-card" a:for="{{gmListData}}">
         <image class="img-gmtx" src="{{item.img}}"/>

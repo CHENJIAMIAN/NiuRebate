@@ -3,21 +3,21 @@
     <!-- 用户信息 -->
     <view class="user-info">
       <view class="user-icon">
-        <image class="image-yh" src="../../assets/img/yh.png"/>
+        <image class="img-yh" src="/assets/img/yh.png"/>
       </view>
       <view class="txt-group1">
         <view class="txt-sjh">
           {{phone}}
         </view>
         <view class="txt-tiny-tip">
-          <image class="image-zs" src="../../assets/img/zs.png"/>
+          <image class="img-zs" src="/assets/img/zs.png"/>
           <text style="margin-left: 15rpx;">
             <text a:if="{{!isVIP}}">您还不是会员</text>
             <text a:else>{{memberId}}</text>
           </text>
         </view>
       </view>
-      <image class="image-yqyl" src="../../assets/img/yqyl.png"/>
+      <image class="img-yqyl" src="/assets/img/yqyl.png"/>
     </view>
     <!-- 会员卡 -->
     <view class="flex-content user-card-container">
@@ -37,12 +37,35 @@
   </view>
   <!-- 主内容 -->
   <view hidden="{{needLogin}}" class="main-content">
-    <view class="txt-wdtj">
-      <image class="image-wdtj" src="../../assets/img/wdtj.png"/>
-      <text style="margin-left: 40rpx;"><button onTap="shareToFriends">我的推荐</button></text>
+    <!-- 我的推荐条 -->
+    <view class="flex-between" onTap="shareToFriends">
+      <view class="txt-wdtj">
+        <image class="img-wdtj" src="/assets/img/wdtj.png"/>
+        <text style="margin-left: 40rpx;">
+       我的推荐
+        </text>
+      </view>
+      <image class="img-yjt" src="/assets/img/yjt.png"/>
+    </view>
+    <!-- 已返利 -->
+    <view>
+      <view class="txt-yfl">已返利
+        <text class="txt-bold-DDIN txt-51" style="margin:0 17rpx;">0.78</text>元
+      </view>
+      <view class="flex-between greenbg-bar">
+        <view>
+          <image class="img-29" style="transform: translateY(2rpx);" src="/assets/img/jlj.png"/>
+          <text style="margin-left:23rpx;">奖励金</text>
+          <text class="txt-bold-DDIN txt-32" style="margin-left:18rpx;">0.12</text>
+        </view>
+        <view class="green">
+        马上提现
+          <image class="img-right" src="/assets/img/right.png"/>
+        </view>
+      </view>
     </view>
     <block a:if="{{!hasContent}}">
-      <image class="image-zwfl" src="../../assets/img/zwfl.png"/>
+      <image class="img-zwfl" src="/assets/img/zwfl.png"/>
       <view class="flex-content txt-zwfl">
       暂无返利
       </view>
@@ -52,10 +75,10 @@
       <!--  -->
       <!--<scroll-view scroll-y="{{true}}" style="height: 200px;" onScroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}"> -->
       <view class="flex-content recommend-list-item" a:for="{{listData}}">
-        <image class="image-tx" src="{{item.mctAvatar}}"/>
+        <image class="img-tx" src="{{item.mctAvatar}}"/>
         <view class="txt-group1">
           <view class="txt-medium">
-            {{item.mctShopName}} 
+            {{item.mctShopName}}
           </view>
           <view class="txt-tinyest-tip" style="margin-top:10rpx;"> 
          {{item.requestTime}}
@@ -66,7 +89,7 @@
             返利：
             <text style="font-size: 32rpx;">
             {{item.fanli}}元
-            </text> 
+            </text>
           </view>
           <view class="txt-tinyest-tip" style="margin-top:10rpx;">
           消费：{{item.amount}}元
@@ -83,7 +106,7 @@
   <pay-button a:if="{{memberFlag == 1}}" />
   <view hidden="{{!needLogin}}">
     <view class="flex-content" style="height:80vh">
-      <image class="image-sqdl" src="../../assets/img/sqdl.png"/>
+      <image class="img-sqdl" src="/assets/img/sqdl.png"/>
     </view>
     <view class="btn-section flex-content" style="bottom: 400rpx;">
       <text class="tip-text">{{'美好生活从大牛开始'}}</text>

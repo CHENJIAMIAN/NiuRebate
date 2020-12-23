@@ -24,7 +24,7 @@
         <view class="txt-24-lightgray" style="margin-top:19rpx;">距您{{distance}}</view>
       </view>
       <view style="text-align:center;" onTap="openLocation">
-        <image class="img-dw" src="../../assets/img/dw2.png"/>
+        <image class="img-dw" src="/assetsdw2.png"/>
         <view class="txt-20-green">去这里</view>
       </view>
     </view>

@@ -10,7 +10,7 @@
           <text class="orange">10.50%</text></view>
       </view>
       <view style="text-align:center;" onTap="payCode">
-        <image class="img-fkm" src="../../assets/img/fkm2.png"/>
+        <image class="img-fkm" src="/assetsfkm2.png"/>
         <view class="txt-20 green" style="margin-top:14rpx;">付款码</view>
       </view>
     </view>
@@ -38,7 +38,7 @@
     </view>
     <view class="green" style="margin-left:100rpx;" onTap="showDetail">
       <text>明细</text>
-      <image class="img-down" src="../../assets/img/down2.png"/>
+      <image class="img-down" src="/assetsdown2.png"/>
     </view>
     <button class="{{'btn-buy '+ (!amountValue&&'opacity03')}}" disabled="{{!amountValue}}" type="primary" onTap="paybill">立即买单</button>
   </view>
