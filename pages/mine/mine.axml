@@ -17,7 +17,7 @@
           </text>
         </view>
       </view>
-      <image class="img-yqyl" src="/assets/img/yqyl.png"/>
+      <image  onTap="shareToFriends" class="img-yqyl" src="/assets/img/yqyl.png"/>
     </view>
     <!-- 会员卡 -->
     <view class="flex-content user-card-container">
