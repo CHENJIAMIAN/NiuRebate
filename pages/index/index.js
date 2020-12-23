@@ -275,7 +275,7 @@ Page({
       }
     });
 
-  },
+  }, 
 
 
   chooseLocation() {
@@ -293,6 +293,10 @@ Page({
         });
 
         my.showLoading();
+ 
+        //清空列表数据
+        that.setData({tjListData:[]});
+
         that.requestMerchantData(res.longitude, res.latitude, res.cityName);
 
       },

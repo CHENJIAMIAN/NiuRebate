@@ -1,5 +1,6 @@
 {
   "pages": [
+     "pages/my-invite/my-invite",
     "pages/index/index",
     "pages/vip-invite/vip-invite",
     "pages/GetUserBase/GetUserBase",
@@ -9,6 +10,7 @@
     "pages/shop-home/shop-home",
     "pages/UserInfo/UserInfo",
     "pages/home/home"
+   
   ],
   "window": {
     "defaultTitle": "老牛返利"
