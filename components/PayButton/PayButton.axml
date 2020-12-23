@@ -1,18 +1,18 @@
   <view  class="{{'big-green-circle ' + (showPayBtn && 'long-green-bar')}}">
     <block a:if="{{showPayBtn}}">
       <view class="img-btn" onTap="alipayScan">
-        <image class="image-sm" src="../../assets/img/sm.png"/>
+        <image class="image-sm" src="/assets/img/sm.png"/>
         <view class="txt-tiny-tip">
         扫一扫
         </view>
       </view>
       <view class="img-btn" style="margin-top:36rpx" onTap="payCode">
-        <image class="image-sm" src="../../assets/img/fkm.png"/>
+        <image class="image-sm" src="/assets/img/fkm.png"/>
         <view class="txt-tiny-tip">
       付款码
         </view>
       </view>
-      <image onTap="tapHidePay" class="image-down" src="../../assets/img/down.png"/>
+      <image onTap="tapHidePay" class="image-down" src="/assets/img/down.png"/>
     </block>
     <view a:else onTap="tapShowPay">
       买单

@@ -16,23 +16,23 @@
      background: url(../assets/img/cardbg.png) 0 0 / 100% 100% no-repeat;
    }
 
-   .image-yh {
+   .img-yh {
      width: 106rpx;
      height: 106rpx;
    }
 
-   .image-zs {
+   .img-zs {
      width: 28rpx;
      height: 23rpx;
      transform: translateY(2px);
    }
 
-   .image-yqyl {
+   .img-yqyl {
      width: 92rpx;
      height: 60rpx;
    }
 
-   .image-wdtj {
+   .img-wdtj {
      width: 37rpx;
      height: 34rpx;
      transform: translateX(4px) translateY(2px);
@@ -146,16 +146,14 @@
      bottom: -60rpx;
    }
 
-   .image-zwfl {
+   .img-zwfl {
      width: 317rpx;
      height: 290rpx;
      margin-left: 185rpx;
      margin-top: 200rpx;
    }
 
-
-
-   .image-tx {
+   .img-tx {
      width: 80rpx;
      height: 80rpx;
      border-radius: 50%;
@@ -181,12 +179,12 @@
      right: 0rpx;
    }
 
-   .image-zwkt {
+   .img-zwkt {
      width: 473rpx;
      height: 336rpx;
    }
 
-   .image-sqdl {
+   .img-sqdl {
      width: 750rpx;
      height: 804rpx;
    }
@@ -214,4 +212,61 @@
      font-weight: 500;
      color: #666666;
      line-height: 34rpx;
+   }
+
+   .img-29 {
+     width: 29rpx;
+     height: 29rpx;
+   }
+
+   .img-right {
+     width: 14rpx;
+     height: 24rpx;
+     margin-left: 16rpx;
+     transform: translateY(2rpx);
+   }
+
+   .greenbg-bar {
+     width: 690rpx;
+     height: 72rpx;
+     background: rgba(44, 192, 160, .1);
+     border-radius: 36rpx;
+     font-size: 28rpx;
+     font-family: PingFang SC;
+     font-weight: 500;
+     color: #222222;
+     padding: 22rpx 30rpx;
+     box-sizing: border-box;
+   }
+
+   .green {
+     color: #22A38A;
+   }
+
+   .txt-bold-DDIN {
+     font-family: D-DIN;
+     font-weight: bold;
+     color: #222222;
+   }
+
+   .txt-32 {
+     font-size: 32rpx;
+   }
+
+   .txt-51 {
+     font-size: 51rpx;
+   }
+
+   .txt-yfl {
+     font-size: 24rpx;
+     font-family: PingFang SC;
+     font-weight: 500;
+     color: #666666;
+     text-align: center;
+     line-height: 100rpx;
+   }
+
+   .img-yjt {
+     width: 14rpx;
+     height: 24rpx;
    }

@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/mine/mine",
     "pages/index/index",
     "pages/vip-invite/vip-invite",
     "pages/GetUserBase/GetUserBase",
     "pages/GetPhoneNumber/GetPhoneNumber",
-    "pages/mine/mine",
     "pages/pay/pay",
     "pages/shop-home/shop-home",
     "pages/UserInfo/UserInfo",

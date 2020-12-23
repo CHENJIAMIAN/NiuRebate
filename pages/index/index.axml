@@ -22,12 +22,12 @@
     <view class="top-bar">
       <!-- postion -->
       <view>
-        <!--<image class="img-hk" src="../../assets/img/hk.png"/> -->
-        <image class="img-dw" src="../../assets/img/dw.png"/>
+        <!--<image class="img-hk" src="/assets/img/hk.png"/> -->
+        <image class="img-dw" src="/assets/img/dw.png"/>
         <text class="txt-28" style="margin-left:15rpx;" onTap="chooseLocation">
           {{position}}...
         </text>
-        <image class="img-xl" src="../../assets/img/xl.png" style="margin-left:18rpx;" onTap="chooseLocation"/>
+        <image class="img-xl" src="/assets/img/xl.png" style="margin-left:18rpx;" onTap="chooseLocation"/>
       </view>
       <!-- search -->
       <search-bar value="{{searchValue}}" placeholder="支付拿返利！" showCancelButton="{{false}}" />
@@ -44,13 +44,13 @@
       </swiper>
       <!-- notify bar -->
       <view class="notify-bar">
-        <image class="img-tz" src="../../assets/img/tz2.png"/>
+        <image class="img-tz" src="/assets/img/tz2.png"/>
         <text class="txt-24 orange" style="margin-left:20rpx;">在国诚C消费后赚了5.53元</text>
       </view>
       <!-- pay bar -->
       <view class="pay-bar" hidden="true" >
         <view class="img-btn" onTap="alipayScan">
-          <image class="image-sm" src="../../assets/img/sm.png"/>
+          <image class="image-sm" src="/assets/img/sm.png"/>
           <view class="txt-28" style="margin-top:16rpx;">
         扫一扫
           </view>
@@ -58,7 +58,7 @@
         <view class="split-line-vertical">
         </view>
         <view class="img-btn" onTap="payCode">
-          <image class="image-sm" src="../../assets/img/fkm.png"/>
+          <image class="image-sm" src="/assets/img/fkm.png"/>
           <view class="txt-28" style="margin-top:16rpx;">
       付款码
           </view>
