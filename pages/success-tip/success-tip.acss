@@ -1,0 +1,10 @@
+.img-cc {
+  width: 256rpx;
+  height: 256rpx;
+}
+
+.txt-ccl {
+  line-height: 100rpx;
+  color: #108ee9;
+  font-size: 40rpx;
+}

@@ -1,3 +1,8 @@
 <view>
-  New Page
+  <view class="flex-content-v" style="height:100vh">
+    <image class="img-cc" src="/assets/img/cc.png"/>
+    <view class="txt-ccl">
+      出错啦
+    </view>
+  </view>
 </view>

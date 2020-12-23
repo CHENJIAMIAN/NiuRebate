@@ -1,3 +1,8 @@
 <view>
-  New Page
+  <view class="flex-content-v" style="height:100vh">
+    <icon type="success" size="60"/>
+    <view class="txt-ccl">
+      支付成功
+    </view>
+  </view>
 </view>
