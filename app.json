@@ -8,7 +8,8 @@
     "pages/pay/pay",
     "pages/shop-home/shop-home",
     "pages/UserInfo/UserInfo",
-    "pages/home/home"
+    "pages/home/home",
+    "pages/share/share"
   ],
   "window": {
     "defaultTitle": "老牛返利"

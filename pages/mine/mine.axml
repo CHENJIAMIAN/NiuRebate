@@ -39,7 +39,7 @@
   <view hidden="{{needLogin}}" class="main-content">
     <view class="txt-wdtj">
       <image class="image-wdtj" src="../../assets/img/wdtj.png"/>
-      <text style="margin-left: 40rpx;">我的推荐</text>
+      <text style="margin-left: 40rpx;"><button onTap="shareToFriends">我的推荐</button></text>
     </view>
     <block a:if="{{!hasContent}}">
       <image class="image-zwfl" src="../../assets/img/zwfl.png"/>

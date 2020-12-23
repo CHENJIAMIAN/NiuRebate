@@ -231,5 +231,10 @@ Page({
     });
   },
 
+  shareToFriends(){
+    my.navigateTo({
+      url: '/pages/share/share'
+    });
+  },
 
 });

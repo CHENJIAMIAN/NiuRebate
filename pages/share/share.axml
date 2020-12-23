@@ -1,0 +1,3 @@
+<view>
+ <button onTap="shareToFriends">邀请好友</button>
+</view>
