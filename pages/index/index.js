@@ -86,6 +86,7 @@ Page({
   }, 
   onLoad(query) {
     // 页面加载
+    console.log("##########"+query.shareUserId);
     console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
     // my.pageScrollTo({
     //   scrollTop: parseInt(600),

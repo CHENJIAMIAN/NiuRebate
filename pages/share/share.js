@@ -1,5 +1,4 @@
 var app = getApp();
-
 Page({
   data: {},
   onLoad() {
@@ -31,5 +30,6 @@ Page({
   shareToFriends(){
     my.showSharePanel();
   },
+
 
 });

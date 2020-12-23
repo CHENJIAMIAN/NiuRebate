@@ -24,7 +24,7 @@
       <view class="user-card">
         <view class="txt-group2">
           <view class="txt-dnvip">
-      大牛VIP
+      老牛VIP
           </view>
           <view class="txt-tiny-tip">
             <text a:if="{{!isVIP}}">用支付宝支付就有返利</text>
@@ -39,7 +39,7 @@
   <view hidden="{{needLogin}}" class="main-content">
     <view class="txt-wdtj">
       <image class="image-wdtj" src="../../assets/img/wdtj.png"/>
-      <text style="margin-left: 40rpx;">我的推荐</text>
+      <text style="margin-left: 40rpx;"><button onTap="shareToFriends">我的推荐</button></text>
     </view>
     <block a:if="{{!hasContent}}">
       <image class="image-zwfl" src="../../assets/img/zwfl.png"/>

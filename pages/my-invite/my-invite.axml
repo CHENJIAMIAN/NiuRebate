@@ -6,6 +6,6 @@
         <text class="tip-text">{{'独乐乐不如众乐乐'}}</text>  
       </view>
       <view class="btn-section flex-content">
-        <button type="primary">邀请好友开卡</button>
+        <button type="primary"  onTap="shareToFriends" >邀请好友开卡</button>
       </view>
     </view>
