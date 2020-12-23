@@ -233,7 +233,7 @@ Page({
 
   shareToFriends(){
     my.navigateTo({
-      url: '/pages/share/share'
+      url: '/pages/my-invite/my-invite'
     });
   },
 

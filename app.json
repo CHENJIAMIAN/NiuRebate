@@ -3,8 +3,8 @@
     "pages/error-tip/error-tip",
     "pages/success-tip/success-tip",
     "pages/shop-home/shop-home",
-    "pages/mine/mine",
     "pages/index/index",
+    "pages/mine/mine",
     "pages/vip-invite/vip-invite",
     "pages/GetUserBase/GetUserBase",
     "pages/GetPhoneNumber/GetPhoneNumber",
@@ -12,9 +12,8 @@
     "pages/UserInfo/UserInfo",
     "pages/home/home",
     "pages/share/share",
-    "pages/error-tip/error-tip",
-    "pages/pay-success-tip/pay-success-tip",
-    "pages/success-tip/success-tip"
+    "pages/my-invite/my-invite"
+
   ],
   "window": {
     "defaultTitle": "老牛返利"
