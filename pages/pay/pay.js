@@ -74,6 +74,8 @@ Page({
     
    paybill() {
 
+    var that = this;
+
     var url = app.serverUrl + '/mini/order';
 
     my.request({
@@ -91,7 +93,6 @@ Page({
 
          console.log(resdata);
 
-
         if (resdata.data.code == 0) {
 
           var tradeNo = resdata.data.data.aliTradeNo;
@@ -100,12 +101,16 @@ Page({
             tradeNO: tradeNo,
             success: function (res) {  
 
-              
+              my.navigateTo({
+                url: '/pages/success-tips/success-tips'
+              });
               
             },
             fail: function (res) {
 
-             
+              my.navigateTo({
+                url: '/pages/error-tips/error-tips'
+              });
             },
           });
 

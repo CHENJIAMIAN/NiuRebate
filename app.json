@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/error-tip/error-tip",
     "pages/success-tip/success-tip",
     "pages/shop-home/shop-home",
-    "pages/index/index",
     "pages/mine/mine",
     "pages/vip-invite/vip-invite",
     "pages/GetUserBase/GetUserBase",
@@ -19,7 +19,7 @@
     "defaultTitle": "老牛返利"
   },
   "tabBar": {
-    "textColor": "#333333",
+    "textColor": "#333333", 
     "selectedColor": "#009D9A",
     "backgroundColor": "#ffffff",
     "items": [

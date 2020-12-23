@@ -17,7 +17,7 @@
           </text>
         </view>
       </view>
-      <image class="img-yqyl" src="/assets/img/yqyl.png"/>
+      <image  onTap="shareToFriends" class="img-yqyl" src="/assets/img/yqyl.png"/>
     </view>
     <!-- 会员卡 -->
     <view class="flex-content user-card-container">
@@ -50,13 +50,13 @@
     <!-- 已返利 -->
     <view>
       <view class="txt-yfl">已返利
-        <text class="txt-bold-DDIN txt-51" style="margin:0 17rpx;">0.78</text>元
+        <text class="txt-bold-DDIN txt-51" style="margin:0 17rpx;">{{stat.fanli}}</text>元
       </view>
       <view class="flex-between greenbg-bar">
         <view>
           <image class="img-29" style="transform: translateY(2rpx);" src="/assets/img/jlj.png"/>
           <text style="margin-left:23rpx;">奖励金</text>
-          <text class="txt-bold-DDIN txt-32" style="margin-left:18rpx;">0.12</text>
+          <text class="txt-bold-DDIN txt-32" style="margin-left:18rpx;">{{stat.bounty}}</text>
         </view>
         <view class="green">
         马上提现

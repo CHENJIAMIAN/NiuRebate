@@ -2,7 +2,10 @@
   <view class="flex-content-v" style="height:100vh">
     <icon type="success" size="60"/>
     <view class="txt-ccl">
-      支付成功
+      支付成功, {{time}}秒后返回...
+    </view>
+     <view class="txt-ccl">
+         <button type="primary"  onTap="go" >马上返回</button>
     </view>
   </view>
 </view>

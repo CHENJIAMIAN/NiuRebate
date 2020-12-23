@@ -3,7 +3,7 @@
     <icon type="info" size="60" color="#2ABF9F"/>
     <!-- <image class="img-cc" src="/assets/img/cc.png"/> -->
     <view class="txt-ccl">
-      出错啦
+      出错啦, {{time}}秒后返回...
     </view>
   </view>
 </view>
