@@ -42,6 +42,11 @@ Page({
   onLoad() {
   }, 
 
+  onShow() {
+    // 页面显示
+    
+  },
+
   onReady() {
 
     var that = this;

@@ -2,7 +2,7 @@
   <view class="flex-content-v" style="height:100vh">
     <image class="img-cc" src="/assets/img/cc.png"/>
     <view class="txt-ccl">
-      出错啦
+      出错啦, {{time}}秒后返回...
     </view>
   </view>
 </view>

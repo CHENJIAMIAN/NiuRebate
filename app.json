@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/error-tip/error-tip",
     "pages/success-tip/success-tip",
     "pages/shop-home/shop-home",
-    "pages/index/index",
     "pages/mine/mine",
     "pages/vip-invite/vip-invite",
     "pages/GetUserBase/GetUserBase",
