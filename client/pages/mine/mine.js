@@ -3,60 +3,28 @@ var app = getApp();
 Page({
   data: {
     isVIP:false,
+    stat: {},
     listData: [
       {
-        laizi: "小明",
-        time: "12月11日18：40",
-        fanli: "85.00",
-        xiaofei: "98.00",
+        mctAvatar:'',
+        mctShopName: "小红",
+        requestTime: "12月12日18：40",
+        fanli: "45.00",
+        amount: "58.00",
       },
       {
-        laizi: "小红",
-        time: "12月12日18：40",
+        mctAvatar:'',
+        mctShopName: "小红",
+        requestTime: "12月12日18：40",
         fanli: "45.00",
-        xiaofei: "58.00",
+        amount: "58.00",
       },
       {
-        laizi: "小红",
-        time: "12月12日18：40",
+        mctAvatar:'',
+        mctShopName: "小红",
+        requestTime: "12月12日18：40",
         fanli: "45.00",
-        xiaofei: "58.00",
-      },
-      {
-        laizi: "小红",
-        time: "12月12日18：40",
-        fanli: "45.00",
-        xiaofei: "58.00",
-      },
-      {
-        laizi: "小红",
-        time: "12月12日18：40",
-        fanli: "45.00",
-        xiaofei: "58.00",
-      },
-      {
-        laizi: "小红11",
-        time: "12月12日18：40",
-        fanli: "45.00",
-        xiaofei: "58.00",
-      },
-      {
-        laizi: "小红12",
-        time: "12月12日18：40",
-        fanli: "45.00",
-        xiaofei: "58.00",
-      },
-      {
-        laizi: "小红13",
-        time: "12月12日18：40",
-        fanli: "45.00",
-        xiaofei: "58.00",
-      },
-      {
-        laizi: "小红14",
-        time: "12月12日18：40",
-        fanli: "45.00",
-        xiaofei: "58.00",
+        amount: "58.00",
       }
     ],
     hasContent: false,
@@ -204,12 +172,16 @@ Page({
         console.log(resdata);
 
         if (resdata.data.code == 0) {
-         
-          this.setData({
-            hasContent:true
-          });
+        
           
           var bean = resdata.data.data;
+          this.setData({
+            hasContent:true,
+            listData: bean.list,
+            stat: bean.stat
+          });
+          
+
           
         } else if (resdata.data.code == 10){
           

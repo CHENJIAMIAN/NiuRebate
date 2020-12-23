@@ -52,24 +52,24 @@
       <!--  -->
       <!--<scroll-view scroll-y="{{true}}" style="height: 200px;" onScroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}"> -->
       <view class="flex-content recommend-list-item" a:for="{{listData}}">
-        <image class="image-tx" src="../../assets/img/cardbg.png"/>
+        <image class="image-tx" src="{{item.mctAvatar}}"/>
         <view class="txt-group1">
           <view class="txt-medium">
-      转账来自{{item.laizi}}
+            {{item.mctShopName}} 
           </view>
-          <view class="txt-tinyest-tip" style="margin-top:10rpx;">
-         {{item.time}}
+          <view class="txt-tinyest-tip" style="margin-top:10rpx;"> 
+         {{item.requestTime}}
           </view>
         </view>
         <view class="txt-group3">
           <view class="txt-fl">
             返利：
             <text style="font-size: 32rpx;">
-            +{{item.fanli}}
-            </text>
+            {{item.fanli}}元
+            </text> 
           </view>
           <view class="txt-tinyest-tip" style="margin-top:10rpx;">
-          消费：{{item.xiaofei}}
+          消费：{{item.amount}}元
           </view>
         </view>
         <view class="btm-line">
