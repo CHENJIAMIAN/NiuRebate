@@ -1,6 +1,7 @@
 <view>
   <view class="flex-content-v" style="height:100vh">
-    <image class="img-cc" src="/assets/img/cc.png"/>
+    <icon type="info" size="60" color="#2ABF9F"/>
+    <!-- <image class="img-cc" src="/assets/img/cc.png"/> -->
     <view class="txt-ccl">
       出错啦
     </view>
