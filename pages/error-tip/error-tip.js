@@ -1,5 +1,7 @@
 Page({
-  data: {},
+  data: {
+    time:10
+  },
   onLoad() {
     this.setTime();
   },
