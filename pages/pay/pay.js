@@ -7,6 +7,7 @@ Page({
     discount:0.0,
     realTimeRate:0.0,
     bountyRate:0.0,
+    fanli:0.0,
     img: 'https://gw.alipayobjects.com/mdn/rms_eb2664/afts/img/A*bFuBQZuNErMAAAAAAAAAAABkARQnAQ',
     amountValue: "",
     discountValue: "",
@@ -22,7 +23,8 @@ Page({
       discount: query.discount,
       realTimeRate: query.realTimeRate,
       bountyRate: query.bountyRate,
-      img: query.img
+      img: query.img,
+      fanli: query.fanli
     });
   },
   onInput(e) {
@@ -82,7 +84,7 @@ Page({
       url: url,
       method: 'POST',
       data: {
-        buyerId: app.globalData.userId,
+        memberId: app.globalData.memberId,
         merchantId: this.data.id,
         amount: this.data.amountValue
       },

@@ -15,7 +15,7 @@
   font-display: swap;
 }
 
-:root {
+:root { 
   --am-search-searchicon-color: #2FBEA0;
 }
 

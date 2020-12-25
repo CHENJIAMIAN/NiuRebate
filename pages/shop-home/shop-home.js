@@ -98,6 +98,7 @@ Page({
           + '&realTimeRate=' + this.data.realTimeRate
           + '&bountyRate=' + this.data.bountyRate
           + '&img=' + this.data.img
+          + '&fanli=' + this.data.fanli
     });
 
   },

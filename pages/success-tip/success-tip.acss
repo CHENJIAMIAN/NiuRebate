@@ -1,3 +1,8 @@
+
+page {
+  background: white;
+}
+
 .img-cc {
   width: 256rpx;
   height: 256rpx;
@@ -7,4 +12,22 @@
   line-height: 100rpx;
   color: #108ee9;
   font-size: 40rpx;
+}
+
+.btn-ccl {
+  line-height: 100rpx;
+  color: #108ee9;
+  font-size: 28rpx;
+}
+
+.img-tx {
+  border-radius: 50%;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.btm-line {
+  height: 1px;
+  background: lightgray;
+  margin: 20rpx 0;
 }

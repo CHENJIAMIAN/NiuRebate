@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/success-tip/success-tip",
     "pages/index/index",
     "pages/error-tip/error-tip",
-    "pages/success-tip/success-tip",
     "pages/shop-home/shop-home",
     "pages/mine/mine",
     "pages/vip-invite/vip-invite",
@@ -11,7 +11,6 @@
     "pages/pay/pay",
     "pages/UserInfo/UserInfo",
     "pages/home/home",
-    "pages/share/share",
     "pages/my-invite/my-invite"
 
   ],

@@ -1,10 +1,14 @@
 
 Page({
   data: {
-    time:5
+    shopName:'',
+    avatar:'',
+    tradeNo:'',
+    amount:'',
+    time:10
   },
   onLoad() {
-    this.setTime();
+    // this.setTime();
   },
 
   setTime(){

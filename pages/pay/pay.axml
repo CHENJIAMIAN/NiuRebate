@@ -7,7 +7,7 @@
       <view style="flex-grow:1;margin-left:30rpx;">
         <view class="txt-36">{{name}}</view>
         <view class="txt-24-gray" style="margin-top:14rpx;">买单后返利
-          <text class="orange">10.50%</text></view>
+          <text class="orange">{{fanli}}%</text></view>
       </view>
       <view style="text-align:center;" onTap="payCode">
         <image class="img-fkm" src="/assetsfkm2.png"/>

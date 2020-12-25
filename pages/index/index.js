@@ -120,10 +120,14 @@ Page({
             success: function(resdata) {
 
               if (resdata.data.data.userId) {
-
                 app.globalData.userId = resdata.data.data.userId;
-
               }
+
+              if (resdata.data.data.memberId) {
+                app.globalData.memberId = resdata.data.data.memberId;
+              }
+
+              
 
             },
             fail: function (resdata) {

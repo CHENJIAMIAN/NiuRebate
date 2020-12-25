@@ -5,6 +5,7 @@ App({
 
   globalData: {
     hasLogin: false,
+    memberId:'',
     userId: '',
     longitude: '',
     latitude: '',
