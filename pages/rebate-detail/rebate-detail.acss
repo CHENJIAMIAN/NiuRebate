@@ -1,0 +1,26 @@
+.container {
+  padding: 60rpx 30rpx;
+}
+
+.orange {
+  color: #FF8400;
+}
+
+.blue {
+  color: rgb(16, 142, 233);
+}
+.txt-verybig-bold{
+  font-size: 60rpx;
+  font-weight: bold;
+}
+
+.txt-circle-blue{
+  border-radius: 50%;
+  background: rgb(16, 142, 233);
+  color: white;
+  padding: 10rpx 12rpx;
+}
+.gap{
+  height: 1px;
+  background: #fafafa;
+}

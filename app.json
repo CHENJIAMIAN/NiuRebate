@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/rebate-detail/rebate-detail",
     "pages/index/index",
     "pages/error-tip/error-tip",
     "pages/success-tip/success-tip",
@@ -11,16 +12,16 @@
     "pages/pay/pay",
     "pages/UserInfo/UserInfo",
     "pages/home/home",
-    "pages/my-invite/my-invite"
-
+    "pages/my-invite/my-invite",
+    "pages/rebate-detail/rebate-detail"
   ],
   "window": {
     "defaultTitle": "老牛返利"
   },
   "tabBar": {
-    "textColor": "#333333", 
+    "textColor": "#333333",
     "selectedColor": "#009D9A",
-    "backgroundColor": "#ffffff", 
+    "backgroundColor": "#ffffff",
     "items": [
       {
         "pagePath": "pages/index/index",
