@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/rebate-detail/rebate-detail",
+    "pages/my-invite/my-invite",
     "pages/index/index",
+    "pages/rebate-detail/rebate-detail",
     "pages/error-tip/error-tip",
     "pages/success-tip/success-tip",
     "pages/shop-home/shop-home",
@@ -12,7 +13,6 @@
     "pages/pay/pay",
     "pages/UserInfo/UserInfo",
     "pages/home/home",
-    "pages/my-invite/my-invite",
     "pages/rebate-detail/rebate-detail"
   ],
   "window": {

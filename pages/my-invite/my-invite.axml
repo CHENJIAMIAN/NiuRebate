@@ -1,11 +1,23 @@
- <view>
-      <view class="flex-content near-fullheight">
-        <image class="image-zwkt" src="../../assets/img/zwkt.png"/>
-      </view>
-      <view class="flex-content">
-        <text class="tip-text">{{'独乐乐不如众乐乐'}}</text>  
-      </view>
-      <view class="btn-section flex-content">
-        <button type="primary"  onTap="shareToFriends" >邀请好友开卡</button>
-      </view>
+<view>
+  <block a:if="{{!hasRecord}}">
+    <view class="flex-content near-fullheight">
+      <image class="image-zwkt" src="/assets/img/zwkt.png"/>
     </view>
+    <view class="flex-content">
+      <text class="tip-text">{{'独乐乐不如众乐乐'}}</text>
+    </view>
+  </block>
+  <block v-else>
+    <list>
+      <view slot="header">
+   推荐记录
+      </view>
+      <list-item a:for="{{[{},{}]}}" thumb="{{img}}" arrow="{{true}}" onClick="onItemClick" upperSubtitle="" lowerSubtitle="创建时间">
+   昵称
+      </list-item>
+    </list>
+  </block>
+  <view class="btn-section flex-content">
+    <button type="primary" onTap="shareToFriends">邀请好友开卡</button>
+  </view>
+</view>

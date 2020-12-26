@@ -33,3 +33,13 @@
   color: #666666;
   line-height: 34rpx;
 }
+
+.image-tx{
+  border-radius: 50%;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.am-auto-sizer-content{
+  border-radius: 50%;
+}
