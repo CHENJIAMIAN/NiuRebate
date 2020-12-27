@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/my-invite/my-invite",
     "pages/index/index",
+    "pages/my-invite/my-invite",
     "pages/rebate-detail/rebate-detail",
     "pages/error-tip/error-tip",
     "pages/success-tip/success-tip",
