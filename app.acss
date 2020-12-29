@@ -15,7 +15,7 @@
   font-display: swap;
 }
 
-:root { 
+:root {
   --am-search-searchicon-color: #2FBEA0;
 }
 
@@ -24,11 +24,11 @@ page {
   background: white;
 }
 
-button {
+/* button[type=primary] {//不支持
   background: linear-gradient(-27deg, #2DC2A2, #2CC0A0);
   border-radius: 49px;
   border-color: #2DC2A2;
-}
+} */
 
 /* .
 .flex-between {
@@ -80,6 +80,10 @@ button {
   flex-direction: column;
   justify-items: center;
   justify-content: space-around;
+}
+
+.flex-align-center {
+  align-items: center;
 }
 
 /* flex end */

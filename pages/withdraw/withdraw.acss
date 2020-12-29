@@ -1,0 +1,8 @@
+.am-auto-sizer-content {
+  border-radius: 50%;
+}
+
+.am-button {
+  background: white;
+  color: #2FBEA0;
+}

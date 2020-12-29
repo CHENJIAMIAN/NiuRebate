@@ -1,0 +1,33 @@
+<view>
+  <view class="flex-around-v flex-align-center" style="height:350rpx;background:#2FBEA0;color:white;padding:40rpx 0;">
+    <view>
+      可提现
+    </view>
+    <view style="font-size:80rpx;">
+      ￥0
+    </view>
+    <view style="font-size:12px;">
+      当前可以领取的佣金
+    </view>
+    <button type="primary" onTap="">
+      提现
+    </button>
+  </view>
+  <list>
+    <view slot="header" style="font-weight:bold;font-size:35rpx;color:black;">
+				提现记录
+    </view>
+    <list-item a:for="{{[{},{}]}}" thumb="{{img}}" thumbSize="60" arrow="{{false}}" onClick="onItemClick" lowerSubtitle="">
+   碧桂园创新小镇
+      <view slot="afterUpperSubtitle" style="font-size:14px;">
+   2020年12月29日17点42分
+      </view>
+      <view slot="extra" class="txt-extra" style="font-size:16px">
+        <view style="color:#2FBEA0;">返利:0.04元
+        </view>
+        <view style="margin-top:10rpx;">消费:0.02元
+        </view>
+      </view>
+    </list-item>
+  </list>
+</view>

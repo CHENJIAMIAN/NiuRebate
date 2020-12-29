@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/withdraw/withdraw",
+    "pages/validate-name/validate-name",
     "pages/index/index",
     "pages/my-invite/my-invite",
     "pages/rebate-detail/rebate-detail",
@@ -12,11 +14,11 @@
     "pages/GetPhoneNumber/GetPhoneNumber",
     "pages/pay/pay",
     "pages/UserInfo/UserInfo",
-    "pages/home/home",
-    "pages/rebate-detail/rebate-detail"
+    "pages/home/home"
   ],
   "window": {
-    "defaultTitle": "老牛返利"
+    "defaultTitle": "老牛返利",
+    "titleBarColor": "#2FBEA0"
   },
   "tabBar": {
     "textColor": "#333333",

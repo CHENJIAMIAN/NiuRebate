@@ -1,0 +1,21 @@
+<view class="container">
+  <container className="container-item" title="" thumb="" onActionTap="titleClick">
+    <view class="item flex-around-v">
+      <view class="item flex-around-v flex-align-center"style="height:300rpx;">
+        <image class="img-tx" src="https://img.alicdn.com/tfs/TB1Go8lh9R26e4jSZFEXXbwuXXa-84-84.png"/>
+        <input placeholder="请输入您的真实姓名" onInput="bindKeyInput"/>
+        <view style="font-size:12px;color:gray;">
+        为保证您能顺利拿到实时返利建议完善
+        </view>
+      </view>
+      <view class="flex-around-v" style="height:250rpx;">
+        <button type="primary" onTap="tapValidate">
+      去校验
+        </button>
+        <button type="ghost" onTap="">
+      返回
+        </button>
+      </view>
+    </view>
+  </container>
+</view>
