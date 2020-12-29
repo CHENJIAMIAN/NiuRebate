@@ -242,4 +242,15 @@ Page({
     });
   },
 
+  goDetail(e){
+
+    const { item } = e.target.dataset;
+
+    my.navigateTo({
+      url: '/pages/rebate-detail/rebate-detail?tradeNo=' + item.tradeNo 
+    });
+
+
+  },
+
 });

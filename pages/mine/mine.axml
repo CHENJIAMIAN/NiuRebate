@@ -75,7 +75,7 @@
       <view class="title">返利明细</view>
       <!--  -->
       <!--<scroll-view scroll-y="{{true}}" style="height: 200px;" onScroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}"> -->
-      <view class="flex-content recommend-list-item" a:for="{{listData}}">
+      <view class="flex-content recommend-list-item" a:for="{{listData}}" data-item={{item}} onTap="goDetail">
         <image class="img-tx" src="{{item.mctAvatar}}"/>
         <view class="txt-group1">
           <view class="txt-medium">
@@ -93,7 +93,7 @@
             </text>
           </view>
           <view class="txt-tinyest-tip" style="margin-top:10rpx;">
-          消费：{{item.amount}}元
+          消费：{{item.amount}}元 
           </view>
         </view>
         <view class="btm-line">
