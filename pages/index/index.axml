@@ -35,8 +35,8 @@
     <!-- main white content area -->
     <view class="main-content">
       <!-- top img -->
-      <swiper class="demo-swiper" previousMargin="5px" nextMargin="5px" indicator-dots="{{true}}" autoplay="{{true}}" vertical="{{false}}" interval="{{5000}}" circular="{{true}}" duration="{{1000}}" indicator-active-color="#2DC2A2">
-        <swiper-item key="swiper-item-{{index}}" a:for="{{imgs}}">
+      <swiper class="demo-swiper" previousMargin="0px" nextMargin="0px" indicator-dots="{{true}}" autoplay="{{true}}" vertical="{{false}}" interval="{{5000}}" circular="{{true}}" duration="{{1000}}" indicator-active-color="#2DC2A2">
+        <swiper-item key="swiper-item-{{index}}" a:for="{{imgs}}" >
           <view class="flex-content swiper-item">
             <image class="img-top" src="{{img}}"/>
           </view>

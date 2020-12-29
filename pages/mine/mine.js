@@ -172,7 +172,7 @@ Page({
       }, 
       success: (resdata) => {
 
-        my.hideLoading();
+        my.hideLoading(); 
 
         console.log(resdata);
 
