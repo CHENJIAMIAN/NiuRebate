@@ -1,0 +1,35 @@
+<view class="am-amount pay-input {{className}}">
+  <wb size="32">
+    <view class="am-amount-title-container" a:if="{{title}}">
+      <view class="am-amount-title">
+        {{title}}
+        <text class="am-amount-title-tip">{{titleTip}}</text>
+      </view>
+      <slot a:if="{{hasExtraText}}" name="titleRight">
+        <view slot="titleRight" class="am-amount-title-right" onTap="onTapExtra">{{extraText}}</view>
+      </slot>
+    </view>
+    <view class="am-amount-input">
+      <view a:if="{{hasMoneySymbol}}" class="am-amount-symbol">¥</view>
+      <input
+        type="digit"
+        maxlength="{{maxLength}}"
+        class="am-amount-value"
+        value="{{repayAmount}}"
+        focus="{{focus}}"
+        onInput="onInput"
+        onConfirm="onConfirm"
+        onFocus="onFocus"
+        onBlur="handleBlur"
+        placeholder="{{placeholder}}"
+        controlled="{{true}}"
+        disabled="{{disabled}}"
+        underlineColorAndroid="transparent"
+      />
+      <view a:if="{{hasClear}}" onTap="onClearTap"
+            class="pay-input-fix am-amount-clear {{repayAmount.length > 0 && focus ? 'visible' : ''}}">
+        <icon type="clear" size="22" />
+      </view>
+    </view>
+  </wb>
+</view>
