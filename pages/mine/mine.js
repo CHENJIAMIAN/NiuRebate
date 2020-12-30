@@ -172,7 +172,7 @@ Page({
       }, 
       success: (resdata) => {
 
-        my.hideLoading();
+        my.hideLoading(); 
 
         console.log(resdata);
 
@@ -240,6 +240,17 @@ Page({
     my.navigateTo({
       url: '/pages/my-invite/my-invite'
     });
+  },
+
+  goDetail(e){
+
+    const { item } = e.target.dataset;
+
+    my.navigateTo({
+      url: '/pages/rebate-detail/rebate-detail?tradeNo=' + item.tradeNo 
+    });
+
+
   },
 
 });

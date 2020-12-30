@@ -223,7 +223,7 @@
 }
 
 .swiper-item{
-  margin:10rpx;
+  margin:0rpx;
 }
 
 
