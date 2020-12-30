@@ -6,3 +6,9 @@
   background: white;
   color: #2FBEA0;
 }
+
+.custom-input {
+  background: #ffffff0d;
+  color: white;
+  width: 250rpx;
+}

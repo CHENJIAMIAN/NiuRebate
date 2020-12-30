@@ -1,0 +1,102 @@
+.am-amount {
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 32rpx;
+}
+
+.am-amount-title-container {
+  display: flex;
+  align-items: center;
+}
+
+.am-amount-title {
+  height: 48rpx;
+  line-height: 48rpx;
+  color: wheat;
+  font-size: 32rpx;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.am-amount-title-tip {
+  font-size: 26rpx;
+  line-height: 26rpx;
+  color: white;
+  margin-left: 16rpx;
+}
+
+.am-amount-title-right {
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: wheat;
+}
+
+.am-amount-input {
+  /* padding: 16rpx 0 28rpx 0; */
+  display: flex;
+  align-items: flex-end;
+  font-size: 10rpx;
+  height: 40px;
+}
+
+.am-amount-symbol {
+  width: 36rpx;
+  font-size: 40rpx;
+  color: white;
+}
+
+.pay-input .a-input-placeholder {
+  font-size: 40rpx;
+  line-height: 48rpx;
+  font-weight: normal;
+  margin-top: 3px;
+  font-family: "AlipayNumber";
+}
+
+.pay-input .a-input-content {
+  font-family: "AlipayNumber";
+}
+
+.am-amount-value {
+  padding: 0 0 0 15rpx;
+  box-sizing: border-box;
+  z-index: 2;
+  /* height: 50rpx; */
+  background-color: transparent;
+  font-size: 20rpx;
+  font-weight: 500;
+}
+
+
+.a-input-content {
+  font-size: 60rpx !important;
+  color: white;
+}
+
+.am-amount-clear {
+  visibility: hidden;
+  padding: 6px;
+  z-index: 100;
+}
+
+.pay-input-fix {
+  margin-top: 4px;
+}
+
+.am-amount-clear icon {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}

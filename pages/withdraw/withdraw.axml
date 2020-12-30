@@ -1,12 +1,22 @@
 <view>
-  <view class="flex-around-v flex-align-center" style="height:350rpx;background:#2FBEA0;color:white;padding:40rpx 0;">
+  <view class="flex-around-v flex-align-center" style="height:400rpx;background:#2FBEA0;color:white;padding:40rpx 0;">
     <view>
       可提现
     </view>
     <view style="font-size:80rpx;">
       ￥0
     </view>
-    <button type="primary" onTap="">
+    <pay-input
+      placeholder="请输入提现金额"
+      hasMoneySymbol="{{true}}"
+      hasClear="{{true}}"
+      title=""
+      extraText="预计今天到账"
+      onInput="onMoneyInput"
+      maxLength="10"
+      repayAmount="{{repayInput}}"
+    />
+    <button type="primary" onTap="tapWithDraw">
       提现
     </button>
   </view>
@@ -14,14 +24,12 @@
     <view slot="header" style="font-weight:bold;font-size:35rpx;color:black;">
 				提现记录
     </view>
-    <list-item a:for="{{[{},{}]}}" thumbSize="60" arrow="{{false}}" onClick="onItemClick" lowerSubtitle="">
-      <view slot="afterUpperSubtitle" style="font-size:14px;">
-   2020年12月29日17点42分
+    <list-item a:for="{{[{},{}]}}" thumbSize="60" arrow="{{false}}" onClick="onItemClick" lowerSubtitle="2020年12月29日17点42分">
+      <view slot="afterUpperSubtitle" style="font-size:14px;color:black;margin-bottom:10rpx;">
+   提现<text style="font-size:40rpx;color:#2FBEA0;">{{` 0.04 `}}</text> 元
       </view>
       <view slot="extra" class="txt-extra" style="font-size:16px">
-        <view style="color:#2FBEA0;">提现:0.04元
-        </view>
-        <view style="margin-top:10rpx;">已到账
+        <view style="margin-top:10rpx;color:#2FBEA0;">已到账
         </view>
       </view>
     </list-item>

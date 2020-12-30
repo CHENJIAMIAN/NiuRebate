@@ -17,6 +17,9 @@
 
 :root {
   --am-search-searchicon-color: #2FBEA0;
+  --am-amount-background: transparent;
+  --am-amount-title-color: white;
+  --am-amount-symbol-color: white;
 }
 
 page {
