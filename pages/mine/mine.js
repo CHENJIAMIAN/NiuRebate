@@ -251,6 +251,12 @@ Page({
     });
 
 
-  },
+  }, 
+
+  gowithdraw(){
+     my.navigateTo({
+      url: '/pages/withdraw/withdraw' 
+    });
+  }
 
 });

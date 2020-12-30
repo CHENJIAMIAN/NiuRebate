@@ -58,7 +58,7 @@
           <text style="margin-left:23rpx;">奖励金</text>
           <text class="txt-bold-DDIN txt-32" style="margin-left:18rpx;">{{stat.bounty}}</text>
         </view>
-        <view class="green">
+        <view class="green" onTap="gowithdraw">
         马上提现
           <image class="img-right" src="/assets/img/right.png"/>
         </view>

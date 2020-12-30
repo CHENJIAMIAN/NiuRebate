@@ -221,7 +221,7 @@ Page({
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-      success: (resdata) => {
+      success: (resdata) => { 
         my.hideLoading();
 
         if (resdata.data.code == 0) {

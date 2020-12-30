@@ -18,5 +18,6 @@ Page({
 
   tapValidate(){
     // alert(this.data.inputValue)
+
   }
 });
