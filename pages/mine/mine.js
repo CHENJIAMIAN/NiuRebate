@@ -1,26 +1,27 @@
 var app = getApp();
 
 Page({
+  lastClickTabBarTime: null,
   data: {
-    isVIP:false,
+    isVIP: false,
     stat: {},
     listData: [
       {
-        mctAvatar:'',
+        mctAvatar: '',
         mctShopName: "小红",
         requestTime: "12月12日18：40",
         fanli: "45.00",
         amount: "58.00",
       },
       {
-        mctAvatar:'',
+        mctAvatar: '',
         mctShopName: "小红",
         requestTime: "12月12日18：40",
         fanli: "45.00",
         amount: "58.00",
       },
       {
-        mctAvatar:'',
+        mctAvatar: '',
         mctShopName: "小红",
         requestTime: "12月12日18：40",
         fanli: "45.00",
@@ -31,20 +32,20 @@ Page({
     showPayBtn: false,
     memberId: '',
     userId: '',
-    phone:'',
+    phone: '',
     nickName: '',
     avatar: '',
     memberFlag: '',
     expiryDate: '',
-    needLogin:false
+    needLogin: false
   },
 
   onLoad() {
-  }, 
+  },
 
   onShow() {
     // 页面显示
-    
+
   },
 
   onReady() {
@@ -73,10 +74,10 @@ Page({
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded'
             },
-            success: function(resdata) {
+            success: function (resdata) {
 
               my.hideLoading();
-              
+
               console.log(resdata)
 
               if (resdata.data.data.userId) {
@@ -99,12 +100,12 @@ Page({
 
                 if (resdata.data.data.memberFlag == 0) {
                   that.setData({
-                    isVIP:false,
-                    hasContent:false
+                    isVIP: false,
+                    hasContent: false
                   });
-                }else if (resdata.data.data.memberFlag == 1){
-                    that.setData({
-                    isVIP:true
+                } else if (resdata.data.data.memberFlag == 1) {
+                  that.setData({
+                    isVIP: true
                   });
 
                   that.loadRecord();
@@ -113,7 +114,7 @@ Page({
               } else if (resdata.data.code == 1) {
 
                 that.setData({
-                  needLogin:true
+                  needLogin: true
                 });
 
               } else if (resdata.data.code == 2) {
@@ -145,8 +146,8 @@ Page({
 
   },
 
- 
-  loadRecord(){
+
+  loadRecord() {
 
     let page = 1;
     this.requestFanliData(page);
@@ -169,33 +170,33 @@ Page({
       },
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
-      }, 
+      },
       success: (resdata) => {
 
-        my.hideLoading(); 
+        my.hideLoading();
 
         console.log(resdata);
 
         if (resdata.data.code == 0) {
-        
-          
+
+
           var bean = resdata.data.data;
           this.setData({
-            hasContent:true,
+            hasContent: true,
             listData: bean.list,
             stat: bean.stat
           });
-          
 
-          
-        } else if (resdata.data.code == 10){
-          
+
+
+        } else if (resdata.data.code == 10) {
+
           this.setData({
-            hasContent:false
+            hasContent: false
           });
 
 
-        }else if(resdata.data.code == 7){
+        } else if (resdata.data.code == 7) {
           my.showToast({
             type: 'none',
             content: resdata.data.msg,
@@ -203,7 +204,7 @@ Page({
             success: () => {
             },
           });
-        }else{
+        } else {
           my.showToast({
             type: 'fail',
             content: resdata.data.msg,
@@ -222,7 +223,7 @@ Page({
   },
 
 
-  goPhoneNumber(){ 
+  goPhoneNumber() {
     my.navigateTo({
       url: '/pages/GetPhoneNumber/GetPhoneNumber'
     });
@@ -230,24 +231,24 @@ Page({
   },
 
 
-  goBuyCard(){
+  goBuyCard() {
     my.navigateTo({
       url: '/pages/vip-invite/vip-invite'
     });
   },
 
-  shareToFriends(){
+  shareToFriends() {
     my.navigateTo({
       url: '/pages/my-invite/my-invite'
     });
   },
 
-  goDetail(e){
+  goDetail(e) {
 
     const { item } = e.target.dataset;
 
     my.navigateTo({
-      url: '/pages/rebate-detail/rebate-detail?tradeNo=' + item.tradeNo 
+      url: '/pages/rebate-detail/rebate-detail?tradeNo=' + item.tradeNo
     });
 
 
@@ -257,6 +258,24 @@ Page({
      my.navigateTo({
       url: '/pages/withdraw/withdraw' 
     });
-  }
+  },
 
+
+  // 实现双击回到顶部
+  onTabItemTap(item) {
+    if (!this.lastClickTabBarTime) {
+      this.lastClickTabBarTime = +new Date();
+      return;
+    } else {
+      const current = +new Date();
+      const gap = current - this.lastClickTabBarTime;
+      this.lastClickTabBarTime = current;//用完即取新
+      console.log(gap)
+      if (gap < 500) {
+        item.pagePath == 'pages/mine/mine' && my.pageScrollTo({
+          scrollTop: 0,
+        });
+      }
+    }
+  }
 });

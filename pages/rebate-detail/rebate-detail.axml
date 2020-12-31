@@ -9,15 +9,10 @@
   </view>
   <view class="flex-content txt-verybig-bold" style="margin-top:30rpx;">{{fanli}}元
   </view>
-  <view class="flex-content blue" style="margin-top:20rpx;">即将到账
+  <view class="flex-content orange" style="margin-top:20rpx;">即将到账
   </view>
-  <!-- <view class="flex-between" style="margin-top:30rpx;">
-    <view>平台补贴
-    </view>
-    <view class="orange">待领取
-    </view> -->
-  </view>
-  <view class="flex-between"  style="margin-top:50rpx;">
+  <!--<view class="flex-between" style="margin-top:30rpx;"><view>平台补贴</view><view class="orange">待领取</view></view> -->
+  <view class="flex-between" style="margin-top:50rpx;">
     <view>实时返利(到账支付宝余额)
     </view>
     <view class="orange">{{realTime}}元

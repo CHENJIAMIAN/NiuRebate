@@ -6,74 +6,71 @@
         <image class="image-zwkt" src="../../assets/img/zwkt.png"/>
       </view>
       <view class="flex-content">
-        <text class="tip-text">{{'当前城市暂未开通，敬请期待'}}</text>  
+        <text class="tip-text">{{'当前城市暂未开通，敬请期待'}}</text>
       </view>
       <view class="btn-section flex-content">
-        <button type="primary" onTap="chooseLocation">手动定位</button>
+        <button class="custom-button" type="primary" onTap="chooseLocation">手动定位</button>
       </view>
     </view>
   </block>
-
   <!-- 主页内容 -->
   <view a:else class="container-index">
-    <!-- 本页为透明头，考虑兼容性问题，这里使用固定高度作为顶部占位-->
-    <view style="height: 66px;background:#2DC2A2;"></view>
-    <!-- top bar --> 
-    <view class="top-bar">
-      <!-- postion -->
-      <view>
-        <!--<image class="img-hk" src="/assets/img/hk.png"/> -->
-        <image class="img-dw" src="/assets/img/dw.png"/>
-        <text class="txt-28" style="margin-left:15rpx;" onTap="chooseLocation">
+    <scroll-view scroll-y="{{true}}" onScrollToLower="scrollMytrip" class="schedule-scroll">
+      <!-- 本页为透明头，考虑兼容性问题，这里使用固定高度作为顶部占位-->
+      <view style="height: 66px;background:#2DC2A2;"></view>
+      <!-- top bar -->
+      <view class="top-bar">
+        <!-- postion -->
+        <view>
+          <!--<image class="img-hk" src="/assets/img/hk.png"/> -->
+          <image class="img-dw" src="/assets/img/dw.png"/>
+          <text class="txt-28" style="margin-left:15rpx;" onTap="chooseLocation">
           {{position}}...
-        </text>
-        <image class="img-xl" src="/assets/img/xl.png" style="margin-left:18rpx;" onTap="chooseLocation"/>
+          </text>
+          <image class="img-xl" src="/assets/img/xl.png" style="margin-left:18rpx;" onTap="chooseLocation"/>
+        </view>
+        <!-- search -->
+        <search-bar value="{{searchValue}}" placeholder="支付拿返利！" showCancelButton="{{false}}" />
       </view>
-      <!-- search -->
-      <search-bar value="{{searchValue}}" placeholder="支付拿返利！" showCancelButton="{{false}}" />
-    </view>
-    <!-- main white content area -->
-    <view class="main-content">
-      <!-- top img -->
-      <swiper class="demo-swiper" previousMargin="0px" nextMargin="0px" indicator-dots="{{true}}" autoplay="{{true}}" vertical="{{false}}" interval="{{5000}}" circular="{{true}}" duration="{{1000}}" indicator-active-color="#2DC2A2">
-        <swiper-item key="swiper-item-{{index}}" a:for="{{imgs}}" >
-          <view class="flex-content swiper-item">
-            <image class="img-top" src="{{img}}"/>
+      <!-- main white content area -->
+      <view class="main-content">
+        <!-- top img -->
+        <swiper class="demo-swiper" previousMargin="0px" nextMargin="0px" indicator-dots="{{true}}" autoplay="{{true}}" vertical="{{false}}" interval="{{5000}}" circular="{{true}}" duration="{{1000}}" indicator-active-color="#2DC2A2">
+          <swiper-item key="swiper-item-{{index}}" a:for="{{imgs}}">
+            <view class="flex-content swiper-item">
+              <image class="img-top" src="{{img}}"/>
+            </view>
+          </swiper-item>
+        </swiper>
+        <!-- notify bar -->
+        <view class="notify-bar">
+          <image class="img-tz" src="/assets/img/tz2.png"/>
+          <text class="txt-24 orange" style="margin-left:20rpx;">在国诚C消费后赚了5.53元</text>
+        </view>
+        <!-- pay bar -->
+        <view class="pay-bar" hidden="true">
+          <view class="img-btn" onTap="alipayScan">
+            <image class="image-sm" src="/assets/img/sm.png"/>
+            <view class="txt-28" style="margin-top:16rpx;">扫一扫
+            </view>
           </view>
-        </swiper-item>
-      </swiper>
-      <!-- notify bar -->
-      <view class="notify-bar">
-        <image class="img-tz" src="/assets/img/tz2.png"/>
-        <text class="txt-24 orange" style="margin-left:20rpx;">在国诚C消费后赚了5.53元</text>
-      </view>
-      <!-- pay bar -->
-      <view class="pay-bar" hidden="true" >
-        <view class="img-btn" onTap="alipayScan">
-          <image class="image-sm" src="/assets/img/sm.png"/>
-          <view class="txt-28" style="margin-top:16rpx;">
-        扫一扫
+          <view class="split-line-vertical">
+          </view>
+          <view class="img-btn" onTap="payCode">
+            <image class="image-sm" src="/assets/img/fkm.png"/>
+            <view class="txt-28" style="margin-top:16rpx;">付款码
+            </view>
           </view>
         </view>
-        <view class="split-line-vertical">
-        </view>
-        <view class="img-btn" onTap="payCode">
-          <image class="image-sm" src="/assets/img/fkm.png"/>
-          <view class="txt-28" style="margin-top:16rpx;">
-      付款码
-          </view>
-        </view>
-      </view>
-      <!-- tab bar -->
-      <view>
-        <tabs tabs="{{tabs}}" tabsName="activeTab" onTabClick="handleTabClick" onChange="handleTabChange" activeTab="{{activeTab}}" showPlus="{{false}}" swipeable="{{false}}" capsule="{{false}}" hasSubTitle="{{true}}" tabBarUnderlineWidth="20px" stickyBar="{{true}}" tabBarActiveTextColor="#FF8400" tabBarInactiveTextColor="#666666" tabBarActiveSubTextColor="#FF8400" tabBarSubTextColor="#666666">
-          <block a:for="{{tabs}}">
-            <tab-content key="{{index}}" tabId="{{index}}" activeTab="{{activeTab}}" a:if="{{index === 0}}">
-              <view class="tab-content">
-                <view class="schedule-container">
-                  <scroll-view scroll-y="{{true}}" onScrollToLower="scrollMytrip" class="schedule-scroll">
+        <!-- tab bar -->
+        <view>
+          <tabs tabs="{{tabs}}" tabsName="activeTab" onTabClick="handleTabClick" onChange="handleTabChange" activeTab="{{activeTab}}" showPlus="{{false}}" swipeable="{{false}}" capsule="{{false}}" hasSubTitle="{{true}}" tabBarUnderlineWidth="20px" stickyBar="{{true}}" tabBarActiveTextColor="#FF8400" tabBarInactiveTextColor="#666666" tabBarActiveSubTextColor="#FF8400" tabBarSubTextColor="#666666">
+            <block a:for="{{tabs}}">
+              <tab-content key="{{index}}" tabId="{{index}}" activeTab="{{activeTab}}" a:if="{{index === 0}}">
+                <view class="tab-content">
+                  <view class="schedule-container">
                     <!-- tj card -->
-                    <view class="tj-card" a:for="{{list}}" data-item={{item}} onTap="goShopDetail" >
+                    <view class="tj-card" a:for="{{list}}" data-item={{item}} onTap="goShopDetail">
                       <image class="img-tj" src="{{item.img}}"/>
                       <view class="tj-card-txts">
                         <view class="txt-32-bold">{{item.name}}</view>
@@ -90,23 +87,22 @@
                       <view class="bounce3 bounce"></view>
                       <view style="margin:20rpx 0 0 20rpx;color:#666666;">加载中...</view>
                     </view>
-                  </scroll-view>
+                  </view>
                 </view>
-              </view>
-            </tab-content>
-            <tab-content key="{{index}}" tabId="{{index}}" activeTab="{{activeTab}}" a:elif="{{index === 1}}">
-            </tab-content>
-            <tab-content key="{{index}}" tabId="{{index}}" activeTab="{{activeTab}}" a:elif="{{index === 2}}">
-              <view class="tab-content">{{item.title}}</view>
-            </tab-content>
-            <tab-content key="{{index}}" tabId="{{index}}" activeTab="{{activeTab}}" a:else>
-              <view class="tab-content">{{item.title}}</view>
-            </tab-content>
-          </block>
-        </tabs>
+              </tab-content>
+              <tab-content key="{{index}}" tabId="{{index}}" activeTab="{{activeTab}}" a:elif="{{index === 1}}">
+              </tab-content>
+              <tab-content key="{{index}}" tabId="{{index}}" activeTab="{{activeTab}}" a:elif="{{index === 2}}">
+                <view class="tab-content">{{item.title}}</view>
+              </tab-content>
+              <tab-content key="{{index}}" tabId="{{index}}" activeTab="{{activeTab}}" a:else>
+                <view class="tab-content">{{item.title}}</view>
+              </tab-content>
+            </block>
+          </tabs>
+        </view>
       </view>
-    </view>
-    <pay-button/>
+      <pay-button/>
+      </view>
+    </scroll-view>
   </view>
-
-</view>

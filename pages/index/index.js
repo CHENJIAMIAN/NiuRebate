@@ -36,13 +36,14 @@ const mockData = [{
 // mock列表总数
 const mockTotal = 60;
 
-Page({ 
+Page({
+  lastClickTabBarTime: null,
   data: {
-    position:'',
-    imgs: [0,1,2,3],
+    position: '',
+    imgs: [0, 1, 2, 3],
     img: 'https://gw.alipayobjects.com/mdn/rms_eb2664/afts/img/A*bFuBQZuNErMAAAAAAAAAAABkARQnAQ',
     tjListData: [
-      
+
     ],
     showIndexPage: true,
     gotoLocation: true,
@@ -83,10 +84,10 @@ Page({
       },
     ],
     activeTab: 0,
-  }, 
+  },
   onLoad(query) {
     // 页面加载
-    console.log("##########"+query.shareUserId);
+    console.log("##########" + query.shareUserId);
     console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
     // my.pageScrollTo({
     //   scrollTop: parseInt(600),
@@ -117,7 +118,7 @@ Page({
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded'
             },
-            success: function(resdata) {
+            success: function (resdata) {
 
               if (resdata.data.data.userId) {
                 app.globalData.userId = resdata.data.data.userId;
@@ -127,11 +128,11 @@ Page({
                 app.globalData.memberId = resdata.data.data.memberId;
               }
 
-              
+
 
             },
             fail: function (resdata) {
-            
+
             }
           });
 
@@ -173,7 +174,7 @@ Page({
       fail() {
         my.hideLoading();
       },
-    }) 
+    })
   },
   onShow() {
     // 页面显示
@@ -216,7 +217,7 @@ Page({
         longitude: longitude,
         latitude: latitude,
         cityName: cityName,
-        page:page
+        page: page
       },
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -225,7 +226,7 @@ Page({
         my.hideLoading();
 
         if (resdata.data.code == 0) {
-          this.setData({ gotoLocation: false }); 
+          this.setData({ gotoLocation: false });
 
           console.log(resdata);
 
@@ -253,8 +254,8 @@ Page({
           //   tjListData: this.data.tjListData.concat(dataList)
           // });
 
-          
-        } else if (resdata.data.code == 6){
+
+        } else if (resdata.data.code == 6) {
           this.setData({ gotoLocation: true });
           my.showToast({
             type: 'fail',
@@ -264,7 +265,7 @@ Page({
             },
           });
 
-        }else if(resdata.data.code == 7){
+        } else if (resdata.data.code == 7) {
           this.setData({ show: false });
           my.showToast({
             type: 'none',
@@ -280,7 +281,7 @@ Page({
       }
     });
 
-  }, 
+  },
 
 
   chooseLocation() {
@@ -292,17 +293,26 @@ Page({
         app.globalData.longitude = res.longitude;
         app.globalData.latitude = res.latitude;
         app.globalData.cityName = res.cityName;
-        app.globalData.district = res.name; 
+        app.globalData.district = res.name;
         that.setData({
           position: res.name
         });
 
         my.showLoading();
- 
-        //清空列表数据
-        that.setData({tjListData:[]});
 
-        that.requestMerchantData(res.longitude, res.latitude, res.cityName);
+
+        let page = 1;
+        let list = []; 
+
+        //清空列表数据
+        this.setData({
+              list, 
+              page,
+              show: false
+            });
+
+
+        that.requestMerchantData(res.longitude, res.latitude, res.cityName, page);
 
       },
       fail: (error) => {
@@ -334,7 +344,7 @@ Page({
 
   /**
  * scroll-view滑到底部触发事件
- * @method scrollMytrip
+ * @method scrollMytrip 
  */
   async scrollMytrip() {
     console.log('scrollMytrip')
@@ -342,19 +352,19 @@ Page({
       const { page, list, } = this.data;
       // 判断是否还有数据需要加载 
       // if (list.length < mockTotal) {
-        this.setData({ show: true });
-        const newPage = page + 1;
+      this.setData({ show: true });
+      const newPage = page + 1;
 
-        console.log(newPage);
+      console.log(newPage);
 
-        this.requestMerchantData(app.globalData.longitude, app.globalData.latitude, app.globalData.cityName, newPage);
+      this.requestMerchantData(app.globalData.longitude, app.globalData.latitude, app.globalData.cityName, newPage);
 
-        // this.mySchedulde(newPage);
+      // this.mySchedulde(newPage);
       // }
     } catch (e) {
       this.setData({ show: false });
       console.log('scrollMytrip执行异常:', e);
-    } 
+    }
   },
   /**
    * 模拟请求服务端查询数据并渲染页面
@@ -383,11 +393,29 @@ Page({
   },
 
 
-  goShopDetail(e){
+  goShopDetail(e) {
     const { item } = e.target.dataset;
     my.navigateTo({
-      url: `/pages/shop-home/shop-home?id=${item.id}` 
+      url: `/pages/shop-home/shop-home?id=${item.id}`
     });
+  },
+
+  // 实现双击回到顶部
+  onTabItemTap(item) {
+    if (!this.lastClickTabBarTime) {
+      this.lastClickTabBarTime = +new Date();
+      return;
+    } else {
+      const current = +new Date();
+      const gap = current - this.lastClickTabBarTime;
+      this.lastClickTabBarTime = current;//用完即取新
+      console.log(gap)
+      if (gap < 500) {
+        item.pagePath == 'pages/index/index' && my.pageScrollTo({
+          scrollTop: 0,
+        });
+      }
+    }
   }
 
 });

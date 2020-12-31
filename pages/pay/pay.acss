@@ -105,6 +105,7 @@
   background: linear-gradient(-27deg, #2DC2A2, #2CC0A0);
   border-radius: 8rpx;
   color: white !important;
+  border: none;
 }
 
 .opacity03 {

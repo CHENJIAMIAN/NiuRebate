@@ -1,108 +1,108 @@
 <view>
-  <view hidden="{{needLogin}}" class="user-top-container">
-    <!-- 用户信息 -->
-    <view class="user-info">
-      <view class="user-icon">
-        <image class="img-yh" src="/assets/img/yh.png"/>
-      </view>
-      <view class="txt-group1">
-        <view class="txt-sjh">
+  <scroll-view scroll-y="{{true}}" onScrollToLower="scrollMytrip" class="schedule-scroll">
+    <view hidden="{{needLogin}}" class="user-top-container">
+      <!-- 用户信息 -->
+      <view class="user-info">
+        <view class="user-icon">
+          <image class="img-yh" src="/assets/img/yh.png"/>
+        </view>
+        <view class="txt-group1">
+          <view class="txt-sjh">
           {{phone}}
-        </view>
-        <view class="txt-tiny-tip">
-          <image class="img-zs" src="/assets/img/zs.png"/>
-          <text style="margin-left: 15rpx;">
-            <text a:if="{{!isVIP}}">您还不是会员</text>
-            <text a:else>{{memberId}}</text>
-          </text>
-        </view>
-      </view>
-      <image  onTap="shareToFriends" class="img-yqyl" src="/assets/img/yqyl.png"/>
-    </view>
-    <!-- 会员卡 -->
-    <view class="flex-content user-card-container">
-      <view class="user-card">
-        <view class="txt-group2">
-          <view class="txt-dnvip">
-      老牛VIP
           </view>
           <view class="txt-tiny-tip">
-            <text a:if="{{!isVIP}}">用支付宝支付就有返利</text>
-            <text a:else>有效日期至{{expiryDate}}</text>
-          </view>
-        </view>
-        <button a:if="{{!isVIP}}" type="primary" class="btn-ljkt" onTap="goBuyCard">立即开通</button>
-      </view>
-    </view>
-  </view>
-  <!-- 主内容 -->
-  <view hidden="{{needLogin}}" class="main-content">
-    <!-- 我的推荐条 -->
-    <view class="flex-between" onTap="shareToFriends">
-      <view class="txt-wdtj">
-        <image class="img-wdtj" src="/assets/img/wdtj.png"/>
-        <text style="margin-left: 40rpx;">
-       我的推荐
-        </text>
-      </view>
-      <image class="img-yjt" src="/assets/img/yjt.png"/>
-    </view>
-    <!-- 已返利 -->
-    <view>
-      <view class="txt-yfl">已返利
-        <text class="txt-bold-DDIN txt-51" style="margin:0 17rpx;">{{stat.fanli}}</text>元
-      </view>
-      <view class="flex-between greenbg-bar">
-        <view>
-          <image class="img-29" style="transform: translateY(2rpx);" src="/assets/img/jlj.png"/>
-          <text style="margin-left:23rpx;">奖励金</text>
-          <text class="txt-bold-DDIN txt-32" style="margin-left:18rpx;">{{stat.bounty}}</text>
-        </view>
-        <view class="green" onTap="gowithdraw">
-        马上提现
-          <image class="img-right" src="/assets/img/right.png"/>
-        </view>
-      </view>
-    </view>
-    <block a:if="{{!hasContent}}">
-      <image class="img-zwfl" src="/assets/img/zwfl.png"/>
-      <view class="flex-content txt-zwfl">
-      暂无返利
-      </view>
-    </block>
-    <!-- 内容列表 -->
-    <view a:else class="recommend-list">
-      <view class="title">返利明细</view>
-      <!--  -->
-      <!--<scroll-view scroll-y="{{true}}" style="height: 200px;" onScroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}"> -->
-      <view class="flex-content recommend-list-item" a:for="{{listData}}" data-item={{item}} onTap="goDetail">
-        <image class="img-tx" src="{{item.mctAvatar}}"/>
-        <view class="txt-group1">
-          <view class="txt-medium">
-            {{item.mctShopName}}
-          </view>
-          <view class="txt-tinyest-tip" style="margin-top:10rpx;"> 
-         {{item.requestTime}}
-          </view>
-        </view>
-        <view class="txt-group3">
-          <view class="txt-fl">
-            返利：
-            <text style="font-size: 32rpx;">
-            {{item.fanli}}元
+            <image class="img-zs" src="/assets/img/zs.png"/>
+            <text style="margin-left: 15rpx;">
+              <text a:if="{{!isVIP}}">您还不是会员</text>
+              <text a:else>{{memberId}}</text>
             </text>
           </view>
-          <view class="txt-tinyest-tip" style="margin-top:10rpx;">
-          消费：{{item.amount}}元 
-          </view>
         </view>
-        <view class="btm-line">
+        <image onTap="shareToFriends" class="img-yqyl" src="/assets/img/yqyl.png"/>
+      </view>
+      <!-- 会员卡 -->
+      <view class="flex-content user-card-container">
+        <view class="user-card">
+          <view class="txt-group2">
+            <view class="txt-dnvip">
+      老牛VIP
+            </view>
+            <view class="txt-tiny-tip">
+              <text a:if="{{!isVIP}}">用支付宝支付就有返利</text>
+              <text a:else>有效日期至{{expiryDate}}</text>
+            </view>
+          </view>
+          <button a:if="{{!isVIP}}" type="primary" class="btn-ljkt" onTap="goBuyCard">立即开通</button>
         </view>
       </view>
-      <!--</scroll-view> -->
-      <!--  -->
     </view>
-  </view>
+    <!-- 主内容 -->
+    <view hidden="{{needLogin}}" class="main-content">
+      <!-- 我的推荐条 -->
+      <view class="flex-between" onTap="shareToFriends">
+        <view class="txt-wdtj">
+          <image class="img-wdtj" src="/assets/img/wdtj.png"/>
+          <text style="margin-left: 40rpx;">
+       我的推荐
+          </text>
+        </view>
+        <image class="img-yjt" src="/assets/img/yjt.png"/>
+      </view>
+      <!-- 已返利 -->
+      <view>
+        <view class="txt-yfl">已返利
+          <text class="txt-bold-DDIN txt-51" style="margin:0 17rpx;">{{stat.fanli}}</text>元
+        </view>
+        <view class="flex-between greenbg-bar">
+          <view>
+            <image class="img-29" style="transform: translateY(2rpx);" src="/assets/img/jlj.png"/>
+            <text style="margin-left:23rpx;">奖励金</text>
+            <text class="txt-bold-DDIN txt-32" style="margin-left:18rpx;">{{stat.bounty}}</text>
+          </view>
+          <view class="green" onTap="gowithdraw">
+        马上提现
+            <image class="img-right" src="/assets/img/right.png"/>
+          </view>
+        </view>
+      </view>
+      <block a:if="{{!hasContent}}">
+        <image class="img-zwfl" src="/assets/img/zwfl.png"/>
+        <view class="flex-content txt-zwfl" style="margin-bottom:30rpx;">
+      暂无返利
+        </view>
+      </block>
+      <!-- 内容列表 -->
+      <view a:else class="recommend-list">
+        <view class="title">返利明细</view>
+        <!--  -->
+        <view class="flex-content recommend-list-item" a:for="{{listData}}" data-item={{item}} onTap="goDetail">
+          <image class="img-tx" src="{{item.mctAvatar}}"/>
+          <view class="txt-group1">
+            <view class="txt-medium">
+            {{item.mctShopName}}
+            </view>
+            <view class="txt-tinyest-tip" style="margin-top:10rpx;"> 
+         {{item.requestTime}}
+            </view>
+          </view>
+          <view class="txt-group3">
+            <view class="txt-fl">
+            返利：
+              <text style="font-size: 32rpx;">
+            {{item.fanli}}元
+              </text>
+            </view>
+            <view class="txt-tinyest-tip" style="margin-top:10rpx;">
+          消费：{{item.amount}}元
+            </view>
+          </view>
+          <view class="btm-line">
+          </view>
+        </view>
+        <!--  -->
+      </view>
+    </view>
+  </scroll-view>
   <!-- 买单组件 -->
   <pay-button a:if="{{memberFlag == 1}}" />
   <view hidden="{{!needLogin}}">
@@ -113,7 +113,7 @@
       <text class="tip-text">{{'美好生活从大牛开始'}}</text>
     </view>
     <view class="btn-section flex-content">
-      <button type="primary" onTap="goPhoneNumber">授权登录</button>
+      <button class="custom-button" type="primary" onTap="goPhoneNumber">授权登录</button>
     </view>
   </view>
 </view>

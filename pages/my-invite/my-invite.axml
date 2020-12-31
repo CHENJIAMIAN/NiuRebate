@@ -18,6 +18,6 @@
     </list>
   </block>
   <view class="btn-section flex-content">
-    <button type="primary" onTap="shareToFriends">邀请好友开卡</button>
+    <button  class="custom-button"  type="primary" onTap="shareToFriends">邀请好友开卡</button>
   </view>
 </view>

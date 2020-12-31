@@ -1,19 +1,19 @@
 {
   "pages": [
-    "pages/withdraw/withdraw",
-    "pages/validate-name/validate-name",
     "pages/index/index",
-    "pages/my-invite/my-invite",
     "pages/rebate-detail/rebate-detail",
-    "pages/error-tip/error-tip",
-    "pages/success-tip/success-tip",
-    "pages/shop-home/shop-home",
     "pages/mine/mine",
+    "pages/withdraw/withdraw",
     "pages/vip-invite/vip-invite",
-    "pages/GetUserBase/GetUserBase",
-    "pages/GetPhoneNumber/GetPhoneNumber",
-    "pages/pay/pay",
+    "pages/validate-name/validate-name",
     "pages/UserInfo/UserInfo",
+    "pages/shop-home/shop-home",
+    "pages/pay/pay",
+    "pages/success-tip/success-tip",
+    "pages/my-invite/my-invite",
+    "pages/GetPhoneNumber/GetPhoneNumber",
+    "pages/GetUserBase/GetUserBase",
+    "pages/error-tip/error-tip",
     "pages/home/home"
   ],
   "window": {
