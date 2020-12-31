@@ -4,7 +4,7 @@
       可提现
     </view>
     <view style="font-size:80rpx;">
-      ￥0
+      ￥{{walletMoney}}
     </view>
     <pay-input
       placeholder="请输入提现金额"
@@ -24,12 +24,12 @@
     <view slot="header" style="font-weight:bold;font-size:35rpx;color:black;">
 				提现记录
     </view>
-    <list-item a:for="{{[{},{}]}}" thumbSize="60" arrow="{{false}}" onClick="onItemClick" lowerSubtitle="2020年12月29日17点42分">
+    <list-item a:for="{{list}}" thumbSize="60" arrow="{{false}}" onClick="onItemClick" lowerSubtitle="{{item.createTime}}">
       <view slot="afterUpperSubtitle" style="font-size:14px;color:black;margin-bottom:10rpx;">
-   提现<text style="font-size:40rpx;color:#2FBEA0;">{{` 0.04 `}}</text> 元
+   提现<text style="font-size:40rpx;color:#2FBEA0;">{{item.wallet}}</text> 元
       </view>
       <view slot="extra" class="txt-extra" style="font-size:16px">
-        <view style="margin-top:10rpx;color:#2FBEA0;">已到账
+        <view style="margin-top:10rpx;color:#2FBEA0;">{{item.statusName}}
         </view>
       </view>
     </list-item>

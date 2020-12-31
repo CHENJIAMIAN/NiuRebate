@@ -1,6 +1,6 @@
 App({
 
-  // serverUrl:"http://192.168.50.158:9800",
+   //serverUrl:"http://192.168.50.176:9800",
   serverUrl: "http://www.lemengsc.com:9800",
 
   globalData: {
