@@ -1,4 +1,3 @@
-
 page {
   background: white;
 }
@@ -10,7 +9,7 @@ page {
 
 .txt-ccl {
   line-height: 100rpx;
-  color: #108ee9;
+  color: #2DC2A2;
   font-size: 40rpx;
 }
 

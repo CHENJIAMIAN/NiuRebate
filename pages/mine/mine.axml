@@ -113,7 +113,7 @@
       <text class="tip-text">{{'美好生活从大牛开始'}}</text>
     </view>
     <view class="btn-section flex-content">
-      <button type="primary" onTap="goPhoneNumber">授权登录</button>
+      <button  class="custom-button"  type="primary" onTap="goPhoneNumber">授权登录</button>
     </view>
   </view>
 </view>

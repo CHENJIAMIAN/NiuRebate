@@ -134,6 +134,7 @@
   font-weight: 500;
   color: #FFFFFF;
   line-height: 70rpx;
+  border: none;
 }
 
 .shop-desc {

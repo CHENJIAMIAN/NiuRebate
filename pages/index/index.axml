@@ -9,7 +9,7 @@
         <text class="tip-text">{{'当前城市暂未开通，敬请期待'}}</text>  
       </view>
       <view class="btn-section flex-content">
-        <button type="primary" onTap="chooseLocation">手动定位</button>
+        <button class="custom-button"  type="primary" onTap="chooseLocation">手动定位</button>
       </view>
     </view>
   </block>

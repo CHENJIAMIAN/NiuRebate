@@ -38,7 +38,7 @@
       支付成功, {{time}}秒后返回...
     </view>
      <view class="btn-ccl">
-         <button type="primary"  onTap="go" >马上返回</button>
+         <button class="custom-button" style="padding:0 20rpx;" type="primary"  onTap="go" >马上返回</button>
     </view>
   </view>
 </view>
