@@ -16,7 +16,7 @@
       maxLength="10"
       repayAmount="{{repayInput}}"
     />
-    <button type="primary" onTap="tapWithDraw">
+    <button class="wd-button" type="primary" onTap="tapWithDraw">
       提现
     </button>
   </view>

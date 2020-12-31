@@ -7,6 +7,12 @@
   color: #2FBEA0;
 }
 
+.wd-button {
+  background: white;
+  color: #2FBEA0;
+  width: 120px;
+}
+
 .custom-input {
   background: #ffffff0d;
   color: white;
