@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/rebate-detail/rebate-detail",
+    "pages/mine/mine",
     "pages/withdraw/withdraw",
     "pages/vip-invite/vip-invite",
     "pages/validate-name/validate-name",
@@ -9,10 +11,8 @@
     "pages/pay/pay",
     "pages/success-tip/success-tip",
     "pages/my-invite/my-invite",
-    "pages/mine/mine",
     "pages/GetPhoneNumber/GetPhoneNumber",
     "pages/GetUserBase/GetUserBase",
-    "pages/rebate-detail/rebate-detail",
     "pages/error-tip/error-tip",
     "pages/home/home"
   ],

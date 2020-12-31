@@ -95,11 +95,10 @@
      width: 686rpx;
      background: white;
      border-radius: 15px 15px 0 0;
-     position: fixed;
-     bottom: 0;
-     top: 286rpx;
+     /* position: fixed; */
+     position: relative;
+     margin-top: -180rpx;
      padding: 62rpx 32rpx 0 32rpx;
-     overflow: auto;
    }
 
    .user-info {
@@ -160,7 +159,6 @@
    }
 
    .recommend-list {
-     overflow: auto;
      margin-top: 20rpx;
    }
 

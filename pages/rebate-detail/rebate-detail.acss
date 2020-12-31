@@ -9,18 +9,21 @@
 .blue {
   color: rgb(16, 142, 233);
 }
-.txt-verybig-bold{
+
+.txt-verybig-bold {
   font-size: 60rpx;
   font-weight: bold;
 }
 
-.txt-circle-blue{
+.txt-circle-blue {
   border-radius: 50%;
-  background: rgb(16, 142, 233);
+  /* rgb(16, 142, 233); */
+  background: #2FBEA0;
   color: white;
   padding: 10rpx 12rpx;
 }
-.gap{
+
+.gap {
   height: 1px;
   background: #fafafa;
 }
