@@ -79,6 +79,16 @@ Page({
   tapWithDraw(){
     let that=this;
     console.log(that.data.repayInput);
+    if(that.data.repayInput==""){
+      my.showToast({
+          type: 'none',
+          content: "提现金额为空",
+          duration: 1000,
+          success: () => {
+          },
+        });
+      return;
+    }
      var url = app.serverUrl + '/cardMemberCashOut/blank';
      my.showLoading();
     my.request({
