@@ -87,13 +87,6 @@ Page({
   },
   onLoad(query) {
     // 页面加载
-    console.log("##########" + query.shareUserId);
-    console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
-    // my.pageScrollTo({
-    //   scrollTop: parseInt(600),
-    // });
-    // this.mySchedulde();
-
 
     var that = this;
     my.getAuthCode({
@@ -108,7 +101,6 @@ Page({
 
           console.log(res.authCode);
 
-
           my.request({
             url: url,
             method: 'POST',
@@ -120,6 +112,8 @@ Page({
             },
             success: function (resdata) {
 
+              console.log(resdata);
+
               if (resdata.data.data.userId) {
                 app.globalData.userId = resdata.data.data.userId;
               }
@@ -127,8 +121,6 @@ Page({
               if (resdata.data.data.memberId) {
                 app.globalData.memberId = resdata.data.data.memberId;
               }
-
-
 
             },
             fail: function (resdata) {
@@ -142,6 +134,7 @@ Page({
       },
 
       fail() {
+        console.log('==========');
       },
 
     });

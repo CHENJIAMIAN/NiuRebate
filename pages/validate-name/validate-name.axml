@@ -10,11 +10,11 @@
       </view>
       <view class="flex-around-v" style="height:250rpx;">
         <button class="button-primary" type="primary" onTap="tapValidate">
-      去校验
+      校验
         </button>
-        <button class="button-ghost" type="ghost" onTap="">
+        <!-- <button class="button-ghost" type="ghost" onTap="">
       返回
-        </button>
+        </button> -->
       </view>
     </view>
   </container>

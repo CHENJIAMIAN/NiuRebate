@@ -58,4 +58,16 @@
       <image a:for="{{prodImgList}}" class="img-320" key="{{item.id}}" src="{{item.imgUrl}}"/>
     </scroll-view>
   </view>
+
+
+    <modal
+		show="{{showModal}}"
+    showClose="{{false}}"
+    onButtonClick="onModalButtonClick"
+    buttons="{{buttons}}"
+	>
+		<view slot="header">请补充姓名</view>
+		为保证您能收到实时返利， 建议您准确填写您的姓名，跳过后， 该笔订单实时返利的金额将转为奖励金。
+	</modal>
+
 </view>

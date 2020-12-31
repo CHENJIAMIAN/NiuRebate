@@ -19,7 +19,12 @@ Page({
     realTimeRate:'',
     bountyRate:'',
     shopImgList:[],
-    prodImgList:[]
+    prodImgList:[],
+    showModal: false,
+    buttons: [
+      { text: '跳过',  extClass: 'redBtn'},
+      { text: '去校验', extClass: 'buttonBold' },
+    ]
 
   },
   onLoad(query) {
@@ -91,14 +96,54 @@ Page({
   },
 
   payBill(){
-    my.navigateTo({
-      url: '/pages/pay/pay?id=' + this.data.id 
-          + '&name=' + this.data.name 
-          + '&discount=' + this.data.discount
-          + '&realTimeRate=' + this.data.realTimeRate
-          + '&bountyRate=' + this.data.bountyRate
-          + '&img=' + this.data.img
-          + '&fanli=' + this.data.fanli
+
+     var url = app.serverUrl + '/aliMember/queryById';
+     my.request({
+      url: url,
+      method: 'POST',
+      data: {
+        memberId: app.globalData.memberId
+      },
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      success: (resdata) => {
+
+        if (resdata.data.code == 0) {
+
+          var bean = resdata.data.data;
+          if (bean.name){
+
+            my.navigateTo({
+              url: '/pages/pay/pay?id=' + this.data.id 
+                  + '&name=' + this.data.name 
+                  + '&discount=' + this.data.discount
+                  + '&realTimeRate=' + this.data.realTimeRate
+                  + '&bountyRate=' + this.data.bountyRate
+                  + '&img=' + this.data.img
+                  + '&fanli=' + this.data.fanli
+            });
+
+          }else{
+            this.setData({
+              showModal: true,
+            });
+
+          }
+         
+        }else{
+          my.showToast({
+            type: 'fail',
+            content: resdata.data.msg,
+            duration: 1000,
+            success: () => {
+            },
+          });
+        }
+      },
+      fail: (resdata) => {
+        
+      }
     });
 
   },
@@ -106,10 +151,36 @@ Page({
   openLocation() {
     my.openLocation({
       longitude: this.data.longitude,
-      latitude: this.data.latitude,
+      latitude: this.data.latitude, 
       name: this.data.name,
       address: this.data.address,
     })
+  }, 
+
+
+  onModalButtonClick(e) {
+    const { target: { dataset } } = e;
+    this.setData({
+      showModal: false,
+    });
+
+    if (dataset.index == 0){
+      my.navigateTo({
+        url: '/pages/pay/pay?id=' + this.data.id 
+            + '&name=' + this.data.name 
+            + '&discount=' + this.data.discount
+            + '&realTimeRate=' + this.data.realTimeRate
+            + '&bountyRate=' + this.data.bountyRate
+            + '&img=' + this.data.img
+            + '&fanli=' + this.data.fanli
+        });
+
+    }else if (dataset.index == 1){
+      my.navigateTo({
+        url: '/pages/validate-name/validate-name?merchantId=' + this.data.id
+      });
+    }
+   
   },
 
 });
