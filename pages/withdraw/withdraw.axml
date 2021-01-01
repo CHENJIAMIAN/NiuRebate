@@ -1,37 +1,37 @@
 <view>
-  <view class="flex-around-v flex-align-center" style="height:400rpx;background:#2FBEA0;color:white;padding:40rpx 0;">
-    <view>
+  <scroll-view scroll-y="{{true}}" onScrollToLower="scrollMytrip" class="schedule-scroll">
+    <view class="flex-around-v flex-align-center" style="height:400rpx;background:#2FBEA0;color:white;padding:40rpx 0;">
+      <view>
       可提现
-    </view>
-    <view style="font-size:80rpx;">
+      </view>
+      <view style="font-size:80rpx;">
       ￥{{walletMoney}}
-    </view>
-    <pay-input
-      placeholder="请输入提现金额"
-      hasMoneySymbol="{{true}}"
-      hasClear="{{true}}"
-      title=""
-      extraText="预计今天到账"
-      onInput="onMoneyInput"
-      maxLength="10"
-      repayAmount="{{repayInput}}"
-    />
-    <button class="wd-button" type="primary" onTap="tapWithDraw">
+      </view>
+      <pay-input placeholder="请输入提现金额" hasMoneySymbol="{{true}}" hasClear="{{true}}" title="" extraText="预计今天到账" onInput="onMoneyInput" maxLength="10" repayAmount="{{repayInput}}" />
+      <button class="wd-button" type="primary" onTap="tapWithDraw">
       提现
-    </button>
-  </view>
-  <list>
-    <view slot="header" style="font-weight:bold;font-size:35rpx;color:black;">
-				提现记录
+      </button>
     </view>
-    <list-item a:for="{{list}}" thumbSize="60" arrow="{{false}}" onClick="onItemClick" lowerSubtitle="{{item.createTime}}">
-      <view slot="afterUpperSubtitle" style="font-size:14px;color:black;margin-bottom:10rpx;">
-   提现<text style="font-size:40rpx;color:#2FBEA0;">{{item.wallet}}</text> 元
+    <list>
+      <view slot="header" style="font-weight:bold;font-size:35rpx;color:black;">
+				提现记录
       </view>
-      <view slot="extra" class="txt-extra" style="font-size:16px">
-        <view style="margin-top:10rpx;color:#2FBEA0;">{{item.statusName}}
+      <list-item a:for="{{list}}" thumbSize="60" arrow="{{false}}" onClick="onItemClick" lowerSubtitle="{{item.createTime}}">
+        <view slot="afterUpperSubtitle" style="font-size:14px;color:black;margin-bottom:10rpx;">
+   提现
+          <text style="font-size:40rpx;color:#2FBEA0;">{{item.wallet}}</text> 元
         </view>
-      </view>
-    </list-item>
-  </list>
+        <view slot="extra" class="txt-extra" style="font-size:16px">
+          <view style="margin-top:10rpx;color:#2FBEA0;">{{item.statusName}}
+          </view>
+        </view>
+      </list-item>
+    </list>
+    <view class="spinner" style="{{show ? '' : 'display:none'}}">
+      <view class="bounce1 bounce"></view>
+      <view class="bounce2 bounce"></view>
+      <view class="bounce3 bounce"></view>
+      <view style="margin:20rpx 0 0 20rpx;color:#666666;">加载中...</view>
+    </view>
+  </scroll-view>
 </view>
