@@ -14,7 +14,8 @@
     "pages/GetPhoneNumber/GetPhoneNumber",
     "pages/GetUserBase/GetUserBase",
     "pages/error-tip/error-tip",
-    "pages/home/home"
+    "pages/home/home",
+    "pages/share-recv/share-recv"
   ],
   "window": {
     "defaultTitle": "老牛返利",
