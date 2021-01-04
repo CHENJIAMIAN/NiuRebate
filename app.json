@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/withdraw/withdraw",
     "pages/index/index",
+    "pages/withdraw/withdraw",
     "pages/rebate-detail/rebate-detail",
     "pages/mine/mine",
     "pages/vip-invite/vip-invite",

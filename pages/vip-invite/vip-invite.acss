@@ -122,18 +122,6 @@
      line-height: 24px;
    }
 
-   .btn-ljkt {
-     width: 159rpx;
-     height: 49rpx;
-     background: linear-gradient(99deg, #1A1822, #413542);
-     border-radius: 23px;
-     font-size: 26rpx;
-     font-family: PingFang SC;
-     font-weight: 500;
-     color: #FFDCC6;
-     line-height: 49rpx;
-   }
-
    .main-content {
      position: relative;
      width: 686rpx;

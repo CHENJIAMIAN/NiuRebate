@@ -89,6 +89,7 @@
      font-weight: 500;
      color: #FFDCC6;
      line-height: 49rpx;
+     border: none;
    }
 
    .main-content {
