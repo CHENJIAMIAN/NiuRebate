@@ -4,6 +4,7 @@ Page({
   data: {},
   onLoad(query) {
 
+    console.log("#####shareId:"+ query.shareUserId);
 
     var shareUserId = query.shareUserId;
 
