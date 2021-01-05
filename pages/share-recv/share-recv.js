@@ -23,10 +23,10 @@ Page({
 
           my.request({
             url: url,
-            method: 'POST',
+            method: 'POST', 
             data: {
               authCode: res.authCode,
-              shareUserId: shareUserId
+              shareUserId: shareUserId 
             },
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded'
