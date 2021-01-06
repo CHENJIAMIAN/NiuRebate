@@ -21,7 +21,7 @@ Page({
 
   //获取余额
   requestMemberData() {
-    var url = app.serverUrl + '/cardMemberCashOut/getMemberWallet';
+    var url = app.serverUrl + '/aliCardMemberCashOut/getMemberWallet';
     var that = this;
     my.showLoading();
     my.request({
@@ -96,7 +96,7 @@ Page({
       });
       return;
     }
-    var url = app.serverUrl + '/cardMemberCashOut/blank';
+    var url = app.serverUrl + '/aliCardMemberCashOut/blank';
     my.showLoading();
     my.request({
       url: url,
@@ -145,7 +145,7 @@ Page({
    * "lastVisitTime":1609396525230,"rows":[]}} 
    */
   getMoneyListByNet(pageNo) {
-    var url = app.serverUrl + '/cardMemberCashOut/loadPage';
+    var url = app.serverUrl + '/aliCardMemberCashOut/loadPage';
     my.request({
       url: url,
       method: 'POST',
