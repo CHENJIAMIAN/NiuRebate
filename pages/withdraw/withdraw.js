@@ -4,7 +4,13 @@ Page({
     walletMoney: '',
     repayInput: '',
     list: [],
-    page: 1
+    page: 1,
+    // 
+    loadMore: '',
+    loadContent: [
+      '马不停蹄加载更多数据中...',
+      '-- 已经到底了，加不了咯 --',
+    ],
   },
   onLoad() { },
   onReady() {
@@ -156,7 +162,7 @@ Page({
         console.log("###" + JSON.stringify(resdata));
         console.log("###" + JSON.stringify(resdata.data.code));
         if (resdata.data.code == 0) {
-          this.setData({ list: resdata.data.data.rows });
+          this.setData({ list:this.data.list.concat(resdata.data.data.rows) });
         }
       },
       fail: (resdata) => {
@@ -164,7 +170,7 @@ Page({
       },
       complete: () => {
         console.log('getMoneyListByNet compelete')
-        this.setData({ show: false });
+        this.setData({ loadMore: 'over' });
       }
     });
 
@@ -175,17 +181,16 @@ Page({
   * scroll-view滑到底部触发事件
   * @method scrollMytrip 
   */
-  async scrollMytrip() {
-    console.log('scrollMytrip')
+  onScrollToLower() {
     try {
       const newPage = this.data.page + 1;
-      this.setData({ page: newPage, show: true });
+      this.setData({ page: newPage, loadMore: 'load' });
 
       console.log(newPage);
 
       this.getMoneyListByNet(newPage);
     } catch (e) {
-      this.setData({ show: false });
+      this.setData({ loadMore: 'over' });
       console.log('scrollMytrip执行异常:', e);
     }
   },
