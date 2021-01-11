@@ -43,6 +43,7 @@ Page({
             repayInput: '',
             list: []
           });
+          this.setData({ page: 1 });
           that.getMoneyListByNet(1);
         }
       },
@@ -102,7 +103,7 @@ Page({
       url: url,
       method: 'POST',
       data: {
-        userId: app.globalData.memberId,
+        memberId: app.globalData.memberId,
         wallet: that.data.repayInput
       },
       headers: {
@@ -150,7 +151,7 @@ Page({
       url: url,
       method: 'POST',
       data: {
-        userId: app.globalData.memberId,
+        memberId: app.globalData.memberId,
         pageNo: pageNo,
         pageSize: 10
       },
