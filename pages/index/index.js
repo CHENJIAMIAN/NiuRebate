@@ -14,7 +14,7 @@ const mockData = [{
   type: "便利店",
   position: "西湖区",
   distance: "8.1km",
-  zhuan: "6.30",
+  zhuan: "6.30", 
   fanli: "10.50",
 }, {
   name: "辣酱糊",

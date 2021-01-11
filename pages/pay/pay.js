@@ -78,7 +78,7 @@ Page({
 
     var that = this;
 
-    var url = app.serverUrl + '/mini/order';
+    var url = app.serverUrl + '/aliMini/order';
 
     my.request({
       url: url,
