@@ -100,8 +100,7 @@ Page({
 
                 if (resdata.data.data.memberFlag == 0) {
                   that.setData({
-                    isVIP: false,
-                    hasContent: false
+                    isVIP: false
                   });
                 } else if (resdata.data.data.memberFlag == 1) {
                   that.setData({
@@ -165,14 +164,12 @@ Page({
       url: url,
       method: 'POST',
       data: {
-        userId: app.globalData.userId,
+        memberId: app.globalData.memberId,
         page: page
       },
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      success: (resdata) => {
 
+      success: (resdata) => {
+ 
         my.hideLoading();
 
         console.log(resdata);
