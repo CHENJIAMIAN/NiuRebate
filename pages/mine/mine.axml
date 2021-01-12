@@ -4,7 +4,7 @@
       <!-- 用户信息 -->
       <view class="user-info">
         <view class="user-icon">
-          <image class="img-yh" src="/assets/img/yh.png"/>
+          <image class="img-yh" src="{{avatar}}"/>
         </view>
         <view class="txt-group1">
           <view class="txt-sjh">

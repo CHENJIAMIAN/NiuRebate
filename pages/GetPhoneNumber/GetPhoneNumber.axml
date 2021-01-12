@@ -15,9 +15,9 @@
     <view class="step-between">
     </view>
     <view class="step step2">
-      <view class="ungreen-circle">
+      <view class="ungreen-circle"> 
     2
-      </view>
+      </view> 
       <view class="ungreen-txt">
     授权基本信息
       </view>
