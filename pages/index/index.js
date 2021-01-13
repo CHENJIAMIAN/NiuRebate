@@ -149,7 +149,7 @@ Page({
     my.getLocation({
       type: 1,
       success: (res) => {
-
+ 
         console.log(res);
 
         app.globalData.longitude = res.longitude;
@@ -213,7 +213,7 @@ Page({
         page: page
       },
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/json'
       },
       success: (resdata) => { 
         my.hideLoading();
