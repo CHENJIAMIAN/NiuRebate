@@ -18,7 +18,7 @@ Page({
         var t = that.data.time;
  
         if (t > 0){
-
+ 
           t--;
 
           this.setData({

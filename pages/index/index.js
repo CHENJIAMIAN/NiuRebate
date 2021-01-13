@@ -108,11 +108,11 @@ Page({
               authCode: res.authCode
             },
             headers: {
-              'Content-Type': 'application/x-www-form-urlencoded'
+              'Content-Type': 'application/json'
             },
             success: function (resdata) {
 
-              console.log(resdata);
+              console.log(resdata); 
 
               if (resdata.data.data.userId) {
                 app.globalData.userId = resdata.data.data.userId;

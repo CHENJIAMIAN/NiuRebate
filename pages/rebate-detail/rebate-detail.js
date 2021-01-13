@@ -30,7 +30,7 @@ Page({
         tradeNo: that.data.tradeNo
       },
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/json'
       },
       success: function(resdata) {
 

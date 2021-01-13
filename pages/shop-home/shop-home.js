@@ -43,10 +43,10 @@ Page({
       data: {
         longitude: app.globalData.longitude,
         latitude: app.globalData.latitude,
-        id: query.id
+        merchantId: query.id
       },
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/json'
       },
       success: (resdata) => {
         my.hideLoading();
@@ -60,7 +60,7 @@ Page({
           this.setData({
             id: bean.id,
             img: bean.img,
-            name: bean.name,
+            name: bean.name, 
             price: bean.price,
             position: bean.position,
             type: bean.type,
@@ -105,7 +105,7 @@ Page({
         memberId: app.globalData.memberId
       },
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/json'
       },
       success: (resdata) => {
 

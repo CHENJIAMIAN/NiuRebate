@@ -49,7 +49,7 @@ Page({
         name: that.data.inputName
       },
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/json'
       },
       success: (resdata) => {
 

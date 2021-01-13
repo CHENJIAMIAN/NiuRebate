@@ -9,9 +9,9 @@ Page({
   // .js 
   onGetAuthorize(res) {
 
-    let userId = app.globalData.userId;
+    let memberId = app.globalData.memberId;
 
-    console.log(userId);
+    console.log('=========memberId:' + memberId);
 
     // 获取手机号
       my.getPhoneNumber({
@@ -24,10 +24,10 @@ Page({
                   method: 'POST', 
                   data: { 
                     encryptedData: encryptedData,
-                    userId:userId
+                    memberId:memberId
                   },
                   headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
+                    'Content-Type': 'application/json'
                   },
                   success: function(resdata) {
 

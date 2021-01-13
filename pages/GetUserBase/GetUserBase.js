@@ -7,9 +7,9 @@ Page({
   // .js 
   onGetAuthorize(res) {
 
-    let userId = app.globalData.userId;
+    let memberId = app.globalData.memberId;
 
-    console.log(userId);
+    console.log('======memberId:' + memberId);
 
      my.getOpenUserInfo({
       fail: (res) => {
@@ -25,10 +25,10 @@ Page({
                   method: 'POST', 
                   data: { 
                     userInfo:  JSON.stringify(userInfo),
-                    userId:userId
+                    memberId:memberId
                   },
                   headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
+                    'Content-Type': 'application/json'
                   },
                   success: function(resdata) {
 
@@ -46,7 +46,7 @@ Page({
                       });
 
                     
-
+ 
                     }
                     
                   }, 

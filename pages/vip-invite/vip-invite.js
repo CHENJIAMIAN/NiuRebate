@@ -60,10 +60,10 @@ Page({
       url: url,
       method: 'POST',
       data: {
-        userId: app.globalData.userId
+        memberId: app.globalData.memberId
       },
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/json'
       },
       success: function (resdata) {
 

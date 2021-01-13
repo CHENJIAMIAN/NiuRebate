@@ -72,7 +72,7 @@ Page({
               authCode: res.authCode
             },
             headers: {
-              'Content-Type': 'application/x-www-form-urlencoded'
+              'Content-Type': 'application/json'
             },
             success: function (resdata) {
 
@@ -166,6 +166,10 @@ Page({
       data: {
         memberId: app.globalData.memberId,
         page: page
+      },
+
+      headers: {
+        'Content-Type': 'application/json'
       },
 
       success: (resdata) => {

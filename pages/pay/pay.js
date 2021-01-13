@@ -89,7 +89,7 @@ Page({
         amount: this.data.amountValue
       },
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/json'
       },
       success: function (resdata) {
 
