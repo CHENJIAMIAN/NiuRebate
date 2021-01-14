@@ -97,7 +97,7 @@ Page({
           // console.log(app.serverUrl + '/login/' + res.authCode);
           // 调用自己的服务端接口，让服务端进行后端的授权认证
 
-          var url = app.serverUrl + '/aliMember/login';
+          var url = app.serverUrl + '/aliMember/check';
 
           console.log(res.authCode);
 
