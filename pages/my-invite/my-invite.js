@@ -3,11 +3,65 @@ var app = getApp();
 Page({
   data: {
     img: 'https://gw.alipayobjects.com/mdn/rms_eb2664/afts/img/A*bFuBQZuNErMAAAAAAAAAAABkARQnAQ',
-    hasRecord: true
+    hasRecord: true,
+    listData: [
+      {
+        avatar: '',
+        nickName: "小红",
+        createTime: "12月12日18：40"
+      },
+      {
+        avatar: '',
+        nickName: "小红",
+        createTime: "12月12日18：40"
+      }
+
+    ]
   },
   onLoad() {
     my.hideShareMenu();
     //alert(app.globalData.userId);
+
+    var that = this;
+    var url = app.serverUrl + '/aliMember/myInvite';
+    my.request({
+      url: url,
+      method: 'POST',
+      data: { 
+        memberId: app.globalData.memberId,
+        page:1
+      },
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      success: function (resdata) {
+
+        my.hideLoading();
+
+        console.log(resdata)
+
+
+        if (resdata.data.code == 0) {
+
+          that.setData({
+            listData: resdata.data.data.list
+          });          
+
+        } else {
+
+          that.setData({
+            needLogin: true
+          });
+
+        }
+
+      },
+      fail: function (resdata) {
+        console.log(resdata);
+        my.hideLoading();
+      }
+    });
+
   },
  
 

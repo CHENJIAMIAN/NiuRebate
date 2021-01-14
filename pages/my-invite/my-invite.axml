@@ -12,7 +12,7 @@
       <view slot="header">
    推荐记录
       </view>
-      <list-item a:for="{{[{},{}]}}" thumb="{{img}}" thumbSize="50" arrow="{{true}}" onClick="onItemClick" upperSubtitle="" lowerSubtitle="创建时间">
+      <list-item a:for="{{listData}}" data-item={{item}} thumb="{{img}}" thumbSize="50" arrow="{{true}}" onClick="onItemClick" upperSubtitle="" lowerSubtitle="创建时间">
    昵称
       </list-item>
     </list>
