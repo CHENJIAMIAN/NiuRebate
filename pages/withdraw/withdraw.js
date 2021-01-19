@@ -35,7 +35,7 @@ Page({
       },
       success: (resdata) => {
         my.hideLoading();
-        console.log("###" + JSON.stringify(resdata));
+        //console.log("###" + JSON.stringify(resdata));
         console.log("###" + JSON.stringify(resdata.data.code));
         if (resdata.data.code == 0) {
           that.setData({
@@ -111,7 +111,7 @@ Page({
       },
       success: (resdata) => {
         my.hideLoading();
-        console.log("###" + JSON.stringify(resdata));
+        //console.log("###" + JSON.stringify(resdata));
         console.log("###" + JSON.stringify(resdata.data.code));
         if (resdata.data.code == 0) {
           that.requestMemberData();
@@ -160,7 +160,7 @@ Page({
       },
       success: (resdata) => {
         my.hideLoading();
-        console.log("###" + JSON.stringify(resdata));
+        //console.log("###" + JSON.stringify(resdata));
         console.log("###" + JSON.stringify(resdata.data.code));
         if (resdata.data.code == 0) {
           this.setData({ list:this.data.list.concat(resdata.data.data.rows) });
