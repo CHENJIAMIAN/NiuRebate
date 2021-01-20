@@ -47,15 +47,21 @@
   <view class="btm-gap"></view>
   <view class="content">
     <view class="txt-32-bold">门店照</view>
-    <scroll-view class="scroll-view_H" scroll-x="{{true}}" style="width: 100%;margin-top:30rpx;">
-      <image a:for="{{shopImgList}}" class="img-320" key="{{item.id}}" src="{{item.imgUrl}}"/>
+    <scroll-view class="scroll-view_H" scroll-x="{{true}}" 
+    style="width: 100%;margin-top:30rpx;">
+      <image a:for="{{shopImgList}}" class="img-320"  
+      onTap="previewImageShop" data-index="{{index}}"
+      key="{{item.id}}" src="{{item.imgUrl}}"/>
     </scroll-view>
   </view>
-  <view class="btm-gap"></view>
+  <view class="btm-gap"></view> 
   <view class="content">
     <view class="txt-32-bold">特色产品</view>
-    <scroll-view class="scroll-view_H" scroll-x="{{true}}" style="width: 100%;margin-top:30rpx;">
-      <image a:for="{{prodImgList}}" class="img-320" key="{{item.id}}" src="{{item.imgUrl}}"/>
+    <scroll-view class="scroll-view_H" scroll-x="{{true}}" 
+    style="width: 100%;margin-top:30rpx;">
+      <image a:for="{{prodImgList}}" class="img-320"  
+      onTap="previewImageGoods" data-index="{{index}}"
+      key="{{item.id}}" src="{{item.imgUrl}}"/> 
     </scroll-view>
   </view>
 
@@ -63,7 +69,7 @@
     <modal
 		show="{{showModal}}"
     showClose="{{false}}"
-    onButtonClick="onModalButtonClick"
+    onButtonClick="onModalButtonClick" 
     buttons="{{buttons}}"
 	>
 		<view slot="header">请补充姓名</view>

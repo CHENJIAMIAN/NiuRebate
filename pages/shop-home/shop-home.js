@@ -183,4 +183,38 @@ Page({
    
   },
 
+  //门店照幼灯
+  previewImageShop(e){
+    var index=e.target.dataset.index;
+    var list=this.data.shopImgList;
+    this.previewImage(list,index);
+  },
+  //产品照幼灯
+  previewImageGoods(e){
+    var index=e.target.dataset.index;
+    var list=this.data.prodImgList;
+    this.previewImage(list,index); 
+  },
+
+
+  previewImage(list,index) {
+    console.log("previewImage:list:",list);
+    console.log("previewImage:index:",index);
+
+    var listArry;
+    if(Array.isArray(list)&&list.length>0){
+      var vArray = new Array(list.length);
+       //console.log("list.length:"+list.length);
+       for(var i=0;i<list.length;i++){
+          vArray[i]=list[i].imgUrl;
+       }
+       listArry=vArray;
+    }
+
+    my.previewImage({
+      current: index,
+      urls: listArry
+    });
+  },
+
 });
