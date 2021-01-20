@@ -76,4 +76,15 @@
 		为保证您能收到实时返利， 建议您准确填写您的姓名，跳过后， 该笔订单实时返利的金额将转为奖励金。
 	</modal>
 
+
+   <modal
+		show="{{showAlert}}"
+    showClose="{{false}}"
+    onButtonClick="onAlertButtonClick"
+    buttons="{{alertbuttons}}"
+	>
+		<view slot="header">登录提示</view>
+		检测到您还没有登录系统,请先登录！
+	</modal>
+
 </view>

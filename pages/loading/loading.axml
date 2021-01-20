@@ -1,0 +1,21 @@
+<view class="container">
+  <!-- 通过页面跳转（my.navigateTo）或者页面重定向（my.redirectTo）所到达的页面，即使它是定义在 tabBar 配置中的页面，也不会显示底部的 tab 栏。 -->
+    <view>
+      <view class="flex-content near-fullheight">
+        <image class="image-zwkt" src="../../assets/img/zwkt.png"/>
+      </view>
+      <view class="flex-content">
+        <text class="tip-text">{{title}}</text>
+      </view>
+      <view a:if='{{goBtnFlag}}'  class="btn-section flex-content">
+        <button class="custom-button" type="primary" onTap="goIndex">马上进入</button>
+      </view>
+ 
+      <view a:if='{{loginBtnFlag}}' class='btn-section flex-content'>
+        <button class='custom-button' type='primary' onTap='relogin'>
+          重新登录
+        </button>
+      </view>
+
+    </view>
+</view> 
