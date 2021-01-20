@@ -42,6 +42,8 @@ Page({
             },
             success: function (resdata) {
 
+              my.hideLoading();
+
               console.log(resdata); 
 
               if (resdata.data.data){
@@ -72,12 +74,12 @@ Page({
 
             },
             fail: function (resdata) {
-
+              my.hideLoading();
               that.setData({
                 loginBtnFlag:true,
                 title: '授权失败, 请重试！'
               });
-
+ 
             }
           });
 
@@ -87,6 +89,7 @@ Page({
       },
 
       fail() {
+      my.hideLoading();
        that.setData({
           loginBtnFlag:true,
           title: '授权失败, 请重试！'
@@ -119,7 +122,7 @@ Page({
       clearInterval(intervalProcess);
       my.reLaunch({
           url: "/pages/index/index"
-      });
+      }); 
   },
 
   relogin(){

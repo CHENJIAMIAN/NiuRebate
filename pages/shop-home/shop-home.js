@@ -21,10 +21,21 @@ Page({
     shopImgList:[],
     prodImgList:[],
     showModal: false,
+    showAlert: false,
     buttons: [
       { text: '跳过',  extClass: 'redBtn'},
       { text: '去校验', extClass: 'buttonBold' },
-    ]
+    ],
+    alertbuttons: [
+            {
+                text: "取消",
+                extClass: "redBtn"
+            },
+            {
+                text: "去登录",
+                extClass: "buttonBold"
+            }
+        ]
 
   },
   onLoad(query) {
@@ -96,6 +107,13 @@ Page({
   },
 
   payBill(){
+
+    if (app.globalData.memberId == ''){
+        this.setData({
+            showAlert: true
+        });
+        return;
+    }
 
      var url = app.serverUrl + '/aliMember/queryById';
      my.request({
@@ -180,7 +198,20 @@ Page({
         url: '/pages/validate-name/validate-name?merchantId=' + this.data.id
       });
     }
-   
+    
   },
+
+  onAlertButtonClick:function(e) {
+        const { target: { dataset } } = e;
+        this.setData({
+            showAlert: false
+        });
+
+        if (dataset.index == 1) {
+            my.navigateTo({
+                url: "/pages/GetPhoneNumber/GetPhoneNumber"
+            });
+        } 
+    }
 
 });

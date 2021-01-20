@@ -10,7 +10,7 @@
       <view a:if='{{goBtnFlag}}'  class="btn-section flex-content">
         <button class="custom-button" type="primary" onTap="goIndex">马上进入</button>
       </view>
-
+ 
       <view a:if='{{loginBtnFlag}}' class='btn-section flex-content'>
         <button class='custom-button' type='primary' onTap='relogin'>
           重新登录

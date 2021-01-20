@@ -9,9 +9,9 @@ Page({
   // .js 
   onGetAuthorize(res) {
 
-    let memberId = app.globalData.memberId;
+    let userId = app.globalData.userId;
 
-    console.log('=========memberId:' + memberId);
+    console.log('=========userId:' + userId); 
 
     // 获取手机号
       my.getPhoneNumber({
@@ -24,7 +24,7 @@ Page({
                   method: 'POST', 
                   data: { 
                     encryptedData: encryptedData,
-                    memberId:memberId
+                    userId:userId
                   },
                   headers: {
                     'Content-Type': 'application/json'
@@ -32,10 +32,21 @@ Page({
                   success: function(resdata) {
 
                     if (resdata.data.code == 0){
+                      if (resdata.data.data.memberId) {
+                        app.globalData.memberId =
+                            resdata.data.data.memberId;
+                      }
+
                       my.navigateTo({
                         url: '/pages/GetUserBase/GetUserBase'
                       });
 
+                    }else{
+                      my.showToast({
+                        type: 'fail',
+                        content: resdata.data.msg,
+                        duration: 1000
+                      });
                     }
                     
                   }, 

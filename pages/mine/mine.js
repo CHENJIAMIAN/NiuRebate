@@ -50,6 +50,13 @@ Page({
 
   onReady() {
 
+    if (app.globalData.memberId == ''){
+        this.setData({
+            needLogin: true
+        });
+        return;
+    }
+
     var that = this;
     my.showLoading();
 
