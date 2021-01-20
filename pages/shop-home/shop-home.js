@@ -203,12 +203,14 @@ Page({
 
   //门店照幼灯
   previewImageShop(e){
+    console.log("previewImageShop");
     var index=e.target.dataset.index;
     var list=this.data.shopImgList;
     this.previewImage(list,index);
   },
   //产品照幼灯
   previewImageGoods(e){
+    console.log("previewImageGoods");
     var index=e.target.dataset.index;
     var list=this.data.prodImgList;
     this.previewImage(list,index); 
