@@ -3,7 +3,7 @@ var intervalProcess;
 
 Page({
   data: {
-    title:'欢迎使用老牛返利，正在授权...',
+    title:'欢迎使用乐盟返利，正在授权...',
     goBtnFlag: false,
     loginBtnFlag: false,
     time:3
@@ -128,7 +128,7 @@ Page({
   relogin(){
 
     this.setData({
-      title:'欢迎使用老牛返利，正在授权...',
+      title:'欢迎使用乐盟返利，正在授权...',
       loginBtnFlag: false
     });
 

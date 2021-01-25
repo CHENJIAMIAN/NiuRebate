@@ -25,7 +25,7 @@
         <view class="user-card">
           <view class="txt-group2">
             <view class="txt-dnvip">
-      老牛VIP
+      乐盟VIP
             </view>
             <view class="txt-tiny-tip">
               <text a:if="{{!isVIP}}">用支付宝支付就有返利</text>
