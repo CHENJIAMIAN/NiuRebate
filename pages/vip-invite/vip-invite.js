@@ -2,6 +2,11 @@ var app = getApp();
 
 Page({
   data: {
+    avatar:'/assets/img/yh.png',
+        phone:'',
+        tip:'您还不是会员',
+        btnLabel:'19.9元/年 开通VIP会员',
+        memberFlag:0,
     dpListData: [{
       img: 'https://gw.alipayobjects.com/mdn/rms_eb2664/afts/img/A*bFuBQZuNErMAAAAAAAAAAABkARQnAQ',
       dianming: "辣椒胡",
@@ -49,10 +54,65 @@ Page({
     // my.pageScrollTo({
     //   scrollTop: parseInt(600),
     // });
+
+    var that = this;
+
+    var url = app.serverUrl + '/aliMember/login';
+
+    my.request({
+      url: url,
+      method: 'POST',
+      data: {
+        memberId: app.globalData.memberId
+      },
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      success: function (resdata) {
+
+
+        if (resdata.data.code == 0) {
+
+         var bean = resdata.data.data;
+          if (bean.memberFlag == 0){
+              that.setData({
+                  avatar: bean.avatar,
+                  phone: bean.phone,
+                  tip:'您还不是会员',
+                  btnLabel:'19.9元/年 开通VIP会员',
+                  memberFlag:0
+              });
+          }else if (bean.memberFlag == 1){
+              that.setData({
+                  avatar: bean.avatar,
+                  phone: bean.phone,
+                  tip:'您已经是会员',
+                  btnLabel:'返回会员界面',
+                  memberFlag:1
+              });
+          }
+
+        } else {
+
+        }
+
+      },
+      fail: function (resdata) {
+        console.log(resdata);
+      }
+    });
+
   },
 
 
    buyCard() {
+
+    if (this.data.memberFlag == 1){
+         my.reLaunch({
+            url: '/pages/mine/mine'
+          })
+        return;
+    }
 
     var url = app.serverUrl + '/aliMember/buyCard';
 

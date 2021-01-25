@@ -1,9 +1,9 @@
 <view>
   <view class="user-top-container">
     <view class="txt-tiny-tip">
-      <image class="img-tz" src="/assetstz.png"/>
+      <image class="img-tz" src="/assets/img/tz.png"/>
       <text style="margin-left: 15rpx;">
-            198****6904
+            {{phone}}
       </text>
     </view>
     <!-- 会员卡 -->
@@ -12,16 +12,16 @@
       <view class="user-card">
         <view class="user-info">
           <view class="user-icon">
-            <image class="img-yh" src="/assetsyh.png"/>
+            <image class="img-yh" src="{{avatar}}"/>
           </view>
           <view class="txt-group1">
             <view class="txt-sjh">
-          151****6904
+           {{phone}}
             </view>
             <view class="txt-tiny-tip">
-              <image class="img-zs" src="/assetszs.png"/>
+              <image class="img-zs" src="/assets/img/zs.png"/>
               <text style="margin-left: 15rpx;">
-            您还不是会员
+            {{tip}}
               </text>
             </view>
           </view>
@@ -123,7 +123,7 @@
       </view>
     </view>
     <button class="btn-kt" type="primary" onTap="buyCard">
-      19.9元/年 开通VIP会员
+     {{btnLabel}}
     </button>
   </view>
 </view>
