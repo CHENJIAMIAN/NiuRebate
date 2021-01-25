@@ -209,9 +209,7 @@ Page({
           my.showToast({
             type: 'none',
             content: resdata.data.msg,
-            duration: 1000,
-            success: () => {
-            },
+            duration: 1000
           });
         }
       },

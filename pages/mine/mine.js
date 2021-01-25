@@ -93,6 +93,7 @@ Page({
             that.setData({
               isVIP: false
             });
+            that.loadRecord();
           } else if (resdata.data.data.memberFlag == 1) {
             that.setData({
               isVIP: true

@@ -101,7 +101,7 @@ Page({
 
           my.tradePay({
             tradeNO: tradeNo,
-            success: function (res) {  
+            success: function (res) { 
 
               my.navigateTo({
                 url: '/pages/success-tips/success-tips'
