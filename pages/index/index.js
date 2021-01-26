@@ -14,7 +14,7 @@ const mockData = [{
   type: "便利店",
   position: "西湖区",
   distance: "8.1km",
-  zhuan: "6.30", 
+  zhuan: "6.30",
   fanli: "10.50",
 }, {
   name: "辣酱糊",
@@ -43,11 +43,11 @@ Page({
     imgs: [0, 1, 2, 3],
     img: 'https://gw.alipayobjects.com/mdn/rms_eb2664/afts/img/A*bFuBQZuNErMAAAAAAAAAAABkARQnAQ',
     tjListData: [],
-    bannerList:[],
+    bannerList: [],
     showIndexPage: true,
     gotoLocation: false,
     showContent: false,
-    searchValue:"",
+    searchValue: "",
     tabs: [
       {
         title: '推荐',
@@ -96,7 +96,7 @@ Page({
     my.getLocation({
       type: 1,
       success: (res) => {
- 
+
         console.log(res);
 
         app.globalData.longitude = res.longitude;
@@ -108,7 +108,7 @@ Page({
         });
 
         that.requestBanner();
-        
+
         let page = 1;
         that.requestMerchantData(res.longitude, res.latitude, res.city, page);
 
@@ -140,32 +140,32 @@ Page({
     // 返回自定义分享信息
     return {
       title: 'My App',
-      desc: 'My App description', 
+      desc: 'My App description',
       path: 'pages/index/index',
     };
   },
 
 
-  requestBanner(){
-        var url = app.serverUrl + "/aliActivity/list";
+  requestBanner() {
+    var url = app.serverUrl + "/aliActivity/list";
 
-        my.request({
-            url: url,
-            method: "POST",
-            data: {},
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            success: resdata => {
-                if (resdata.data.code == 0) {
-                    var dataList = resdata.data.data;
-                    this.setData({
-                        bannerList: dataList
-                    });
-                } 
-            }
-        });
-    },
+    my.request({
+      url: url,
+      method: "POST",
+      data: {},
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      success: resdata => {
+        if (resdata.data.code == 0) {
+          var dataList = resdata.data.data;
+          this.setData({
+            bannerList: dataList
+          });
+        }
+      }
+    });
+  },
 
   requestMerchantData(longitude, latitude, cityName, page) {
 
@@ -185,12 +185,12 @@ Page({
       headers: {
         'Content-Type': 'application/json'
       },
-      success: (resdata) => { 
+      success: (resdata) => {
         my.hideLoading();
 
         if (resdata.data.code == 0) {
-          this.setData({ 
-            gotoLocation: false, 
+          this.setData({
+            gotoLocation: false,
             showContent: true
           });
 
@@ -266,14 +266,14 @@ Page({
 
 
         let page = 1;
-        let list = []; 
+        let list = [];
 
         //清空列表数据
         this.setData({
-              list, 
-              page,
-              show: false
-            });
+          list,
+          page,
+          show: false
+        });
 
 
         that.requestMerchantData(res.longitude, res.latitude, res.cityName, page);
@@ -285,7 +285,7 @@ Page({
     });
   },
 
-  handleSearchSubmit(value){
+  handleSearchSubmit(value) {
 
     console.log('===========' + value);
 
@@ -313,7 +313,7 @@ Page({
     console.log(index + '2===========2' + tabsName);
 
     this.setData({
-      [tabsName]: index, 
+      [tabsName]: index,
     });
   },
   // tab end
@@ -392,6 +392,20 @@ Page({
         });
       }
     }
+  },
+
+
+  onImgSwiperChange(event) {
+    const { current, isChanging } = event.detail;
+    //  其中 isChanging 需 acceleration 设置为 {{true}} 时才有值，
+    //   当连续滑动多屏时，中间若干屏触发 onChange 事件时 isChanging 为 true，最后一屏返回 false
+    console.log('onImgSwiperChange', { current, isChanging, '当前': this.data.bannerList[current] });
+  },
+
+  tapBanerImg(e) {
+    console.log('tapBanerImg', e.currentTarget.dataset);
+    const { item } = e.currentTarget.dataset;
+    console.log('tapBanerImg', item);
   }
 
 });
