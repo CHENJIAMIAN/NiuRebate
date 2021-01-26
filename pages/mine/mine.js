@@ -37,7 +37,11 @@ Page({
     avatar: '',
     memberFlag: '',
     expiryDate: '',
-    needLogin: false
+    needLogin: false,
+    page: 1,
+    //
+    loadMore: "",
+    loadContent: ["马不停蹄加载更多数据中...", "-- 已经到底了，加不了咯 --"]
   },
 
   onLoad() {
@@ -50,11 +54,11 @@ Page({
 
   onReady() {
 
-    if (app.globalData.memberId == ''){
-        this.setData({
-            needLogin: true
-        });
-        return;
+    if (app.globalData.memberId == '') {
+      this.setData({
+        needLogin: true
+      });
+      return;
     }
 
     var that = this;
@@ -124,7 +128,7 @@ Page({
     });
 
 
-        
+
 
 
 
@@ -158,7 +162,7 @@ Page({
       },
 
       success: (resdata) => {
- 
+
         my.hideLoading();
 
         console.log(resdata);
@@ -203,6 +207,11 @@ Page({
       fail: (resdata) => {
         console.log(resdata);
         my.hideLoading();
+      },
+      complete: () => {
+        this.setData({
+          loadMore: "over"
+        });
       }
     });
 
@@ -238,11 +247,11 @@ Page({
     });
 
 
-  }, 
+  },
 
-  gowithdraw(){
-     my.navigateTo({
-      url: '/pages/withdraw/withdraw' 
+  gowithdraw() {
+    my.navigateTo({
+      url: '/pages/withdraw/withdraw'
     });
   },
 
@@ -262,6 +271,29 @@ Page({
           scrollTop: 0,
         });
       }
+    }
+  },
+
+
+
+  /**
+   * scroll-view滑到底部触发事件
+   * @method scrollMytrip
+   */
+  onScrollToLower() {
+    try {
+      const newPage = this.data.page + 1;
+      this.setData({
+        page: newPage,
+        loadMore: "load"
+      });
+      console.log(newPage);
+      this.requestFanliData(newPage);
+    } catch (e) {
+      this.setData({
+        loadMore: "over"
+      });
+      console.log("scrollMytrip执行异常:", e);
     }
   }
 });

@@ -1,5 +1,5 @@
 <view>
-  <scroll-view scroll-y="{{true}}" onScrollToLower="scrollMytrip" class="schedule-scroll">
+  <scroll-view  style='height: 100vh;' scroll-y="{{true}}" onScrollToLower="onScrollToLower" class="schedule-scroll">
     <view hidden="{{needLogin}}" class="user-top-container">
       <!-- 用户信息 -->
       <view class="user-info">
@@ -75,7 +75,7 @@
       <view a:else class="recommend-list">
         <view class="title">返利明细</view>
         <!--  -->
-        <view class="flex-content recommend-list-item" a:for="{{listData}}" data-item={{item}} onTap="goDetail">
+        <!-- <view class="flex-content recommend-list-item" a:for="{{listData}}" data-item={{item}} onTap="goDetail">
           <image class="img-tx" src="{{item.mctAvatar}}"/>
           <view class="txt-group1">
             <view class="txt-medium">
@@ -98,7 +98,29 @@
           </view>
           <view class="btm-line">
           </view>
-        </view>
+        </view> -->
+        <list loadMore='{{loadMore}}' loadContent='{{loadContent}}'>
+          <list-item extra='{{true}}'  a:for='{{listData}}' thumb='{{item.mctAvatar}}' thumbSize='50' arrow='{{false}}'
+            a:key='id' data-item='{{item}}' onTap='goDetail'>
+            <view slot='afterUpperSubtitle'  class='txt-medium' style='font-size:14px;color:black;margin-bottom:24rpx;'>
+              {{item.mctShopName}}
+            </view>
+            <view slot='afterLowerSubtitle' class='txt-tinyest-tip' style='font-size:12px;'>
+              {{item.requestTime}}
+            </view>
+            <view slot='extra' class='txt-extra' style='font-size:16px'>
+              <view class='txt-group3'>
+                <view class='txt-fl'>
+                  返利： <text style='font-size: 32rpx;'> {{item.fanli}}元 </text>
+                </view>
+                <view class='txt-tinyest-tip' style='margin-top:24rpx;'>
+                  消费：{{item.amount}}元
+                </view>
+              </view>
+            </view>
+          </list-item>
+        </list>
+
         <!--  -->
       </view>
     </view>
