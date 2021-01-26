@@ -19,7 +19,7 @@ Page({
     ]
   },
   onLoad() {
-    my.hideShareMenu();
+    my.hideShareMenu(); 
     //alert(app.globalData.userId);
 
     var that = this;
