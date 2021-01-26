@@ -1,7 +1,7 @@
 App({
 
    //serverUrl:"http://192.168.50.176:9800",
-  serverUrl: "http://www.lemengsc.com:9800",
+  serverUrl: "https://www.lemengsc.com",
 
   globalData: {
     hasLogin: false,

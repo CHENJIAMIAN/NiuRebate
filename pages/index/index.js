@@ -396,16 +396,25 @@ Page({
 
 
   onImgSwiperChange(event) {
-    const { current, isChanging } = event.detail;
+    // const { current, isChanging } = event.detail;
     //  其中 isChanging 需 acceleration 设置为 {{true}} 时才有值，
     //   当连续滑动多屏时，中间若干屏触发 onChange 事件时 isChanging 为 true，最后一屏返回 false
-    console.log('onImgSwiperChange', { current, isChanging, '当前': this.data.bannerList[current] });
+    // console.log('onImgSwiperChange', { current, isChanging, '当前': this.data.bannerList[current] });
   },
 
   tapBanerImg(e) {
     console.log('tapBanerImg', e.currentTarget.dataset);
     const { item } = e.currentTarget.dataset;
     console.log('tapBanerImg', item);
+
+     my.navigateTo({
+        url: '/pages/activity/activity?id=' + item.id 
+            + '&title=' + item.title 
+            + '&bannerImg=' + item.bannerImg
+            + '&activityImg=' + item.activityImg
+        });
+
+
   }
 
 });

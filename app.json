@@ -16,7 +16,8 @@
     "pages/GetUserBase/GetUserBase",
     "pages/error-tip/error-tip",
     "pages/home/home",
-    "pages/share-recv/share-recv"
+    "pages/share-recv/share-recv",
+    "pages/activity/activity"
   ],
   "window": {
     "defaultTitle": "乐盟返利",
