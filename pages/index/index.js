@@ -46,7 +46,8 @@ Page({
 
     ],
     showIndexPage: true,
-    gotoLocation: true,
+    gotoLocation: false,
+    showContent: false,
     tabs: [
       {
         title: '推荐',
@@ -137,7 +138,7 @@ Page({
     // 返回自定义分享信息
     return {
       title: 'My App',
-      desc: 'My App description',
+      desc: 'My App description', 
       path: 'pages/index/index',
     };
   },
@@ -165,7 +166,10 @@ Page({
         my.hideLoading();
 
         if (resdata.data.code == 0) {
-          this.setData({ gotoLocation: false });
+          this.setData({ 
+            gotoLocation: false, 
+            showContent: true
+          });
 
           console.log(resdata);
 
@@ -267,14 +271,24 @@ Page({
   },
   // tab start
   handleTabClick({ index, tabsName }) {
+
+    console.log(index + '1===========1' + tabsName);
+
     this.setData({
       [tabsName]: index,
     });
+
+
+    
+
   },
 
   handleTabChange({ index, tabsName }) {
+
+    console.log(index + '2===========2' + tabsName);
+
     this.setData({
-      [tabsName]: index,
+      [tabsName]: index, 
     });
   },
   // tab end
