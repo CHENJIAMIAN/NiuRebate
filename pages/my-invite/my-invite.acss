@@ -1,4 +1,3 @@
-
 .image-zwkt {
   width: 473rpx;
   height: 336rpx;
@@ -34,12 +33,12 @@
   line-height: 34rpx;
 }
 
-.image-tx{
+.image-tx {
   border-radius: 50%;
   width: 100rpx;
   height: 100rpx;
 }
 
-.am-auto-sizer-content{
+.am-auto-sizer-content {
   border-radius: 50%;
 }
