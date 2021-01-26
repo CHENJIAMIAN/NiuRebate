@@ -42,12 +42,12 @@ Page({
     position: '',
     imgs: [0, 1, 2, 3],
     img: 'https://gw.alipayobjects.com/mdn/rms_eb2664/afts/img/A*bFuBQZuNErMAAAAAAAAAAABkARQnAQ',
-    tjListData: [
-
-    ],
+    tjListData: [],
+    bannerList:[],
     showIndexPage: true,
     gotoLocation: false,
     showContent: false,
+    searchValue:"",
     tabs: [
       {
         title: '推荐',
@@ -107,6 +107,8 @@ Page({
           position: res.city + res.district
         });
 
+        that.requestBanner();
+        
         let page = 1;
         that.requestMerchantData(res.longitude, res.latitude, res.city, page);
 
@@ -143,6 +145,27 @@ Page({
     };
   },
 
+
+  requestBanner(){
+        var url = app.serverUrl + "/aliActivity/list";
+
+        my.request({
+            url: url,
+            method: "POST",
+            data: {},
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            success: resdata => {
+                if (resdata.data.code == 0) {
+                    var dataList = resdata.data.data;
+                    this.setData({
+                        bannerList: dataList
+                    });
+                } 
+            }
+        });
+    },
 
   requestMerchantData(longitude, latitude, cityName, page) {
 
@@ -262,7 +285,11 @@ Page({
     });
   },
 
+  handleSearchSubmit(value){
 
+    console.log('===========' + value);
+
+  },
 
   mine() {
     my.navigateTo({
@@ -278,8 +305,6 @@ Page({
       [tabsName]: index,
     });
 
-
-    
 
   },
 

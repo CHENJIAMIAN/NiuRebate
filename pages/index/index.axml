@@ -30,15 +30,15 @@
           <image class="img-xl" src="/assets/img/xl.png" style="margin-left:18rpx;" onTap="chooseLocation"/>
         </view>
         <!-- search -->
-        <search-bar value="{{searchValue}}" placeholder="支付拿返利！" showCancelButton="{{false}}" />
+        <search-bar value="{{searchValue}}" placeholder="支付拿返利！" onSubmit="handleSearchSubmit" showCancelButton="{{false}}" />
       </view>
       <!-- main white content area -->
       <view class="main-content">
         <!-- top img -->
         <swiper class="demo-swiper" previousMargin="0px" nextMargin="0px" indicator-dots="{{true}}" autoplay="{{true}}" vertical="{{false}}" interval="{{5000}}" circular="{{true}}" duration="{{1000}}" indicator-active-color="#2DC2A2">
-          <swiper-item key="swiper-item-{{index}}" a:for="{{imgs}}">
+          <swiper-item key="swiper-item-{{index}}" a:for="{{bannerList}}"  data-item={{item}} >
             <view class="flex-content swiper-item">
-              <image class="img-top" src="{{img}}"/>
+              <image class="img-top" src="{{item.bannerImg}}"/>
             </view>
           </swiper-item>
         </swiper>
