@@ -34,7 +34,7 @@ Page({
             success: function (resdata) {
 
               my.navigateTo({
-                url: '/pages/index/index' 
+                url: '/pages/loading/loading' 
               });
 
             },

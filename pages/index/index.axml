@@ -43,7 +43,7 @@
           </swiper-item>
         </swiper>
         <!-- notify bar -->
-        <view class="notify-bar">
+        <view class="notify-bar" a:if="{{false}}">
           <image class="img-tz" src="/assets/img/tz2.png"/>
           <text class="txt-24 orange" style="margin-left:20rpx;">在国诚C消费后赚了5.53元</text>
         </view>
