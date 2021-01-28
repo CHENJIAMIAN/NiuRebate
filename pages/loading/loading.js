@@ -44,7 +44,7 @@ Page({
 
               // my.hideLoading();
 
-              console.log(resdata); 
+              // console.log(resdata); 
 
               if (resdata.data.data){
 

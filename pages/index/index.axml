@@ -64,13 +64,17 @@
         </view>
         <!-- tab bar -->
         <view>
-          <tabs tabs="{{tabs}}" tabsName="activeTab" onTabClick="handleTabClick" onChange="handleTabChange" activeTab="{{activeTab}}" showPlus="{{false}}" swipeable="{{false}}" capsule="{{false}}" hasSubTitle="{{true}}" tabBarUnderlineWidth="20px" stickyBar="{{true}}" tabBarActiveTextColor="#FF8400" tabBarInactiveTextColor="#666666" tabBarActiveSubTextColor="#FF8400" tabBarSubTextColor="#666666">
+          <tabs tabs="{{tabs}}" tabsName="activeTab" onTabClick="handleTabChange" onChange="handleTabChange" 
+          tabContentHeight='{{tabContentHeight}}'
+          activeTab="{{activeTab}}" showPlus="{{false}}" swipeable="{{true}}" capsule="{{false}}" 
+          hasSubTitle="{{true}}" tabBarUnderlineWidth="20px" stickyBar="{{true}}" tabBarActiveTextColor="#FF8400" 
+          tabBarInactiveTextColor="#666666" tabBarActiveSubTextColor="#FF8400" tabBarSubTextColor="#666666">
             <block a:for="{{tabs}}">
               <tab-content a:if='{{index == 0}}' key="{{index}}" tabId="{{index}}" activeTab="{{activeTab}}">
-                <view class="tab-content">
+                <view class="tab-content{{index}}">
                   <view class="schedule-container">
                     <!-- tj card -->
-                    <view class="tj-card" a:for="{{list}}" data-item={{item}} onTap="goShopDetail">
+                    <view class="tj-card" a:for="{{cateList[index]}}" data-item={{item}} onTap="goShopDetail">
                       <image class="img-tj" src="{{item.img}}"/>
                       <view class="tj-card-txts">
                         <view class="txt-32-bold">{{item.name}}</view>
@@ -94,10 +98,10 @@
                 </view>
               </tab-content>
               <tab-content a:else key="{{index}}" tabId="{{index}}" activeTab="{{activeTab}}">
-                <view class="tab-content">
+                <view class="tab-content{{index}}">
                   <view class="schedule-container">
                     <!-- tj card -->
-                    <view class="tj-card2 flex" a:for="{{cateList}}" data-item={{item}} onTap="goShopDetail">
+                    <view class="tj-card2 flex" a:for="{{cateList[index]}}" data-item={{item}} onTap="goShopDetail">
                       <image class="img-tj2" src="{{item.img}}"/>
                       <view class="tj-card-txts">
                         <view class="txt-32-bold">{{item.name}}</view>

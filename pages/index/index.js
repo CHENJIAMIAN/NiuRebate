@@ -47,11 +47,11 @@ Page({
     list2: [],
     list3: [],
     cateList: [],
-    page:1,
-    page1:1,
-    page2:1,
-    page3:1,
-    categoryId:0,
+    page: 1,
+    page1: 1,
+    page2: 1,
+    page3: 1,
+    categoryId: 0,
     bannerList: [],
     showIndexPage: true,
     gotoLocation: false,
@@ -95,6 +95,7 @@ Page({
       },
     ],
     activeTab: 0,
+    tabContentHeight: ''
   },
   onLoad(query) {
     // 页面加载
@@ -107,7 +108,7 @@ Page({
       type: 1,
       success: (res) => {
 
-        console.log(res);
+        // console.log(res);
 
         app.globalData.longitude = res.longitude;
         app.globalData.latitude = res.latitude;
@@ -179,8 +180,8 @@ Page({
 
   requestMerchantData(longitude, latitude, cityName, page) {
 
-    console.log(longitude + '===' + latitude + '===' + cityName);
-    
+    // console.log(longitude + '===' + latitude + '===' + cityName);
+
     let categoryId = this.data.categoryId;
 
     var url = app.serverUrl + '/aliShop/list';
@@ -197,7 +198,7 @@ Page({
       headers: {
         'Content-Type': 'application/json'
       },
-      success: (resdata) => { 
+      success: (resdata) => {
         my.hideLoading();
 
         if (resdata.data.code == 0) {
@@ -206,66 +207,55 @@ Page({
             showContent: true
           });
 
-          console.log(resdata);
+          console.log(`requestMerchantData page:${page},categoryId:${categoryId}`, resdata);
 
-          
-          if (categoryId == 0){
+
+          if (categoryId == 0) {
             let list = this.data.list;
             var dataList = resdata.data.data;
-            setTimeout(() => {
-              for (let i = 0; i < dataList.length; i++) {
-                list.push(dataList[i]);
-              }
-              this.setData({
-                list: list,
-                page: page
-              });
-            }, 1000);
+            for (let i = 0; i < dataList.length; i++) {
+              list.push(dataList[i]);
+            }
+            this.setData({
+              list: list,
+              page: page
+            });
 
-          }else if (categoryId == 1){
+          } else if (categoryId == 1) {
             let list = this.data.list1;
             var dataList = resdata.data.data;
-            setTimeout(() => {
-              for (let i = 0; i < dataList.length; i++) {
-                list.push(dataList[i]);
-              }
-              this.setData({
-                list1: list,
-                cateList: list,
-                page1: page
-              });
-            }, 1000);
+            for (let i = 0; i < dataList.length; i++) {
+              list.push(dataList[i]);
+            }
+            this.setData({
+              list1: list,
+              page1: page
+            });
 
-          }else if (categoryId == 2){
+          } else if (categoryId == 2) {
 
             let list = this.data.list2;
             var dataList = resdata.data.data;
-            setTimeout(() => {
-              for (let i = 0; i < dataList.length; i++) {
-                list.push(dataList[i]);
-              }
-              this.setData({
-                list2: list,
-                cateList: list,
-                page2: page
-              });
-            }, 1000);
-            
-          }else if (categoryId == 3){
+            for (let i = 0; i < dataList.length; i++) {
+              list.push(dataList[i]);
+            }
+            this.setData({
+              list2: list,
+              page2: page
+            });
+
+          } else if (categoryId == 3) {
 
             let list = this.data.list3;
             var dataList = resdata.data.data;
-            setTimeout(() => {
-              for (let i = 0; i < dataList.length; i++) {
-                list.push(dataList[i]);
-              }
-              this.setData({
-                list3: list,
-                cateList: list,
-                page3: page
-              });
-            }, 1000);
-            
+            for (let i = 0; i < dataList.length; i++) {
+              list.push(dataList[i]);
+            }
+            this.setData({
+              list3: list,
+              page3: page
+            });
+
           }
 
 
@@ -282,54 +272,41 @@ Page({
 
         } else if (resdata.data.code == 7) {
 
-          if (categoryId == 0){
+          if (categoryId == 0) {
             let list = this.data.list;
-            setTimeout(() => {              
-              this.setData({
-                list: list,
-                page: page,
-                show: false
-              });
-            }, 1000);
+            this.setData({
+              list: list,
+              page: page,
+              show: false
+            });
 
-          }else if (categoryId == 1){
+          } else if (categoryId == 1) {
             let list = this.data.list1;
-            setTimeout(() => {
-              this.setData({
-                list1: list,
-                cateList: list,
-                page1: page,
-                show: false
-              });
-            }, 1000);
+            this.setData({
+              list1: list,
+              page1: page,
+              show: false
+            });
 
-          }else if (categoryId == 2){
+          } else if (categoryId == 2) {
 
             let list = this.data.list2;
-            setTimeout(() => {
-              this.setData({
-                list2: list,
-                cateList: list,
-                page2: page,
-                show: false
-              });
-            }, 1000);
-            
-          }else if (categoryId == 3){
+            this.setData({
+              list2: list,
+              page2: page,
+              show: false
+            });
+
+          } else if (categoryId == 3) {
 
             let list = this.data.list3;
-            setTimeout(() => {
-              this.setData({
-                list3: list,
-                cateList: list,
-                page3: page,
-                show: false
-              });
-            }, 1000);
-            
+            this.setData({
+              list3: list,
+              page3: page,
+              show: false
+            });
+
           }
-
-
 
           my.showToast({
             type: 'none',
@@ -340,6 +317,24 @@ Page({
       },
       fail: (resdata) => {
         my.hideLoading();
+      },
+      complete: () => {
+        const { list, list1, list2, list3 } = this.data;
+        // 设置内容
+        this.setData({
+          cateList: [list, list1, list2, list3],
+        })
+        // 适配高度
+        my.createSelectorQuery()
+          .select('.tab-content' + categoryId).boundingClientRect().exec((ret) => {
+            if (!ret) return;
+            const hei = ret[0].height;
+            console.log('.tab-content' + categoryId, hei)
+            console.log(this.data.cateList)
+            this.setData({
+              tabContentHeight: hei + 30,
+            })
+          })
       }
     });
 
@@ -394,34 +389,22 @@ Page({
     });
   },
   // tab start
-  handleTabClick({ index, tabsName }) {
-
-    console.log(index + '1===========1' + tabsName);
-
+  handleTabChange({ index, tabsName }) {
+    // console.log('handleTabChange', { index, tabsName });
     this.setData({
       [tabsName]: index,
       categoryId: index
     });
 
     var newPage = this.data.page;
-    if (index == 1){
-        newPage = this.data.page1;
-    }else if (index == 2){
-        newPage = this.data.page2;
-    }else if (index == 3){
-        newPage = this.data.page3;
+    if (index == 1) {
+      newPage = this.data.page1;
+    } else if (index == 2) {
+      newPage = this.data.page2;
+    } else if (index == 3) {
+      newPage = this.data.page3;
     }
     this.requestMerchantData(app.globalData.longitude, app.globalData.latitude, app.globalData.cityName, newPage);
-
-  },
-
-  handleTabChange({ index, tabsName }) {
-
-    console.log(index + '2===========2' + tabsName);
-
-    this.setData({
-      [tabsName]: index,
-    });
   },
   // tab end
 
@@ -437,20 +420,20 @@ Page({
       // if (list.length < mockTotal) {
       // this.setData({ show: true });
 
-    let index = this.data.categoryId;
-    var newPage = this.data.page;
-    if (index == 1){
+      let index = this.data.categoryId;
+      var newPage = this.data.page;
+      if (index == 1) {
         newPage = this.data.page1;
-    }else if (index == 2){
+      } else if (index == 2) {
         newPage = this.data.page2;
-    }else if (index == 3){
+      } else if (index == 3) {
         newPage = this.data.page3;
-    }
+      }
 
-    newPage = newPage + 1;
-    console.log(newPage);
+      newPage = newPage + 1;
+      console.log(newPage);
 
-    this.requestMerchantData(app.globalData.longitude, app.globalData.latitude, app.globalData.cityName, newPage);
+      this.requestMerchantData(app.globalData.longitude, app.globalData.latitude, app.globalData.cityName, newPage);
 
       // this.mySchedulde(newPage);
       // }
@@ -522,12 +505,12 @@ Page({
     const { item } = e.currentTarget.dataset;
     console.log('tapBanerImg', item);
 
-     my.navigateTo({
-        url: '/pages/activity/activity?id=' + item.id 
-            + '&title=' + item.title 
-            + '&bannerImg=' + item.bannerImg
-            + '&activityImg=' + item.activityImg
-        });
+    my.navigateTo({
+      url: '/pages/activity/activity?id=' + item.id
+        + '&title=' + item.title
+        + '&bannerImg=' + item.bannerImg
+        + '&activityImg=' + item.activityImg
+    });
 
 
   }
