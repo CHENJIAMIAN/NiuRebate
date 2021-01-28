@@ -15,7 +15,7 @@ Page({
   
   login(){
 
-    my.showLoading();
+    // my.showLoading();
     // 页面加载
     var that = this;
 
@@ -42,7 +42,7 @@ Page({
             },
             success: function (resdata) {
 
-              my.hideLoading();
+              // my.hideLoading();
 
               console.log(resdata); 
 
@@ -74,7 +74,7 @@ Page({
 
             },
             fail: function (resdata) {
-              my.hideLoading();
+              // my.hideLoading();
               that.setData({
                 loginBtnFlag:true,
                 title: '授权失败, 请重试！'
@@ -89,7 +89,7 @@ Page({
       },
 
       fail() {
-      my.hideLoading();
+      // my.hideLoading();
        that.setData({
           loginBtnFlag:true,
           title: '授权失败, 请重试！'
