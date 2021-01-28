@@ -32,6 +32,7 @@
         <!-- search -->
         <view onTap="searchClick">
           <search-bar value="{{searchValue}}" placeholder="支付拿返利！" 
+          disabled="{{true}}"
              showCancelButton="{{false}}" />
         </view>
         

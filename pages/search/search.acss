@@ -38,10 +38,8 @@
   background: #2cc1a1;
   /* linear-gradient(-27deg, #2cc1a1, #2cc0a0); */
   display: flex;
-  padding: 30rpx;
-  justify-content: space-between;
-  margin-top: -40rpx;
-  transform: translateY(40rpx);
+  justify-content: center;
+  padding-top: 30rpx;
 }
 
 .main-content {
@@ -226,8 +224,8 @@
   margin: 0rpx;
 }
 
-
 /* 横向tab */
+
 .weui-tabs-bar__wrp {
   /* border-bottom: 1px solid #eee; */
 }
@@ -235,7 +233,6 @@
 .weui-tabs-swiper {
   width: 100%;
 }
-
 
 .weui-tabs-bar__title {
   margin: 0px 10px;
@@ -257,4 +254,11 @@
   line-height: 44rpx;
   padding: 0 24rpx;
   margin: 8rpx;
+}
+
+.am-search {
+  width: 5.8rem;
+  height: 0.66rem;
+  background: #FFFFFF;
+  border-radius: 33px;
 }

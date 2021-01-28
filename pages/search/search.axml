@@ -1,84 +1,68 @@
-<view class='container'>
-<view>
-  <view class='top-bar' >
-        <search-bar borderColor='white' value='{{searchValue}}' 
-        placeholder='支付拿返利！' 
-        showCancelButton='{{false}}'  
-        bindinput='onSearchBarInput'
-        bindsubmit='onSubmit'
-
-        style="width:100vh;margin-left:50rpx;" >
-        </search-bar> 
-  </view>
-  <!-- bindconfirm='goToSearchData'  
-        confirm-type='search'-->
-  <!--历史搜索记录-->
-  <view  style="background: #2cc1a1;">
-    <view >{{'xxxxxxxxxx'}}</view>
-    <view class='txt-32-bold' style="margin-left:30rpx;">
+<scroll-view scroll-y='{{true}}' style="height:100vh;" class='schedule-scroll' onScrollToLower='scrollMytrip'>
+  <view class='container' style="">
+    <view style="position: fixed;top: 0;left: 0;right: 0;z-index:1;background: #2cc1a1;">
+      <view class='top-bar' >
+        <search-bar borderColor='white' value='{{searchValue}}' placeholder='支付拿返利！' showCancelButton='{{false}}' onInput='onSearchBarInput' onSubmit='onSubmit' onClear='onClear'
+        >
+        </search-bar>
+      </view>
+      <!-- bindconfirm='goToSearchData' confirm-type='search'-->
+      <!--历史搜索记录-->
+      <view>
+        <view class='txt-32-bold' style="margin-left:30rpx;">
         {{searchTip}}
-    </view>
-    
-    <view class='flex' style='flex-wrap:wrap;'>
-    <view class='btn-txt-white-radius' a:for='{{historyList}}'
-    data-item="{{item}}" 
-      onTap="hisItemClick" 
-     >
+        </view>
+        <view class='flex' style='flex-wrap:wrap;'>
+          <view class='btn-txt-white-radius' a:for='{{historyList}}' data-item="{{item}}" onTap="hisItemClick">
           {{item}}
+          </view>
+        </view>
+      </view>
+      <view style="height:20rpx;background: #2cc1a1;"></view>
     </view>
-  </view>
-
-  </view>
-  
-  <view style="height:20rpx;background: #2cc1a1;"></view>
-</view>
-<!--顶总结束-->
-
-
-
-  
-  <view wx:if='{{showContent}}' class='container-index'>
-    <scroll-view scroll-y='{{true}}' class='schedule-scroll' bindscrolltolower='scrollMytrip'>
+    <!--顶总结束-->
+    <view wx:if='{{showContent}}' class='container-index' style="margin-top:100px;">
       <view class='main-content'>
         <view>
           <view class='schedule-container'>
-                  <view class='tj-card2 flex' a:for='{{list}}' data-item='{{item}}' onTap='goShopDetail' wx:key='id'>
-                    <image class='img-tj2' src='{{item.img}}'>
-                    </image>
-                    <view class='tj-card-txts'>
-                      <view class='txt-32-bold'>
+            <view class='tj-card2 flex' a:for='{{list}}' data-item='{{item}}' onTap='goShopDetail' wx:key='id'>
+              <image class='img-tj2' src='{{item.img}}'>
+              </image>
+              <view class='tj-card-txts'>
+                <view class='txt-32-bold'>
                         {{item.name}}
-                      </view>
-                      <view class='txt-20-gray'>
+                </view>
+                <view class='txt-20-gray'>
                         {{item.price}}/人 {{item.type}} {{item.position}} {{item.distance}}
-                      </view>
-                      <view class='btn-txt-group'>
-                        <view class='btn-txt-l'
-                          style="background: url(/assets/img/yjjx2.png) 0 0 / 100% 100% no-repeat;">
+                </view>
+                <view class='btn-txt-group'>
+                  <view class='btn-txt-l' style="background: url(/assets/img/yjjx2.png) 0 0 / 100% 100% no-repeat;">
                           每单约赚￥{{item.zhuan}}
-                        </view>
-                        <view class='btn-txt-r'
-                          style="background: url(/assets/img/yjjx1.png) 0 0 / 100% 100% no-repeat;">
-                          返利{{item.fanli}}%
-                        </view>
-                      </view>
-                    </view>
                   </view>
-                  <!-- 加载中 -->
-                  <view class='spinner' style="{{show ? '' : 'display:none'}}">
-                    <view class='bounce1 bounce'>
-                    </view>
-                    <view class='bounce2 bounce'>
-                    </view>
-                    <view class='bounce3 bounce'>
-                    </view>
-                    <view style='margin:20rpx 0 0 20rpx;color:#666666;'>
-                      加载中...
-                    </view>
+                  <view class='btn-txt-r' style="background: url(/assets/img/yjjx1.png) 0 0 / 100% 100% no-repeat;">
+                          返利{{item.fanli}}%
                   </view>
                 </view>
+              </view>
+            </view>
+            <!-- 加载中 -->
+            <view class='spinner' style="{{show ? '' : 'display:none'}}">
+              <view class='bounce1 bounce'>
+              </view>
+              <view class='bounce2 bounce'>
+              </view>
+              <view class='bounce3 bounce'>
+              </view>
+              <view style='margin:20rpx 0 0 20rpx;color:#666666;'>
+                      加载中...
+              </view>
+            </view>
+            <view class="spinner" style="{{show ? 'display:none' : ''}}">
+              <view style="margin:20rpx;color:#666666;">-- 已经到底了，加不了咯 --</view>
+            </view>
+          </view>
         </view>
       </view>
-    </scroll-view>
+    </view>
   </view>
-</view>
+</scroll-view>
