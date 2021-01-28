@@ -12,7 +12,7 @@ Page({
   },
 
   onLoad(query) {
-    var cache = my.getStorageSync('SearchHistoryKey');
+    var cache = my.getStorageSync({ key: 'SearchHistoryKey' });
     if (cache != null && cache != '' && cache != '查无此key') {
       this.setData({
         historyList: cache.data
@@ -20,8 +20,7 @@ Page({
       this.autoHeight();
       console.log('historyList', this.data.historyList)
     }
-    this.requestMerchantData(app.globalData.longitude, app.globalData.latitude,
-      app.globalData.cityName, 1, "小");
+    
   },
   onReady() { },
 
@@ -119,11 +118,12 @@ Page({
       return;
     }
 
-    var cache = my.getStorageSync('SearchHistoryKey');
+    var cache = my.getStorageSync({ key: 'SearchHistoryKey' });
     console.log("####cache:", cache)
-    if (cache != null && cache != '' && cache != undefined && cache == '查无此key') {
+    if (cache != null && cache != '' && cache != undefined && cache != '查无此key') {
       var isExist = false;
       var arr = [];
+      cache=cache.data;
       for (var i = 0; i < cache.length; i++) {
         var name = cache[i]
         if (i >= 12) {
@@ -141,7 +141,7 @@ Page({
       if (!isExist) {
         arr.unshift(searchKey);
       }
-      my.setStorageSync("SearchHistoryKey", arr);
+      my.setStorageSync({key:"SearchHistoryKey",data:arr});
       this.setData({
         historyList: arr
       })
@@ -150,7 +150,7 @@ Page({
     } else {
       var arr = [];
       arr[0] = searchKey;
-      my.setStorageSync("SearchHistoryKey", arr);
+      my.setStorageSync({key:"SearchHistoryKey",data:arr});
       this.setData({
         historyList: arr
       })

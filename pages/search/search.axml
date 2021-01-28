@@ -18,7 +18,7 @@
           </view>
         </view>
       </view>
-      <view style="height:20rpx;background: #2cc1a1;"></view>
+      
     </view>
     <!--顶总结束-->
     <view id='btm' wx:if='{{showContent}}' class='container-index' style="margin-top:100px;">
