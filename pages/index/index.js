@@ -42,12 +42,22 @@ Page({
     position: '',
     imgs: [0, 1, 2, 3],
     img: 'https://gw.alipayobjects.com/mdn/rms_eb2664/afts/img/A*bFuBQZuNErMAAAAAAAAAAABkARQnAQ',
-    tjListData: [],
+    list: [],
+    list1: [],
+    list2: [],
+    list3: [],
+    cateList: [],
+    page:1,
+    page1:1,
+    page2:1,
+    page3:1,
+    categoryId:0,
     bannerList: [],
     showIndexPage: true,
     gotoLocation: false,
     showContent: false,
     searchValue: "",
+    show: false,
     tabs: [
       {
         title: '推荐',
@@ -170,7 +180,8 @@ Page({
   requestMerchantData(longitude, latitude, cityName, page) {
 
     console.log(longitude + '===' + latitude + '===' + cityName);
-
+    
+    let categoryId = this.data.categoryId;
 
     var url = app.serverUrl + '/aliShop/list';
     my.request({
@@ -180,12 +191,13 @@ Page({
         longitude: longitude,
         latitude: latitude,
         cityName: cityName,
-        page: page
+        page: page,
+        categoryId: categoryId
       },
       headers: {
         'Content-Type': 'application/json'
       },
-      success: (resdata) => {
+      success: (resdata) => { 
         my.hideLoading();
 
         if (resdata.data.code == 0) {
@@ -196,29 +208,66 @@ Page({
 
           console.log(resdata);
 
-          let list = this.data.tjListData;
-          var dataList = resdata.data.data;
-          // for (var i=0; i<dataList.length; i++){
-          //   list.push(dataList[i]);
-          // }
+          
+          if (categoryId == 0){
+            let list = this.data.list;
+            var dataList = resdata.data.data;
+            setTimeout(() => {
+              for (let i = 0; i < dataList.length; i++) {
+                list.push(dataList[i]);
+              }
+              this.setData({
+                list: list,
+                page: page
+              });
+            }, 1000);
 
-          setTimeout(() => {
-            for (let i = 0; i < dataList.length; i++) {
-              let newObj = { ...dataList[i], remarksa: `我是第${page}页` };
-              list.push(newObj);
-            }
-            this.setData({
-              list,
-              page,
-              show: false
-            });
-          }, 1000);
+          }else if (categoryId == 1){
+            let list = this.data.list1;
+            var dataList = resdata.data.data;
+            setTimeout(() => {
+              for (let i = 0; i < dataList.length; i++) {
+                list.push(dataList[i]);
+              }
+              this.setData({
+                list1: list,
+                cateList: list,
+                page1: page
+              });
+            }, 1000);
 
+          }else if (categoryId == 2){
 
+            let list = this.data.list2;
+            var dataList = resdata.data.data;
+            setTimeout(() => {
+              for (let i = 0; i < dataList.length; i++) {
+                list.push(dataList[i]);
+              }
+              this.setData({
+                list2: list,
+                cateList: list,
+                page2: page
+              });
+            }, 1000);
+            
+          }else if (categoryId == 3){
 
-          // this.setData({
-          //   tjListData: this.data.tjListData.concat(dataList)
-          // });
+            let list = this.data.list3;
+            var dataList = resdata.data.data;
+            setTimeout(() => {
+              for (let i = 0; i < dataList.length; i++) {
+                list.push(dataList[i]);
+              }
+              this.setData({
+                list3: list,
+                cateList: list,
+                page3: page
+              });
+            }, 1000);
+            
+          }
+
 
 
         } else if (resdata.data.code == 6) {
@@ -232,7 +281,56 @@ Page({
           });
 
         } else if (resdata.data.code == 7) {
-          this.setData({ show: false });
+
+          if (categoryId == 0){
+            let list = this.data.list;
+            setTimeout(() => {              
+              this.setData({
+                list: list,
+                page: page,
+                show: false
+              });
+            }, 1000);
+
+          }else if (categoryId == 1){
+            let list = this.data.list1;
+            setTimeout(() => {
+              this.setData({
+                list1: list,
+                cateList: list,
+                page1: page,
+                show: false
+              });
+            }, 1000);
+
+          }else if (categoryId == 2){
+
+            let list = this.data.list2;
+            setTimeout(() => {
+              this.setData({
+                list2: list,
+                cateList: list,
+                page2: page,
+                show: false
+              });
+            }, 1000);
+            
+          }else if (categoryId == 3){
+
+            let list = this.data.list3;
+            setTimeout(() => {
+              this.setData({
+                list3: list,
+                cateList: list,
+                page3: page,
+                show: false
+              });
+            }, 1000);
+            
+          }
+
+
+
           my.showToast({
             type: 'none',
             content: resdata.data.msg,
@@ -270,9 +368,8 @@ Page({
 
         //清空列表数据
         this.setData({
-          list,
-          page,
-          show: false
+          list: list,
+          page: page
         });
 
 
@@ -303,8 +400,18 @@ Page({
 
     this.setData({
       [tabsName]: index,
+      categoryId: index
     });
 
+    var newPage = this.data.page;
+    if (index == 1){
+        newPage = this.data.page1;
+    }else if (index == 2){
+        newPage = this.data.page2;
+    }else if (index == 3){
+        newPage = this.data.page3;
+    }
+    this.requestMerchantData(app.globalData.longitude, app.globalData.latitude, app.globalData.cityName, newPage);
 
   },
 
@@ -325,15 +432,25 @@ Page({
   async scrollMytrip() {
     console.log('scrollMytrip')
     try {
-      const { page, list, } = this.data;
+      // const { page, list, } = this.data;
       // 判断是否还有数据需要加载 
       // if (list.length < mockTotal) {
-      this.setData({ show: true });
-      const newPage = page + 1;
+      // this.setData({ show: true });
 
-      console.log(newPage);
+    let index = this.data.categoryId;
+    var newPage = this.data.page;
+    if (index == 1){
+        newPage = this.data.page1;
+    }else if (index == 2){
+        newPage = this.data.page2;
+    }else if (index == 3){
+        newPage = this.data.page3;
+    }
 
-      this.requestMerchantData(app.globalData.longitude, app.globalData.latitude, app.globalData.cityName, newPage);
+    newPage = newPage + 1;
+    console.log(newPage);
+
+    this.requestMerchantData(app.globalData.longitude, app.globalData.latitude, app.globalData.cityName, newPage);
 
       // this.mySchedulde(newPage);
       // }
@@ -349,18 +466,16 @@ Page({
    */
   async mySchedulde(page = 1) {
     try {
-      let list = this.data.tjListData;
+      let list = this.data.list;
       // 模拟请求拿到数据进行更新data
       setTimeout(() => {
         let data = mockData;
         for (let i = 0; i < data.length; i++) {
-          let newObj = { ...data[i], remarksa: `我是第${page}页` };
-          list.push(newObj);
+          list.push(data[i]);
         }
         this.setData({
           list,
-          page,
-          show: false
+          page
         });
       }, 1000);
     } catch (e) {

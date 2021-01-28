@@ -82,7 +82,7 @@ Page({
                   btnLabel:'19.9元/年 开通VIP会员',
                   memberFlag:0
               });
-          }else if (bean.memberFlag == 1){
+          }else if (bean.memberFlag > 0){
               that.setData({
                   avatar: bean.avatar,
                   phone: bean.phone,

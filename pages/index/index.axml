@@ -97,7 +97,7 @@
                 <view class="tab-content">
                   <view class="schedule-container">
                     <!-- tj card -->
-                    <view class="tj-card2 flex" a:for="{{list}}" data-item={{item}} onTap="goShopDetail">
+                    <view class="tj-card2 flex" a:for="{{cateList}}" data-item={{item}} onTap="goShopDetail">
                       <image class="img-tj2" src="{{item.img}}"/>
                       <view class="tj-card-txts">
                         <view class="txt-32-bold">{{item.name}}</view>
@@ -108,14 +108,14 @@
                         </view>
                       </view>
                     </view>
-                    <view class="spinner" style="{{show ? '' : 'display:none'}}">
+                    <view class="spinner" style="{{show? '' : 'display:none'}}">
                       <view class="bounce1 bounce"></view>
                       <view class="bounce2 bounce"></view>
                       <view class="bounce3 bounce"></view>
                       <view style="margin:20rpx 0 0 20rpx;color:#666666;">加载中...</view>
                     </view>
                   </view>
-                    <view class="spinner" style="{{!show ? '' : 'display:none'}}">
+                    <view class="spinner" style="{{show ? 'display:none' : ''}}">
                       <view style="margin:20rpx;color:#666666;">-- 已经到底了，加不了咯 --</view>
                     </view>
                 </view>
