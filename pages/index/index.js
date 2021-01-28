@@ -530,7 +530,15 @@ Page({
         });
 
 
-  }
+  },
+
+
+   //跳到搜索页面
+    searchClick() {
+        my.navigateTo({
+            url: '/pages/search/search'
+        });
+    },
 
 });
 

@@ -30,7 +30,11 @@
           <image class="img-xl" src="/assets/img/xl.png" style="margin-left:18rpx;" onTap="chooseLocation"/>
         </view>
         <!-- search -->
-        <search-bar value="{{searchValue}}" placeholder="支付拿返利！" onSubmit="handleSearchSubmit" showCancelButton="{{false}}" />
+        <view onTap="searchClick">
+          <search-bar value="{{searchValue}}" placeholder="支付拿返利！" 
+             showCancelButton="{{false}}" />
+        </view>
+        
       </view>
       <!-- main white content area -->
       <view class="main-content">
