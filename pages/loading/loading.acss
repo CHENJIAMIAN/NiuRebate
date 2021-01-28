@@ -1,7 +1,7 @@
 
 .image-zwkt {
-  width: 473rpx;
-  height: 336rpx;
+  width: 500rpx;
+  height: 500rpx;
 }
 
 .image-sqdl {
