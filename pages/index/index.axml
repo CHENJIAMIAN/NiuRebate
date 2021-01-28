@@ -15,7 +15,7 @@
   </block>
   <!-- 主页内容 -->
   <view a:if="{{showContent}}" class="container-index">
-    <scroll-view scroll-y="{{true}}" onScrollToLower="scrollMytrip" class="schedule-scroll">
+    <scroll-view scroll-y="{{true}}" style="height:100vh;" onScrollToLower="scrollMytrip" class="schedule-scroll">
       <!-- 本页为透明头，考虑兼容性问题，这里使用固定高度作为顶部占位-->
       <view style="height: 66px;background:#2DC2A2;"></view>
       <!-- top bar -->
