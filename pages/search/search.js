@@ -8,7 +8,7 @@ Page({
         position: "",
         showContent: false,
         tjListData:[],  
-        historyList:[]
+        historyList:''
     },
 
     onLoad(query) {
