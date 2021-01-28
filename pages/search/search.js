@@ -17,6 +17,7 @@ Page({
       this.setData({
         historyList: cache.data
       });
+      this.autoHeight();
       console.log('historyList', this.data.historyList)
     }
     this.requestMerchantData(app.globalData.longitude, app.globalData.latitude,
@@ -158,8 +159,18 @@ Page({
     this.setData({
       list: [],
     });
+    this.autoHeight();
     this.requestMerchantData(app.globalData.longitude, app.globalData.latitude,
       app.globalData.cityName, 1, searchKey);
+  },
+
+  autoHeight() {
+    my.createSelectorQuery()
+      .select('#top').boundingClientRect().exec((rect) => {
+        this.setData({
+          btmHeight: rect[0].height
+        })
+      })
   },
 
   hisItemClick(e) {

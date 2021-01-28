@@ -1,6 +1,6 @@
 <scroll-view scroll-y='{{true}}' style="height:100vh;" class='schedule-scroll' onScrollToLower='scrollMytrip'>
   <view class='container' style="">
-    <view style="position: fixed;top: 0;left: 0;right: 0;z-index:1;background: #2cc1a1;">
+    <view id='top' style="position: fixed;top: 0;left: 0;right: 0;z-index:1;padding:10px;background: #2cc1a1;">
       <view class='top-bar' >
         <search-bar borderColor='white' value='{{searchValue}}' placeholder='支付拿返利！' showCancelButton='{{false}}' onInput='onSearchBarInput' onSubmit='onSubmit' onClear='onClear'
         >
@@ -21,7 +21,7 @@
       <view style="height:20rpx;background: #2cc1a1;"></view>
     </view>
     <!--顶总结束-->
-    <view wx:if='{{showContent}}' class='container-index' style="margin-top:100px;">
+    <view id='btm' wx:if='{{showContent}}' class='container-index' style="margin-top:100px;">
       <view class='main-content'>
         <view>
           <view class='schedule-container'>
