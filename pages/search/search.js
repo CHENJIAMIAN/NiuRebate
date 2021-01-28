@@ -96,7 +96,7 @@ Page({
   },
 
   onSearchBarInput(value) {
-    // console.log('onSearchBarInput', value)
+    console.log('onSearchBarInput', value)
     searchKey = value;
     this.setData({
       searchValue: searchKey
@@ -105,6 +105,8 @@ Page({
 
 
   onSubmit(value) {
+    console.log("onSubmit::",value);
+    searchKey=value;
     this.goToSearchData();
   },
   onClear() {
@@ -118,35 +120,42 @@ Page({
       return;
     }
 
-    var cache = my.getStorageSync({ key: 'SearchHistoryKey' });
-    console.log("####cache:", cache)
-    if (cache != null && cache != '' && cache != undefined && cache != '查无此key') {
+    var cacheGet = my.getStorageSync({ key: 'SearchHistoryKey' });
+    if (cacheGet != null && cacheGet != '' && cacheGet != undefined && cacheGet != '查无此key') {
       var isExist = false;
       var arr = [];
-      cache=cache.data;
-      for (var i = 0; i < cache.length; i++) {
-        var name = cache[i]
-        if (i >= 12) {
-          break;
-        }
+      var cache=cacheGet.data;
+      if(cache!=null){
+          for (var i = 0; i < cache.length; i++) {
+                  var name = cache[i]
+                  if (i >= 12) {
+                    break;
+                  }
 
-        if (name == searchKey) {
-          isExist = true;
-          arr.unshift(searchKey);
-          continue;
-        } else {
-          arr[i] = name;
-        }
-      }
-      if (!isExist) {
-        arr.unshift(searchKey);
-      }
-      my.setStorageSync({key:"SearchHistoryKey",data:arr});
-      this.setData({
-        historyList: arr
-      })
-      console.log('historyList', this.data.historyList)
-
+                  if (name == searchKey) {
+                    isExist = true;
+                    arr.unshift(searchKey);
+                    continue;
+                  } else {
+                    arr[i] = name;
+                  }
+                }
+                if (!isExist) {
+                  arr.unshift(searchKey);
+                }
+                my.setStorageSync({key:"SearchHistoryKey",data:arr});
+                this.setData({
+                  historyList: arr
+                })
+                //console.log('historyList', this.data.historyList)
+      }else{
+        var arr = [];
+              arr[0] = searchKey;
+              my.setStorageSync({key:"SearchHistoryKey",data:arr});
+              this.setData({
+                historyList: arr
+              })
+      } 
     } else {
       var arr = [];
       arr[0] = searchKey;
