@@ -22,8 +22,22 @@
         <text style="font-size:40rpx;color:#2FBEA0;">{{item.wallet}}</text> 元
       </view>
       <view slot="extra" class="txt-extra" style="font-size:16px">
-        <view style="margin-top:10rpx;color:#2FBEA0;">{{item.statusName}}
-        </view>
+
+
+        <view a:if="{{item.statusName=='申请中'}}"
+          style="{{!true ? 'color:green':'color:red'}}">
+            {{item.statusName}}
+          </view>
+          <view a:if="{{item.statusName=='提取成功'}}"
+          style="{{!true ? 'color:green':'color:green'}}">
+            {{item.statusName}}
+          </view>
+          <view a:if="{{item.statusName=='提取失败'}}"
+          style="{{!true ? 'color:green':'color:#d3c6a6'}}">
+            {{item.statusName}}
+          </view>
+
+
       </view>
     </list-item>
   </list>
