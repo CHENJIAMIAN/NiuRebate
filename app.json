@@ -22,7 +22,8 @@
   ],
   "window": {
     "defaultTitle": "乐盟返利",
-    "titleBarColor": "#2FBEA0"
+    "titleBarColor": "#2FBEA0",
+    "enableInPageRenderInput":"YES"
   },
   "tabBar": {
     "textColor": "#333333",

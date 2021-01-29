@@ -204,5 +204,9 @@ Page({
   },
 
 
+  doneSearch(e){
+     console.log("doneSearchdoneSearch",e);
+  }
+
 
 });
