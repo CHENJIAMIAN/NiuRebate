@@ -6,27 +6,7 @@ Page({
     isVIP: false,
     stat: {},
     listData: [
-      {
-        mctAvatar: '',
-        mctShopName: "小红",
-        requestTime: "12月12日18：40",
-        fanli: "45.00",
-        amount: "58.00",
-      },
-      {
-        mctAvatar: '',
-        mctShopName: "小红",
-        requestTime: "12月12日18：40",
-        fanli: "45.00",
-        amount: "58.00",
-      },
-      {
-        mctAvatar: '',
-        mctShopName: "小红",
-        requestTime: "12月12日18：40",
-        fanli: "45.00",
-        amount: "58.00",
-      }
+      
     ],
     hasContent: false,
     showPayBtn: false,
