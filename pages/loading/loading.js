@@ -9,6 +9,9 @@ Page({
     time:3
   },
   onLoad() {
+  },
+
+  onReady() {
     this.login();
   },
 
@@ -69,28 +72,27 @@ Page({
                   loginBtnFlag:true,
                   title: '授权失败, 请重试！'
                 });
-
               }
-
             },
+
             fail: function (resdata) {
               // my.hideLoading();
               that.setData({
                 loginBtnFlag:true,
                 title: '授权失败, 请重试！'
               });
- 
+
             }
           });
-
 
         }
 
       },
 
-      fail() {
-      // my.hideLoading();
-       that.setData({
+      fail: (res) => {
+        // my.hideLoading();
+        console.log("========auth fail");
+        that.setData({
           loginBtnFlag:true,
           title: '授权失败, 请重试！'
         });

@@ -59,6 +59,8 @@ Page({
           fail: (result) => {
               console.log(result);
               console.log('getPhoneNumber_fail');
+              this.confirm();
+              
           },
       });
     },
@@ -66,6 +68,27 @@ Page({
 
     onAuthError(res){
          console.log(res);
+         this.confirm();
     },
 
+    confirm(){
+
+      my.confirm({
+        title: '提示',
+        content: '取消授权，可能会使部分服务无法使用，或页面不完整',
+        confirmButtonText: '重新授权',
+        cancelButtonText: '我知道了',
+        success: (result) => {
+          
+          if (result.confirm){
+
+          }else{
+            my.reLaunch({
+              url: '/pages/index/index'
+            })
+          }
+        },
+      });
+
+    },
 });

@@ -101,7 +101,7 @@
         </view> -->
         <list loadMore='{{loadMore}}' loadContent='{{loadContent}}'>
           <list-item extra='{{true}}'  a:for='{{listData}}' thumb='{{item.mctAvatar}}' thumbSize='50' arrow='{{false}}'
-            a:key='id' data-item='{{item}}' onTap='goDetail'>
+            a:key='id' data-item='{{item}}' onClick='goDetail'>
             <view slot='afterUpperSubtitle'  class='txt-medium' style='font-size:14px;color:black;margin-bottom:24rpx;'>
               {{item.mctShopName}}
             </view>
