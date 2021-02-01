@@ -165,7 +165,7 @@ Page({
 
         my.hideLoading();
 
-        console.log(resdata);
+        console.log(`requestFanliData page:${page}`, resdata);
 
         if (resdata.data.code == 0) {
 
@@ -173,7 +173,7 @@ Page({
           var bean = resdata.data.data;
           this.setData({
             hasContent: true,
-            listData: bean.list,
+            listData: this.data.listData.concat(bean.list),
             stat: bean.stat
           });
 
@@ -239,7 +239,6 @@ Page({
   },
 
   goDetail(e) {
-
     const { item } = e.target.dataset;
 
     my.navigateTo({
@@ -287,7 +286,7 @@ Page({
         page: newPage,
         loadMore: "load"
       });
-      console.log(newPage);
+      console.log('newPage',newPage);
       this.requestFanliData(newPage);
     } catch (e) {
       this.setData({
