@@ -16,11 +16,13 @@
     "pages/error-tip/error-tip",
     "pages/home/home",
     "pages/share-recv/share-recv",
-    "pages/activity/activity"
+    "pages/activity/activity",
+    "pages/search/search"
   ],
   "window": {
     "defaultTitle": "乐盟返利",
-    "titleBarColor": "#2FBEA0"
+    "titleBarColor": "#2FBEA0",
+    "enableInPageRenderInput":"YES"
   },
   "tabBar": {
     "textColor": "#333333",
