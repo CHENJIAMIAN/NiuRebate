@@ -98,7 +98,7 @@ Page({
               isVIP: false
             });
             that.loadRecord();
-          } else if (resdata.data.data.memberFlag == 1) {
+          } else if (resdata.data.data.memberFlag > 0) {
             that.setData({
               isVIP: true
             });

@@ -132,7 +132,7 @@
       <image class="img-sqdl" src="/assets/img/sqdl.png"/>
     </view>
     <view class="btn-section flex-content" style="bottom: 400rpx;">
-      <text class="tip-text">{{'美好生活从大牛开始'}}</text>
+      <text class="tip-text">{{'美好生活从乐盟返利开始'}}</text>
     </view>
     <view class="btn-section flex-content">
       <button class="custom-button" type="primary" onTap="goPhoneNumber">授权登录</button>
