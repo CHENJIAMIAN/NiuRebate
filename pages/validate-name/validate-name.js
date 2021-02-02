@@ -6,9 +6,6 @@ Page({
     inputName: '',
   },
   onLoad(query) {
-    this.setData({
-      merchantId: query.merchantId
-    });
   },
   titleClick() {
     my.alert({
@@ -45,7 +42,6 @@ Page({
       method: 'POST',
       data: {
         memberId: app.globalData.memberId,
-        merchantId: that.data.merchantId,
         name: that.data.inputName
       },
       headers: {
@@ -63,8 +59,8 @@ Page({
             },
           });
 
-          my.navigateTo({
-            url: '/pages/shop-home/shop-home?id=' + that.data.merchantId
+          my.reLaunch({
+            url: '/pages/mine/mine'
           });
           
          

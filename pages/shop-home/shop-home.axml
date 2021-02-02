@@ -31,7 +31,7 @@
     <!-- 5 -->
     <view class="gray-card" style="margin-top:26rpx;">
       <view class="txt-28-bold">使用说明</view>
-      <view class="txt-24-gray" style="margin-top:19rpx;">门店消费——付款并告知使用返利卡——付款即返</view>
+      <view class="txt-24-gray" style="margin-top:19rpx;">到店消费——使用支付付款扫码支付——付款即返</view>
     </view>
   </view>
   <view class="btm-gap"></view>

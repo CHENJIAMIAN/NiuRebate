@@ -18,6 +18,7 @@ Page({
     memberFlag: '',
     expiryDate: '',
     needLogin: false,
+    needAuthName: false,
     page: 1,
     //
     loadMore: "",
@@ -72,6 +73,16 @@ Page({
             memberFlag: resdata.data.data.memberFlag,
             expiryDate: resdata.data.data.expiryDate
           });
+
+          if (resdata.data.data.name){
+            that.setData({
+              needAuthName: false
+            });
+          }else{
+            that.setData({
+              needAuthName: true
+            });
+          }
 
           if (resdata.data.data.memberFlag == 0) {
             that.setData({
@@ -234,6 +245,12 @@ Page({
     });
   },
 
+
+  validateName(){
+    my.navigateTo({
+      url: '/pages/validate-name/validate-name'
+    });
+  },
 
   // 实现双击回到顶部
   onTabItemTap(item) {

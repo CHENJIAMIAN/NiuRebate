@@ -56,6 +56,7 @@ Page({
     showIndexPage: true,
     gotoLocation: false,
     showContent: false,
+    locationFail: false,
     searchValue: "",
     show: false,
     tabs: [
@@ -124,8 +125,12 @@ Page({
         that.requestMerchantData(res.longitude, res.latitude, res.city, page);
 
       },
-      fail() {
+      fail: (res) => {
         my.hideLoading();
+        console.log("=====fail:" + res);
+        that.setData({
+          locationFail: true
+        });
       },
     })
   },
@@ -204,6 +209,7 @@ Page({
         if (resdata.data.code == 0) {
           this.setData({
             gotoLocation: false,
+            locationFail: false,
             showContent: true
           });
 
@@ -352,7 +358,9 @@ Page({
         app.globalData.cityName = res.cityName;
         app.globalData.district = res.name;
         that.setData({
-          position: res.name
+          position: res.name,
+          locationFail: false,
+          gotoLocation: false
         });
 
         my.showLoading();

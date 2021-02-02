@@ -38,6 +38,14 @@
     </view>
     <!-- 主内容 -->
     <view hidden="{{needLogin}}" class="main-content">
+
+
+      <view>
+        <view class="txt-yfl"
+           <button a:if="{{needAuthName}}" type="primary" class="btn-ljkt" onTap="validateName">立即实名</button>
+        </view>
+      </view>
+
       <!-- 我的推荐条 -->
       <view class="flex-between" onTap="shareToFriends">
         <view class="txt-wdtj">
@@ -48,6 +56,7 @@
         </view>
         <image class="img-yjt" src="/assets/img/yjt.png"/>
       </view>
+
       <!-- 已返利 -->
       <view>
         <view class="txt-yfl">已返利
@@ -126,7 +135,7 @@
     </view>
   </scroll-view>
   <!-- 买单组件 -->
-  <pay-button a:if="{{memberFlag == 1}}" />
+  <pay-button  />
   <view hidden="{{!needLogin}}">
     <view class="flex-content" style="height:80vh">
       <image class="img-sqdl" src="/assets/img/sqdl.png"/>

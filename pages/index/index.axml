@@ -13,6 +13,21 @@
       </view>
     </view>
   </block>
+
+  <block a:if="{{locationFail}}">
+    <view>
+      <view class="flex-content near-fullheight">
+        <image class="image-zwkt" src="../../assets/img/zwkt.png"/>
+      </view>
+      <view class="flex-content"> 
+        <text class="tip-text">{{'无法获取当前位置, 请手动定位'}}</text>
+      </view>
+      <view class="btn-section flex-content">
+        <button class="custom-button" type="primary" onTap="chooseLocation">手动定位</button> 
+      </view>
+    </view>
+  </block>
+
   <!-- 主页内容 -->
   <view a:if="{{showContent}}" class="container-index">
     <scroll-view scroll-y="{{true}}" style="height:100vh;" onScrollToLower="scrollMytrip" class="schedule-scroll">
@@ -31,7 +46,7 @@
         </view>
         <!-- search -->
         <view onTap="searchClick">
-          <search-bar value="{{searchValue}}" placeholder="支付拿返利！" 
+          <search-bar value="{{searchValue}}" placeholder="搜索合作商家" 
           disabled="{{true}}"
              showCancelButton="{{false}}" />
         </view>
@@ -53,7 +68,7 @@
           <text class="txt-24 orange" style="margin-left:20rpx;">在国诚C消费后赚了5.53元</text>
         </view>
         <!-- pay bar -->
-        <view class="pay-bar" hidden="true">
+        <!-- <view class="pay-bar" hidden="true">
           <view class="img-btn" onTap="alipayScan">
             <image class="image-sm" src="/assets/img/sm.png"/>
             <view class="txt-28" style="margin-top:16rpx;">扫一扫
@@ -66,7 +81,7 @@
             <view class="txt-28" style="margin-top:16rpx;">付款码
             </view>
           </view>
-        </view>
+        </view> -->
         <!-- tab bar -->
         <view>
           <tabs tabs="{{tabs}}" tabsName="activeTab" onTabClick="handleTabChange" onChange="handleTabChange" 
