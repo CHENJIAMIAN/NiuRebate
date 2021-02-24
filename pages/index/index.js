@@ -42,12 +42,18 @@ Page({
     position: '',
     imgs: [0, 1, 2, 3],
     img: 'https://gw.alipayobjects.com/mdn/rms_eb2664/afts/img/A*bFuBQZuNErMAAAAAAAAAAABkARQnAQ',
-    list: [],
+    list0: [],
     list1: [],
     list2: [],
     list3: [],
     cateList: [],
-    page: 1,
+    tabChangedFlads: {
+      page0: false,
+      page1: false,
+      page2: false,
+      page3: false,
+    },
+    page0: 1,
     page1: 1,
     page2: 1,
     page3: 1,
@@ -217,14 +223,14 @@ Page({
 
 
           if (categoryId == 0) {
-            let list = this.data.list;
+            let list = this.data.list0;
             var dataList = resdata.data.data;
             for (let i = 0; i < dataList.length; i++) {
               list.push(dataList[i]);
             }
             this.setData({
-              list: list,
-              page: page
+              list0: list,
+              page0: page
             });
 
           } else if (categoryId == 1) {
@@ -279,10 +285,10 @@ Page({
         } else if (resdata.data.code == 7) {
 
           if (categoryId == 0) {
-            let list = this.data.list;
+            let list = this.data.list0;
             this.setData({
-              list: list,
-              page: page,
+              list0: list,
+              page0: page,
               show: false
             });
 
@@ -325,10 +331,10 @@ Page({
         my.hideLoading();
       },
       complete: () => {
-        const { list, list1, list2, list3 } = this.data;
+        const { list0, list1, list2, list3 } = this.data;
         // 设置内容
         this.setData({
-          cateList: [list, list1, list2, list3],
+          cateList: [list0, list1, list2, list3],
         })
         // 适配高度
         my.createSelectorQuery()
@@ -371,8 +377,8 @@ Page({
 
         //清空列表数据
         this.setData({
-          list: list,
-          page: page
+          list0: list,
+          page0: page
         });
 
 
@@ -403,15 +409,13 @@ Page({
       [tabsName]: index,
       categoryId: index
     });
+    
+    if(this.data.tabChangedFlads['page'+index])
+      return;
 
-    var newPage = this.data.page;
-    if (index == 1) {
-      newPage = this.data.page1;
-    } else if (index == 2) {
-      newPage = this.data.page2;
-    } else if (index == 3) {
-      newPage = this.data.page3;
-    }
+    var newPage = this.data['page'+index];
+    this.data.tabChangedFlads['page'+index] = true;
+    // 只有在第一次切换到该tab时，才请求列表数据，其他次由上拉触发请求
     this.requestMerchantData(app.globalData.longitude, app.globalData.latitude, app.globalData.cityName, newPage);
   },
   // tab end
@@ -423,13 +427,8 @@ Page({
   async scrollMytrip() {
     console.log('scrollMytrip')
     try {
-      // const { page, list, } = this.data;
-      // 判断是否还有数据需要加载 
-      // if (list.length < mockTotal) {
-      // this.setData({ show: true });
-
       let index = this.data.categoryId;
-      var newPage = this.data.page;
+      var newPage = this.data.page0;
       if (index == 1) {
         newPage = this.data.page1;
       } else if (index == 2) {
@@ -443,37 +442,11 @@ Page({
 
       this.requestMerchantData(app.globalData.longitude, app.globalData.latitude, app.globalData.cityName, newPage);
 
-      // this.mySchedulde(newPage);
-      // }
     } catch (e) {
       this.setData({ show: false });
       console.log('scrollMytrip执行异常:', e);
     }
   },
-  /**
-   * 模拟请求服务端查询数据并渲染页面
-   * @method mySchedulde
-   * @param {int} page 分页,默认第1页
-   */
-  async mySchedulde(page = 1) {
-    try {
-      let list = this.data.list;
-      // 模拟请求拿到数据进行更新data
-      setTimeout(() => {
-        let data = mockData;
-        for (let i = 0; i < data.length; i++) {
-          list.push(data[i]);
-        }
-        this.setData({
-          list,
-          page
-        });
-      }, 1000);
-    } catch (e) {
-      console.log('mySchedulde执行异常:', e);
-    }
-  },
-
 
   goShopDetail(e) {
     const { item } = e.target.dataset;
@@ -524,12 +497,12 @@ Page({
   },
 
 
-   //跳到搜索页面
-    searchClick() {
-        my.navigateTo({
-            url: '/pages/search/search'
-        });
-    },
+  //跳到搜索页面
+  searchClick() {
+    my.navigateTo({
+      url: '/pages/search/search'
+    });
+  },
 
 });
 
