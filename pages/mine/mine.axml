@@ -57,6 +57,17 @@
         <image class="img-yjt" src="/assets/img/yjt.png"/>
       </view>
 
+      <!-- 客服电话 -->
+      <view class="flex-between" onTap="concatphone" style="margin-top:5rpx;">
+        <view class="txt-wdtj">
+          <image class="img-wdtj" src="/assets/img/wd2.png"/>
+          <text style="margin-left: 40rpx;">
+       客服电话
+          </text>
+        </view>
+        <image class="img-yjt" src="/assets/img/yjt.png"/>
+      </view>
+
       <!-- 已返利 -->
       <view>
         <view class="txt-yfl">已返利

@@ -229,6 +229,14 @@ Page({
     });
   },
 
+  concatphone(){
+    my.alert({
+        title: '客服电话(微信同号)',
+        content: '13411879656',
+        buttonText: '我知道了'        
+      });
+  },
+
   goDetail(e) {
     const { item } = e.target.dataset;
 
