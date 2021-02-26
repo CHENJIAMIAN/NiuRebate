@@ -273,7 +273,10 @@ Page({
 
 
         } else if (resdata.data.code == 6) {
-          this.setData({ gotoLocation: true });
+          this.setData({ 
+            gotoLocation: true,
+            showContent: false 
+          });
           my.showToast({
             type: 'fail',
             content: resdata.data.msg,
@@ -366,7 +369,11 @@ Page({
         that.setData({
           position: res.name,
           locationFail: false,
-          gotoLocation: false
+          gotoLocation: false,
+          list0: [],
+          list1: [],
+          list2: [],
+          list3: []
         });
 
         my.showLoading();
