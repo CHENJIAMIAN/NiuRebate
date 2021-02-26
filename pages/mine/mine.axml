@@ -70,7 +70,7 @@
 
       <!-- 已返利 -->
       <view>
-        <view class="txt-yfl">已返利
+        <view class="txt-yfl">已到账
           <text class="txt-bold-DDIN txt-51" style="margin:0 17rpx;">{{stat.fanli}}</text>元
         </view>
         <view class="flex-between greenbg-bar">
