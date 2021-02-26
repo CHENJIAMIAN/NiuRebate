@@ -36,16 +36,20 @@
       <!-- top bar -->
       <view class="top-bar">
         <!-- postion -->
-        <view>
+        <view onTap="chooseLocation">
           <!--<image class="img-hk" src="/assets/img/hk.png"/> -->
           <image class="img-dw" src="/assets/img/dw.png"/>
-          <text class="txt-28" style="margin-left:15rpx;" onTap="chooseLocation">
-          {{position}}...
+          <text 
+            class="txt-28" 
+            style="margin-left:15rpx;" 
+          >
+          {{position}}
           </text>
-          <image class="img-xl" src="/assets/img/xl.png" style="margin-left:18rpx;" onTap="chooseLocation"/>
+          <image class="img-xl" src="/assets/img/xl.png" 
+          style="margin-left:18rpx;" />
         </view>
         <!-- search -->
-        <view onTap="searchClick">
+        <view onTap="searchClick" >
           <search-bar value="{{searchValue}}" placeholder="搜索合作商家" 
           disabled="{{true}}"
              showCancelButton="{{false}}" />
