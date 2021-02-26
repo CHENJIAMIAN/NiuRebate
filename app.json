@@ -1,11 +1,11 @@
 {
   "pages": [
     "pages/loading/loading",
+    "pages/vip-invite/vip-invite",
     "pages/index/index",
     "pages/withdraw/withdraw",
     "pages/rebate-detail/rebate-detail",
     "pages/mine/mine",
-    "pages/vip-invite/vip-invite",
     "pages/validate-name/validate-name",
     "pages/shop-home/shop-home",
     "pages/pay/pay",
@@ -20,7 +20,7 @@
     "pages/search/search"
   ],
   "window": {
-    "defaultTitle": "乐盟返利",
+    "defaultTitle": "乐返多",
     "titleBarColor": "#2FBEA0",
     "enableInPageRenderInput":"YES"
   },

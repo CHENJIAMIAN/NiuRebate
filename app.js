@@ -2,7 +2,7 @@ App({
 
    //serverUrl:"http://192.168.50.176:9800",
   serverUrl: "https://www.lemengsc.com",
-
+  rootImgPath:"",
   globalData: {
     hasLogin: false,
     memberId:'',

@@ -1,5 +1,5 @@
 <view>
-  <scroll-view  style='height: 100vh;' scroll-y="{{true}}" onScrollToLower="onScrollToLower" class="schedule-scroll">
+  <scroll-view hidden="{{needLogin}}" style='height: 100vh;' scroll-y="{{true}}" onScrollToLower="onScrollToLower" class="schedule-scroll">
     <view hidden="{{needLogin}}" class="user-top-container">
       <!-- 用户信息 -->
       <view class="user-info">
@@ -147,14 +147,15 @@
   </scroll-view>
   <!-- 买单组件 -->
   <pay-button  />
+  <!--height:80vh;-->
   <view hidden="{{!needLogin}}">
-    <view class="flex-content" style="height:80vh">
+    <view class="btn-section flex-content" style="height:80vh;bottom: 200rpx;">
       <image class="img-sqdl" src="/assets/img/sqdl.png"/>
     </view>
-    <view class="btn-section flex-content" style="bottom: 400rpx;">
-      <text class="tip-text">{{'美好生活从乐盟返利开始'}}</text>
+    <view class="btn-section flex-content" style="bottom: 300rpx;">
+      <text class="tip-text">{{'美好生活从乐返多开始'}}</text>
     </view>
-    <view class="btn-section flex-content">
+    <view class="btn-section flex-content" >
       <button class="custom-button" type="primary" onTap="goPhoneNumber">授权登录</button>
     </view>
   </view>

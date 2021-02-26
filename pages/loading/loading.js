@@ -51,6 +51,8 @@ Page({
 
               if (resdata.data.data){
 
+                app.rootImgPath=resdata.data.data.imgWebBase;
+
                 if (resdata.data.data.userId) {
                   app.globalData.userId = resdata.data.data.userId;
                 }
