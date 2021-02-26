@@ -77,7 +77,7 @@ Page({
       },
       {
         title: '美食',
-        subTitle: '吃遍全城',
+        subTitle: '餐饮美食',
         number: '66',
         // showBadge: true,
         badge: {
@@ -87,7 +87,7 @@ Page({
       },
       {
         title: '购物',
-        subTitle: '商超便利',
+        subTitle: '零售批发',
         number: '99+',
         // showBadge: true,
         badge: {
