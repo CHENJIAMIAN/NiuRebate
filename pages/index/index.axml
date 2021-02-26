@@ -39,12 +39,20 @@
         <view onTap="chooseLocation">
           <!--<image class="img-hk" src="/assets/img/hk.png"/> -->
           <image class="img-dw" src="/assets/img/dw.png"/>
-          <text 
+          <view 
             class="txt-28" 
-            style="margin-left:15rpx;" 
+            style="
+                margin-left:15rpx;
+                max-width: 240rpx;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: inline-block;
+                white-space: nowrap;
+                transform: translate(0px,4px);
+            " 
           >
           {{position}}
-          </text>
+          </view>
           <image class="img-xl" src="/assets/img/xl.png" 
           style="margin-left:18rpx;" />
         </view>
