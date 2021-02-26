@@ -48,14 +48,14 @@ Page({
     gmListData: [
       {
         img: '/static/wxAliImg/head1.jpg',
-        name: '老王',
+        name: '黄*强',
         job: '电商运营',
         month: '3',
         monney: '２００',
         desc: '真的很划算，一年才１９.９元，和朋友出去吃一顿饭就能赚回来',
       }, {
         img: '/static/wxAliImg/head2.jpg',
-        name: '小李',
+        name: '高*国',
         job: '程序员',
         month: '1',
         monney: '160',
@@ -63,7 +63,7 @@ Page({
       },
        {
         img: '/static/wxAliImg/head3.jpg',
-        name: '小张',
+        name: '曾*源',
         job: '室内设计',
         month: '1',
         monney: '138',
@@ -201,5 +201,11 @@ Page({
     });
 
   },
+
+  goToCenter(){
+    my.reLaunch({
+            url: '/pages/mine/mine'
+          })
+  }
 
 });
