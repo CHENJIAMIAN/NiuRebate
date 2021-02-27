@@ -421,3 +421,17 @@
      height: 167rpx;
      border: 1rpx #413542 dashed;
    }
+
+
+  .btn-ljkt {
+    width: 230rpx;
+    height: 59rpx;
+    background: linear-gradient(99deg, #B9B9FF, #00A600);
+    border-radius: 23px;
+    font-size: 26rpx;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: #ffdcc6;
+    line-height: 59rpx;
+    border: none;
+}

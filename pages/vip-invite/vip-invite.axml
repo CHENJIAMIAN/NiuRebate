@@ -25,6 +25,11 @@
               </text>
             </view>
           </view>
+
+           <button type='primary' class='btn-ljkt' onTap='goToCenter'>
+            进入个人中心
+          </button>
+
         </view>
         <view class="txt-dnvip">
       乐返多VIP会员
@@ -102,7 +107,7 @@
       <view class="title-lr">
         <image class="img-lbar" src="/assets/img/lbar.png" />
         已有
-        <text style="color:#2ABF9F;">1000位用户成为了VIP会员</text>
+        <text style="color:#2ABF9F;">100000+</text>用户成为了VIP会员
         <image class="img-lbar" src="/assets/img/rbar.png"/>
       </view>
       <view class="gm-card" a:for="{{gmListData}}">

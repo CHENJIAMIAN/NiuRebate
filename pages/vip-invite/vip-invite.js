@@ -10,7 +10,7 @@ Page({
         memberFlag:0,
     dpListData: [{
       img: '/static/wxAliImg/shop1.jpg',
-      dianming: "表嫂小厨",
+      dianming: "四海美食城",
       type: "粤菜",
      // position: "海珠区",
      // distance: "14.6km",
@@ -19,7 +19,7 @@ Page({
     },
     {
       img: '/static/wxAliImg/shop2.jpg',
-      dianming: "八哥酸菜鱼",
+      dianming: "八哥火锅店",
       type: "火锅烧烤",
       //position: "荔湾区",
       //distance: "21.8km",
@@ -28,7 +28,7 @@ Page({
     },
     {
       img: '/static/wxAliImg/shop3.jpg',
-      dianming: "猪腰一家",
+      dianming: "焱鱼新派古道烤鱼",
       type: "火锅烧烤",
      // position: "越秀区",
      // distance: "14.6km",
@@ -48,25 +48,25 @@ Page({
     gmListData: [
       {
         img: '/static/wxAliImg/head1.jpg',
-        name: '黄*强',
+        name: '陈*强',
         job: '电商运营',
         month: '3',
-        monney: '２００',
+        monney: '600',
         desc: '真的很划算，一年才１９.９元，和朋友出去吃一顿饭就能赚回来',
       }, {
         img: '/static/wxAliImg/head2.jpg',
-        name: '高*国',
+        name: '李*卫',
         job: '程序员',
         month: '1',
-        monney: '160',
+        monney: '162',
         desc: '超划算，平时随便买点水果吃就已经省回来了',
       },
-       {
+        {
         img: '/static/wxAliImg/head3.jpg',
-        name: '曾*源',
+        name: '朱*叶',
         job: '室内设计',
-        month: '1',
-        monney: '138',
+        month: '2',
+        monney: '338',
         desc: '真的很划算，即付即返,比其它的平台的优惠卷红包之类来得更实在',
       },
     ],
