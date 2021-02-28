@@ -1,5 +1,5 @@
 <view>
-  <view class="user-top-container" onTap="goToCenter">
+  <view class="user-top-container">
     <view class="txt-tiny-tip">
       <image class="img-tz" src="/assets/img/tz.png"/>
       <text style="margin-left: 15rpx;">
