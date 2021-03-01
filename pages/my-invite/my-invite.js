@@ -67,14 +67,16 @@ Page({
 
 
   onShareAppMessage() {
+    var img=app.rootImgPath+"/static/wxAliImg/shareQrcodeImg.jpg";
+    //var img='https://gw.alipayobjects.com/mdn/rms_eb2664/afts/img/A*bFuBQZuNErMAAAAAAAAAAABkARQnAQ';
     return {
-      title: '乐盟返利',
+      title: '乐返多',
       desc: '专注生活服务，提供会员返利',
       path: '/pages/share-recv/share-recv?shareUserId=' + app.globalData.userId,
-      searchTip: '乐盟返利小程序',
+      searchTip: '乐返多',
       content: '分享吱口令',
-      imageUrl: 'https://gw.alipayobjects.com/mdn/rms_eb2664/afts/img/A*bFuBQZuNErMAAAAAAAAAAABkARQnAQ',
-      bgImgUrl: 'https://gw.alipayobjects.com/mdn/rms_eb2664/afts/img/A*bFuBQZuNErMAAAAAAAAAAABkARQnAQ',
+      imageUrl: img,
+      bgImgUrl: img,
       success: function (res) {
         console.log('success', res)
       },
