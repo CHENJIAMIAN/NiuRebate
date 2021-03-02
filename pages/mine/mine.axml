@@ -12,7 +12,7 @@
           </view>
           <view class="txt-tiny-tip">
             <image class="img-zs" src="/assets/img/zs.png"/>
-            <text style="margin-left: 15rpx;">
+            <text style="margin-left: 15rpx;font-size:28rpx">
               <text a:if="{{!isVIP}}">您还不是会员</text>
               <text a:else>{{memberId}}</text>
             </text>
@@ -50,18 +50,21 @@
       <view class="flex-between" onTap="shareToFriends">
         <view class="txt-wdtj">
           <image class="img-wdtj" src="/assets/img/wdtj.png"/>
-          <text style="margin-left: 40rpx;">
+          <text style="margin-left: 40rpx;font-size:32rpx">
        我的推荐
           </text>
         </view>
         <image class="img-yjt" src="/assets/img/yjt.png"/>
       </view>
 
+      <view class="gap">
+    </view>
+
       <!-- 客服电话 -->
       <view class="flex-between" onTap="concatphone" style="margin-top:5rpx;">
         <view class="txt-wdtj">
           <image class="img-wdtj" src="/assets/img/wd2.png"/>
-          <text style="margin-left: 40rpx;">
+          <text style="margin-left: 40rpx;font-size:32rpx">
        客服电话
           </text>
         </view>
@@ -76,10 +79,10 @@
         <view class="flex-between greenbg-bar">
           <view>
             <image class="img-29" style="transform: translateY(2rpx);" src="/assets/img/jlj.png"/>
-            <text style="margin-left:23rpx;">奖励金</text>
+            <text class='txt-32' style="margin-left:23rpx;">奖励金</text>
             <text class="txt-bold-DDIN txt-32" style="margin-left:18rpx;">{{stat.bounty}}</text>
           </view>
-          <view class="green" onTap="gowithdraw">
+          <view class="green txt-32" onTap="gowithdraw">
         马上提现
             <image class="img-right" src="/assets/img/right.png"/>
           </view>

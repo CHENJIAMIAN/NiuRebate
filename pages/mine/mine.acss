@@ -55,7 +55,7 @@
    }
 
    .txt-tiny-tip {
-     font-size: 24rpx;
+     font-size: 28rpx;
      font-family: PingFang SC;
      font-weight: 500;
      color: #FFFFFF;
@@ -84,7 +84,7 @@
      height: 49rpx;
      background: linear-gradient(99deg, #1A1822, #413542);
      border-radius: 23px;
-     font-size: 26rpx;
+     font-size: 28rpx;
      font-family: PingFang SC;
      font-weight: 500;
      color: #FFDCC6;
@@ -258,7 +258,7 @@
    }
 
    .txt-yfl {
-     font-size: 24rpx;
+     font-size: 38rpx;
      font-family: PingFang SC;
      font-weight: 500;
      color: #666666;
@@ -291,3 +291,8 @@
      background: #2ABF9F;
      border-radius: 3px;
    }
+
+   .gap {
+    height: 10px;
+    background: #fafafa;
+  }
