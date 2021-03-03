@@ -99,7 +99,7 @@
           <tabs tabs="{{tabs}}" tabsName="activeTab" onTabClick="handleTabChange" onChange="handleTabChange" 
           tabContentHeight='{{tabContentHeight}}'
           activeTab="{{activeTab}}" showPlus="{{false}}" swipeable="{{true}}" capsule="{{false}}" 
-          hasSubTitle="{{true}}" tabBarUnderlineWidth="20px" stickyBar="{{true}}" tabBarActiveTextColor="#FF8400" 
+          hasSubTitle="{{true}}" tabBarUnderlineWidth="20px" stickyBar="{{false}}" tabBarActiveTextColor="#FF8400" 
           tabBarInactiveTextColor="#666666" tabBarActiveSubTextColor="#FF8400" tabBarSubTextColor="#666666">
             <block a:for="{{tabs}}">
               <tab-content a:if='{{index == 0}}' key="{{index}}" tabId="{{index}}" activeTab="{{activeTab}}">

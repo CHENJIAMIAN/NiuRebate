@@ -210,7 +210,6 @@ Page({
         'Content-Type': 'application/json'
       },
       success: (resdata) => {
-        my.hideLoading();
 
         if (resdata.data.code == 0) {
           this.setData({
@@ -273,9 +272,9 @@ Page({
 
 
         } else if (resdata.data.code == 6) {
-          this.setData({ 
+          this.setData({
             gotoLocation: true,
-            showContent: false 
+            showContent: false
           });
           my.showToast({
             type: 'fail',
@@ -342,10 +341,11 @@ Page({
         // 适配高度
         my.createSelectorQuery()
           .select('.tab-content' + categoryId).boundingClientRect().exec((ret) => {
+            // 有可能请求太慢了，到这里的时候已经切换到其他tab页了，就会造成bug
+            my.hideLoading();
             if (!ret) return;
             const hei = ret[0].height;
-            console.log('.tab-content' + categoryId, hei)
-            console.log(this.data.cateList)
+            console.log('请求complete .tab-content' + categoryId, hei,this.data.cateList)
             this.setData({
               tabContentHeight: hei + 30,
             })
@@ -416,12 +416,24 @@ Page({
       [tabsName]: index,
       categoryId: index
     });
-    
-    if(this.data.tabChangedFlads['page'+index])
-      return;
 
-    var newPage = this.data['page'+index];
-    this.data.tabChangedFlads['page'+index] = true;
+    if (this.data.tabChangedFlads['page' + index]) {
+      // 适配高度
+      my.createSelectorQuery()
+        .select('.tab-content' + index).boundingClientRect().exec((ret) => {
+          // 有可能请求太慢了，到这里的时候已经切换到其他tab页了，就会造成bug
+          if (!ret) return;
+          const hei = ret[0].height;
+          console.log('切换卡片 .tab-content' + index, hei,this.data.cateList)
+          this.setData({
+            tabContentHeight: hei + 30,
+          })
+        })
+      return;
+    }
+
+    var newPage = this.data['page' + index];
+    this.data.tabChangedFlads['page' + index] = true;
     // 只有在第一次切换到该tab时，才请求列表数据，其他次由上拉触发请求
     this.requestMerchantData(app.globalData.longitude, app.globalData.latitude, app.globalData.cityName, newPage);
   },
