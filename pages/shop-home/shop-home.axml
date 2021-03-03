@@ -13,7 +13,7 @@
     <!-- 2 -->
     <view class="flex" style=";margin-top:29rpx;">
       <view class="btn-txt-vip">VIP会员</view>
-      <view class="txt-28 orange" style="margin-left:24rpx;">商家返利{{fanli}}%，每单约赚{{zhuan}}元</view>
+      <view class="txt-28 orange" style="margin-left:24rpx;">商家返利{{fanli}}%，每单约返{{zhuan}}元</view>
     </view>
     <!-- 3 -->
     <view class="txt-30" style="margin:37rpx 0;">营业中| {{operTime}}</view>

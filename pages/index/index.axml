@@ -77,7 +77,7 @@
         <!-- notify bar -->
         <view class="notify-bar" a:if="{{false}}">
           <image class="img-tz" src="/assets/img/tz2.png"/>
-          <text class="txt-24 orange" style="margin-left:20rpx;">在国诚C消费后赚了5.53元</text>
+          <text class="txt-24 orange" style="margin-left:20rpx;">在国诚C消费后返了5.53元</text>
         </view>
         <!-- pay bar -->
         <!-- <view class="pay-bar" hidden="true">
@@ -112,7 +112,7 @@
                         <view class="txt-32-bold">{{item.name}}</view>
                         <view class="txt-20-gray">{{item.price}}/人  {{item.type}}     {{item.position}}  {{item.distance}}</view>
                         <view class="btn-txt-group">
-                          <view class="btn-txt-l"> 每单约赚￥{{item.zhuan}}</view>
+                          <view class="btn-txt-l"> 每单约返￥{{item.zhuan}}</view>
                           <view class="btn-txt-r"> 返利{{item.fanli}}%</view>
                         </view>
                       </view>
@@ -139,7 +139,7 @@
                         <view class="txt-32-bold">{{item.name}}</view>
                         <view class="txt-20-gray">{{item.price}}/人  {{item.type}}     {{item.position}}  {{item.distance}}</view>
                         <view class="btn-txt-group">
-                          <view class="btn-txt-l"> 每单约赚￥{{item.zhuan}}</view>
+                          <view class="btn-txt-l"> 每单约返￥{{item.zhuan}}</view>
                           <view class="btn-txt-r"> 返利{{item.fanli}}%</view>
                         </view>
                       </view>
